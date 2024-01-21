@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-xl md:text-2xl;
+        @apply font-bold;
+        @apply text-center;
+        @apply text-slate-900;
+        @apply pt-3 pb-3;
+    }
+
+    h2 {
+        @apply text-base md:text-xl;
+        @apply text-slate-800;
+        @apply pt-2 pb-2;
+    }
+}
