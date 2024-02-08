@@ -3,17 +3,64 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        font-family: 'Monaco', sans-serif;
+    }
+
     h1 {
         @apply text-xl md:text-2xl;
         @apply font-bold;
         @apply text-center;
         @apply text-slate-900;
+        @apply dark:text-slate-100;
         @apply pt-3 pb-3;
     }
 
     h2 {
         @apply text-base md:text-xl;
         @apply text-slate-800;
+        @apply dark:text-slate-200;
         @apply pt-2 pb-2;
+    }
+
+    h3 {
+        @apply text-slate-800;
+        @apply dark:text-slate-200;
+    }
+
+    div {
+        color: rgb(51 65 85);
+    }
+
+    .dark div {
+        color: rgb(203 213 225);
+    }
+
+    a {
+        color: white;
+    }
+
+
+
+
+}
+
+.swiper-navBtn {
+    color: #000;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border-radius: 50%;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 18px;
+}
+.swiper-pagination-bullet {
+    background-color: #000;
+}
+@media screen and (max-width: 768px) {
+    .swiper-navBtn {
+        display: none;
     }
 }

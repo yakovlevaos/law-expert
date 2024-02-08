@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  darkMode: 'class',
   content: ["./*.{html,js}"],
   theme: {
     extend: {
       backgroundImage: {
-        'banner-pattern': "url('/public/banner.png')",
+        'banner-pattern': "url('/public/banner.jpg')",
       },
     },
     container: {
