@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon-law.svg" />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.querySelector('html').classList.add('dark');
+      } else {
+        document.querySelector('html').classList.remove('dark');
+      }
+    </script>
+    <title>Центр психолого-педагогического сопровождения «Генезис»</title>
+    <script type="module" crossorigin src="/assets/index-k6yKNymy.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-i_Tg3yNF.css">
+  </head>
+  <body class="bg-slate-100 dark:bg-slate-900">
+    <header class="bg-slate-900 sticky top-0 z-10 border-b border-slate-300">
+      <div class="container mx-auto flex justify-around md:justify-between items-center max-sm:px-2 py-1">
+        <a href="#"><img src="/genesis-logo.png" class="w-20" alt=""></a>
+        <ul class="flex justify-between items-center gap-x-10 text-white md:gap-x-12 ">
+          <li class="hidden md:flex"><a href="#expertise">Экспертиза</a></li>
+          <li class="hidden md:flex md:ml-6"><a href="#team">Специалисты</a></li>
+          <li class="hidden md:flex md:ml-6"><a href="#about">О нас</a></li>
+          <li class="hidden md:flex md:ml-6"><a href="#contacts">Контакты</a></li>
+        </ul>
+        <div class="flex items-center">
+          <div class="flex flex-col md:ml-8">
+            <a href="tel:+79029272400">+7 902 927-24-00
+            </a>
+            <a href="tel:+79831992391">+7 983 199-23-91
+            </a>
+          </div>
+          <div class="ml-4 md:ml-8"><a href="https://vk.com/genesiskrsk" target="_blank"><img src="/vk-logo.svg" alt="vk-logo" class="size-6
+           8 md:size-10"></a></div>
+          <div class="flex flex-col justify-center ml-2 md:ml-10">
+            <input type="checkbox" name="light-switch" id="light-switch" class="light-switch sr-only" />
+            <label class="relative cursor-pointer p-2" for="light-switch">
+              <svg class="dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-slate-300" d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z" />
+                <path class="fill-slate-400" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z" />
+              </svg>
+              <svg class="hidden dark:block" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-slate-400" d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z" />
+                <path class="fill-slate-500" d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z" />
+              </svg>
+              <span class="sr-only">Switch to light / dark version</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hidden md:flex md:size-full md:h-96 md:bg-cover md:bg-banner-pattern justify-center p-20 mb-4">
+      <div class="flex justify-center items-center text-2xl lg:text-4xl text-slate-100">Центр психолого-педагогического сопровождения «Генезис»</div>
+    </section>
+    <section class="flex flex-col md:flex-row mx-auto px-2 mb-4 pb-2 gap-x-3">
+          <div class="md:w-1/2">
+            <a id="expertise" class="scroll-mt-28"></a>
+            <h1>Услуги, оказываемые организацией:</h1>
+          </div>
+      <div class="md:w-1/2 dark:bg-slate-800 bg-slate-300 text-slate-600 rounded-md">
+        <a id="team" class="scroll-mt-28"></a>
+        <h1>Основные направления судебно-психологической экспертизы:</h1>
+        <ul class="ml-10">
+          <li class="list-decimal">Оценка детско-родительских отношений</li>
+          <li class="list-decimal">Психолого-педагогическая экспертиза ребенка при разводе родителей</li>
+          <li class="list-decimal">Комплексная психолого-педагогическая экспертиза несовершеннолетних лиц</li>
+          <li class="list-decimal">Заключение на психолого-педагогическую экспертизу</li>
+        </ul>
+        <h1 class="text-center">Специалисты</h1>
+        <div class="container swiper mt-5 mb-5 flex justify-center items-center">
+          <div class="slide-container overflow-hidden" style="width:80%">
+            <div class="swiper-wrapper pb-5">
+              <div class="swiper-slide bg-slate-100 rounded-md flex flex-col justify-center items-center">
+                <div class="box-content w-96 h-96 overflow-hidden rounded-md m-2"><img src="/yurkov-photo.jpg" alt="expert photo" class="rounded-md" /></div>
+                  <div>
+                    <h3 class="font-bold text-center pb-4">Дмитрий Владимирович Юрков</h3>
+                    <div class="flex justify-center items-center gap-x-3">
+                      <a href="/yurkov-1.pdf" target="_blank"><img src="/yurkov-1.jpg" class="w-10" alt=""></a>
+                      <a href="/yurkov-2.pdf" target="_blank"><img src="/yurkov-2.jpg" class="w-10" alt=""></a>
+                      <a href="/yurkov-3.pdf" target="_blank"><img src="/yurkov-3.jpg" class="w-10" alt=""></a>
+                      <a href="/yurkov-4.pdf" target="_blank"><img src="/yurkov-4.jpg" class="w-10" alt=""></a>
+                      <a href="/yurkov-5.pdf" target="_blank"><img src="/yurkov-5.jpg" class="w-10" alt=""></a>
+                    </div>
+                    <p class="text-sm text-center mx-10 mb-5">директор МАУ «Центр психолого-педагогической, медицинской
+                      и социальной помощи «Эго»», педагог–психолог высшей категории, психиатр, судебный эксперт
+                      психолог (экспертный стаж 9 лет, специализация по вопросам экспертизы несовершеннолетних,
+                      детско-родительских отношений, сопровождение несовершеннолетних в уголовном процессе,
+                      этические экспертизы), почетный работник общего образования, Заслуженный педагог
+                      Красноярского края.</p>
+                  </div>
+                </div>
+              <div class="swiper-slide bg-slate-100 rounded-md flex flex-col justify-center items-center">
+                <div class="box-content w-96 h-96 overflow-hidden rounded-md m-2"><img src="/yaroshevich-photo.jpg" alt="expert photo" class="rounded-md" /></div>
+                <div>
+                  <h3 class="font-bold text-center pb-4">Ярошевич Лариса Петровна</h3>
+                  <div class="flex justify-center items-center gap-x-3">
+                    <a href="/yaroshevich-1.pdf" target="_blank"><img src="/yaroshevich-1.jpg" class="w-10" alt=""></a>
+                    <a href="/yaroshevich-2.pdf" target="_blank"><img src="/yaroshevich-2.jpg" class="w-10" alt=""></a>
+                  </div>
+                  <div class="text-sm text-center mx-10 mb-5">педагог-психолог МАУ «ЦППМиСП «Эго», эксперт АНО ДО ЦППС
+                    «ГЕНЕЗИС». Имею высшее психолого-педагогическое образование, высшую категорию педагога-
+                    психолога, стаж профессиональной деятельности 24 года.
+                    <ul class="text-start">Направления деятельности:
+                    <li class="list-decimal">Диагностика и коррекция детско-родительских отношений;</li>
+                    <li class="list-decimal">Определение уровня актуального
+                      развития детей от 0 до 18 лет;</li>
+                    <li class="list-decimal">Оценка детско-родительских отношений при проведении
+                      судебных и досудебных психологических экспертиз.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+        </section>
+
+  <section class="mx-auto dark:bg-slate-800 bg-slate-300 text-slate-600 px-2 mb-4 pb-2">
+    <a id="about" class="scroll-mt-28"></a>
+    <h1>О нас</h1>
+    <h2 class="text-center uppercase font-bold">Центр психолого-педагогического сопровождения «Генезис»</h2>
+    <h2 class="text-center">Автономная некоммерческая организация дополнительного образования</h2>
+    <div class="container mx-auto sm:flex pt-5 md:hidden">
+      <p class="pb-2">Центр &quot;Генезис&quot; организован 4 октября 2022 года. Обучение и воспитание в центре ведутся на
+        русском языке.</p>
+        <ul class="pb-2">Цели деятельности организации:
+          <li class="list-disc md:mt-2 mb-2">предоставление психолого-педагогических и социальных услуг обучающимся, испытывающим трудности в освоении основных общеобразовательных программ, развитие и социальная адаптация;</li>
+          <li class="list-disc md:mt-2 mb-2">помощь организациям, осуществляющим образовательную деятельность по вопросам реализации основных общеобразовательных программ, осуществление образовательной деятельности;</li>
+          <li class="list-disc md:mt-2 mb-2">предоставление консультационных и просветительских услуг, направленных на формирование высокого профессионального уровня и высокой степени квалификации специалистов-психологов, а также профессиональную ориентацию потенциальных специалистов-психологов.</li>
+        </ul>
+    </div>
+<div class="hidden md:block container mx-auto pt-5">
+<p class="text-center pb-5">Центр &quot;Генезис&quot; организован 4 октября 2022 года. Обучение и воспитание в центре ведутся на
+  русском языке.</p>
+  <p class="text-center pb-4">Цели деятельности организации:</p>
+  <div class="grid grid-cols-12 gap-x-5">
+    <div class="col-span-4 dark:bg-slate-900 bg-slate-100 h-full rounded-xl">
+      <div class="flex justify-center items-center pt-5 pb-5"><img src="/edu-help-1.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="development and help"></div>
+      <p class="px-3 pb-2 text-center">предоставление психолого-педагогических и социальных услуг обучающимся, испытывающим трудности в освоении основных общеобразовательных программ, развитие и социальная адаптация</p>
+    </div>
+    <div class="col-span-4 dark:bg-slate-900 bg-slate-100 h-full rounded-xl">
+      <div class="flex justify-center items-center pt-5 pb-5"><img src="/edu-help-2.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="development and help"></div>
+      <p class="px-3 pb-2 text-center">помощь организациям, осуществляющим образовательную деятельность по вопросам реализации основных общеобразовательных программ, осуществление образовательной деятельности</p>
+    </div>
+    <div class="col-span-4 dark:bg-slate-900 bg-slate-100 h-full rounded-xl">
+      <div class="flex justify-center items-center pt-5 pb-5"><img src="/edu-help-3.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="development and help"></div>
+      <p class="px-3 pb-2 text-center">предоставление консультационных и просветительских услуг, направленных на формирование высокого профессионального уровня и высокой степени квалификации специалистов-психологов, а также профессиональную ориентацию потенциальных специалистов-психологов</p>
+    </div>
+  </div></div>
+
+  </section>
+  <section class="px-2 mb-4 pb-2">
+    <a id="contacts" class="scroll-mt-28"></a>
+    <h1>Контакты</h1>
+    <div class="sm:grid grid-cols-6 container mx-auto md:hidden">
+      <div class="col-span-6">
+        <h2>Адрес:</h2>
+        <div>
+          <p>г. Красноярск, улица 60 лет Октября, 102</p>
+          <h2>Телефон:</h2>
+          <h3 class="pt-1.5 pb-1.5">Делопроизводство:</h3>
+          <p>+7(950) 981-54-81 Куницина Екатерина</p>
+          <h3 class="pt-1.5 pb-1.5">По общим вопросам:</h3>
+          <p>+7(902) 927-24-00 Юрков Дмитрий Владимирович</p>
+          <h2 class="p-0">Email:</h2>
+          <p>genesispsykrsk@gmail.com</p>
+          <h2 class="p-0">Директор:</h2>
+          <p>Федотиков Матвей Александрович</p>
+          <p>+7(983) 199-23-91</p>
+          <p>matveyfedotikov@gmail.com</p>
+        </div>
+      </div>
+      </div>
+
+    <div class="hidden md:grid grid-cols-6 container mx-auto">
+      <div class="col-span-2">
+        <h2>Адрес:</h2>
+        <div>
+          <p>г. Красноярск, улица 60 лет Октября, 102</p>
+          <h2 class="p-0">Телефон:</h2>
+          <h3 class="pt-1.5 pb-1.5">Делопроизводство:</h3>
+          <p>+7(950) 981-54-81</p>
+          <p>Куницина Екатерина</p>
+          <h3 class="pt-1.5 pb-1.5">По общим вопросам:</h3>
+          <p>+7(902) 927-24-00</p>
+          <p>Юрков Дмитрий Владимирович</p>
+          <h2 class="p-0">Email:</h2>
+          <p>genesispsykrsk@gmail.com</p>
+          <h2 class="p-0">Директор:</h2>
+          <p>Федотиков Матвей Александрович</p>
+          <p>+7(983) 199-23-91</p>
+          <p>matveyfedotikov@gmail.com</p>
+        </div>
+      </div>
+      <div class="p-2 grid col-span-4" style="position: relative; overflow: hidden">
+        <iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=92.879197%2C55.979485&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjQyMTI0OBJM0KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7Rj9GA0YHQuiwg0YPQu9C40YbQsCA2MCDQu9C10YIg0J7QutGC0Y_QsdGA0Y8sIDEwMiIKDSfCuUIV_upfQg%2C%2C&source=mapframe&utm_source=mapframe&z=16.78" width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative; border-radius:5px;"></iframe></div>
+    </div>
+  </section>
+  <a href="#" class="fixed bottom-2 right-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-10 h-10 stroke-slate-500 hover:stroke-slate-900">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m15 11.25-3-3m0 0-3 3m3-3v7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+  </a>
+  <footer class="bg-slate-900 border-t border-slate-300">
+    <div class="container mx-auto flex justify-around max-sm:px-2 py-4">
+      <div class="hidden md:flex flex-col text-white dark:text-white">
+        <p>АНОДО "Генезис"</p>
+        <p>ОГРН 1222400024241</p>
+        <p>ИНН 2464160079</p>
+        <p>КПП 246401001</p>
+      </div>
+      <div class="flex flex-row justify-center items-center gap-x-4 text-white">
+        <a href="">О нас</a>
+        <a href="">Специалисты</a>
+        <a href="">Контакты</a>
+      </div>
+      <div  class="hidden md:flex justify-center gap-x-5 items-center">
+        <div class="hidden md:flex flex-col justify-center gap-y-2 items-center text-white">
+        <a href="tel:+79029272400">+7 902 927-24-00</a>
+          <a href="tel:+79831992391">+7 983 199-23-91</a>
+      </div>
+        <a href="https://vk.com/dmitryurk"><img src="data:image/svg+xml,%3csvg%20width='101'%20height='100'%20viewBox='0%200%20101%20100'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_2_40)'%3e%3cpath%20d='M0.5%2048C0.5%2025.3726%200.5%2014.0589%207.52944%207.02944C14.5589%200%2025.8726%200%2048.5%200H52.5C75.1274%200%2086.4411%200%2093.4706%207.02944C100.5%2014.0589%20100.5%2025.3726%20100.5%2048V52C100.5%2074.6274%20100.5%2085.9411%2093.4706%2092.9706C86.4411%20100%2075.1274%20100%2052.5%20100H48.5C25.8726%20100%2014.5589%20100%207.52944%2092.9706C0.5%2085.9411%200.5%2074.6274%200.5%2052V48Z'%20fill='%230077FF'/%3e%3cpath%20d='M53.7085%2072.042C30.9168%2072.042%2017.9169%2056.417%2017.3752%2030.417H28.7919C29.1669%2049.5003%2037.5834%2057.5836%2044.25%2059.2503V30.417H55.0004V46.8752C61.5837%2046.1669%2068.4995%2038.667%2070.8329%2030.417H81.5832C79.7915%2040.5837%2072.2915%2048.0836%2066.9582%2051.1669C72.2915%2053.6669%2080.8336%2060.2086%2084.0836%2072.042H72.2499C69.7082%2064.1253%2063.3754%2058.0003%2055.0004%2057.1669V72.042H53.7085Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_2_40'%3e%3crect%20width='100'%20height='100'%20fill='white'%20transform='translate(0.5)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="vk-logo" class="size-8"></a></div>
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const lightSwitches = document.querySelectorAll('.light-switch');
+      if (lightSwitches.length > 0) {
+        lightSwitches.forEach((lightSwitch, i) => {
+          if (localStorage.getItem('dark-mode') === 'true') {
+            lightSwitch.checked = true;
+          }
+          lightSwitch.addEventListener('change', () => {
+            const { checked } = lightSwitch;
+            lightSwitches.forEach((el, n) => {
+              if (n !== i) {
+                el.checked = checked;
+              }
+            });
+            if (lightSwitch.checked) {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('dark-mode', true);
+            } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('dark-mode', false);
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
