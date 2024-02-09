@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     networks:
       php-cms-iis:
-        ipv4_address: 177.160.0.57
+        ipv4_address: 177.169.0.57
     volumes:
       - ./client/dist/:/var/www/html/
   
@@ -31,4 +31,4 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 177.160.0.0/24
+        - subnet: 177.169.0.0/24
