@@ -5,7 +5,7 @@ services:
     build:
       context: ./deploy/nginx
       dockerfile: Dockerfile
-    container_name: "php-fpm-nginx-iis"
+    container_name: "php-fpm-nginx-genesis"
     restart: unless-stopped
     networks:
       php-cms-iis:
@@ -19,7 +19,7 @@ services:
     build:
       context: .
       dockerfile: deploy/php/Dockerfile
-    container_name: "php-fpm-cms-iis"
+    container_name: "php-fpm-cms-genesis"
     restart: unless-stopped
     env_file:
       - .env
