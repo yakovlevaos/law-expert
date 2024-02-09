@@ -8,7 +8,7 @@ services:
     container_name: "php-fpm-nginx-genesis"
     restart: unless-stopped
     networks:
-      php-cms-iis:
+      php-cms-genesis:
         ipv4_address: 177.169.0.57
     volumes:
       - ./client/dist/:/var/www/html/
@@ -22,12 +22,12 @@ services:
     env_file:
       - .env
     networks:
-      - php-cms-iis
+      - php-cms-genesis
     volumes:
       - ./src/php/:/var/www/html/
 
 networks:
-  php-cms-iis:
+  php-cms-genesis:
     driver: bridge
     ipam:
       config:
