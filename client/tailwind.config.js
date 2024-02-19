@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "banner-pattern": "url('/img/banner.jpg')",
+        "banner-pattern": "url('/assets/img/banner.jpg')",
       },
     },
     container: {

@@ -1,4 +1,4 @@
-import "./style.css";
+import "../css/style.css";
 
 let swiper = new Swiper(".slide-container", {
   slidesPerView: 2,
