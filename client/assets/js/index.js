@@ -24,26 +24,26 @@ if (lightSwitches.length > 0) {
   });
 }
 
-const elementMore = document.getElementById("button-more");
-elementMore.addEventListener("click", myFunction);
-const elementLess = document.getElementById("button-less");
-elementLess.addEventListener("click", myFunction);
+// const elementMore = document.getElementById("button-more");
+// elementMore.addEventListener("click", myFunction);
+// const elementLess = document.getElementById("button-less");
+// elementLess.addEventListener("click", myFunction);
 
-function myFunction() {
-  const text = document.getElementById("more");
-  const buttonMore = document.getElementById("button-more");
-  const buttonLess = document.getElementById("button-less");
-
-  if (text.style.display === "none") {
-    text.style.display = "block";
-    buttonMore.style.display = "none";
-    buttonLess.style.display = "block";
-  } else {
-    text.style.display = "none";
-    buttonMore.style.display = "block";
-    buttonLess.style.display = "none";
-  }
-}
+// function myFunction() {
+//   const text = document.getElementById("more");
+//   const buttonMore = document.getElementById("button-more");
+//   const buttonLess = document.getElementById("button-less");
+//
+//   if (text.style.display === "none") {
+//     text.style.display = "block";
+//     buttonMore.style.display = "none";
+//     buttonLess.style.display = "block";
+//   } else {
+//     text.style.display = "none";
+//     buttonMore.style.display = "block";
+//     buttonLess.style.display = "none";
+//   }
+// }
 
 let swiper = new Swiper(".slide-container", {
   slidesPerView: 2,
