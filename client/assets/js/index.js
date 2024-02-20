@@ -24,16 +24,32 @@ if (lightSwitches.length > 0) {
   });
 }
 
-// const elementMore = document.getElementById("button-more");
-// elementMore.addEventListener("click", myFunction);
-// const elementLess = document.getElementById("button-less");
-// elementLess.addEventListener("click", myFunction);
-
-// function myFunction() {
-//   const text = document.getElementById("more");
-//   const buttonMore = document.getElementById("button-more");
-//   const buttonLess = document.getElementById("button-less");
+// const elementMore = document.getElementById("slider");
+// elementMore.addEventListener("click", moreFunction);
 //
+// function moreFunction(event) {
+//   const button = event.target.className.slice(0, 11);
+//   if (button !== "button-more") return;
+//
+//   const textMore = event.target.closest(".text-more");
+//   if (textMore.firstElementChild.style.display === "none") {
+//     textMore.firstElementChild.style.display = "block";
+//     textMore.lastElementChild.textContent = "Свернуть";
+//   } else {
+//     textMore.firstElementChild.style.display = "none";
+//     textMore.lastElementChild.textContent = "Узнать больше";
+//   }
+// }
+
+// const elementMore = document.getElementById("yurkov-button-more");
+// elementMore.addEventListener("click", myFunction);
+// const elementLess = document.getElementById("yurkov-button-less");
+// elementLess.addEventListener("click", myFunction);
+// const text = document.getElementById("yurkov-more");
+//
+// function myFunction() {
+//   const buttonMore = elementMore;
+//   const buttonLess = elementLess;
 //   if (text.style.display === "none") {
 //     text.style.display = "block";
 //     buttonMore.style.display = "none";

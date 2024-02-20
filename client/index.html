@@ -310,7 +310,7 @@
         <div
           class="container swiper mt-5 mb-5 flex justify-center items-center"
         >
-          <div class="slide-container overflow-hidden">
+          <div id="slider" class="slide-container overflow-hidden">
             <div class="swiper-wrapper pb-5">
               <div
                 class="swiper-slide rounded-md flex flex-col justify-center items-center"
@@ -352,28 +352,23 @@
                       директор МАУ «Центр психолого-педагогической, медицинской
                       и социальной помощи «Эго»
                     </p>
-                    <!--                    <div id="button-more" class="pt-3">-->
-                    <!--                      <p-->
-                    <!--                        class="border-t-2 border-slate-800 dark:border-slate-100 font-bold"-->
-                    <!--                      >-->
-                    <!--                        Узнать больше-->
-                    <!--                      </p>-->
-                    <!--                    </div>-->
-                    <!--                    <p id="more" style="display: none">-->
-                    педагог–психолог высшей категории, психиатр, судебный
-                    эксперт психолог (экспертный стаж 9 лет, специализация по
-                    вопросам экспертизы несовершеннолетних, детско-родительских
-                    отношений, сопровождение несовершеннолетних в уголовном
-                    процессе, этические экспертизы), почетный работник общего
-                    образования, Заслуженный педагог Красноярского края.
-                    <!--                    </p>-->
-                    <!--                    <div id="button-less" style="display: none" class="pt-3">-->
-                    <!--                      <p-->
-                    <!--                        class="border-t-2 border-slate-800 dark:border-slate-100 font-bold"-->
-                    <!--                      >-->
-                    <!--                        Свернуть-->
-                    <!--                      </p>-->
-                    <!--                    </div>-->
+
+                    <div class="text-more">
+                      <p style="display: block">
+                        педагог–психолог высшей категории, психиатр, судебный
+                        эксперт психолог (экспертный стаж 9 лет, специализация
+                        по вопросам экспертизы несовершеннолетних,
+                        детско-родительских отношений, сопровождение
+                        несовершеннолетних в уголовном процессе, этические
+                        экспертизы), почетный работник общего образования,
+                        Заслуженный педагог Красноярского края.
+                      </p>
+                      <!--                      <button-->
+                      <!--                        class="button-more border-t-2 border-slate-800 dark:border-slate-100 font-bold"-->
+                      <!--                      >-->
+                      <!--                        Узнать больше-->
+                      <!--                      </button>-->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -412,9 +407,20 @@
                       педагог-психолог МАУ «ЦППМиСП «Эго», эксперт АНО ДО ЦППС
                       «ГЕНЕЗИС»
                     </p>
-                    высшее психолого-педагогическое образование, высшая
-                    категорию педагога-психолога, стаж профессиональной
-                    деятельности 24 года.
+
+                    <!--                    <div id="yarosh-button-more" class="pt-3">-->
+                    <!--                      <p-->
+                    <!--                        class="border-t-2 border-slate-800 dark:border-slate-100 font-bold"-->
+                    <!--                      >-->
+                    <!--                        Узнать больше-->
+                    <!--                      </p>-->
+                    <!--                    </div>-->
+                    <p id="yarosh-more" style="display: none">
+                      высшее психолого-педагогическое образование, высшая
+                      категорию педагога-психолога, стаж профессиональной
+                      деятельности 24 года.
+                    </p>
+
                     <ul class="text-start">
                       Направления деятельности:
                       <li class="list-decimal">
@@ -452,11 +458,11 @@
                     <p class="pt-2 pb-2 font-bold">
                       педагог-психолог высшей кв. категории, нейропсихолог,
                       Московский психолого-социальный институт Специальность
-                      «Психология» Квалификация Психолог, преподаватель
-                      психологии Стаж работы: 18 лет Диплом о профессиональной
-                      переподготовке: АНО ДПО «Международный институт развития
-                      образования» Квалификация Клинический (медицинский)
-                      психолог (нейропсихолог)
+                      «Психология» Квалификация Психолог, <br />преподаватель
+                      психологии стаж работы: 18 лет <br />Диплом о
+                      профессиональной переподготовке: АНО ДПО «Международный
+                      институт развития образования» Квалификация Клинический
+                      (медицинский) психолог (нейропсихолог)
                     </p>
                     нейропсихологическая диагностика, психологическая
                     диагностика особенностей развития ребенка, определение
@@ -471,15 +477,96 @@
                   </div>
                 </div>
               </div>
+              <div
+                class="swiper-slide rounded-md flex flex-col justify-center items-center"
+              >
+                <div
+                  class="box-content w-96 h-96 overflow-hidden rounded-md m-2"
+                >
+                  <img
+                    src="assets/img/kunitsina-photo.jpg"
+                    alt="expert photo"
+                    class="w-4/5 rounded-md"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-bold text-center pb-4">
+                    Куницина Екатерина Александровна
+                  </h3>
+                  <div
+                    class="flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
+                  >
+                    <p class="pt-2 pb-2 font-bold">
+                      заместитель директора по работе с клиентами; <br />
+                      высшее психолого-педагогическое образование, стаж
+                      профессиональной деятельности 6 лет
+                    </p>
+
+                    <div class="text-more">
+                      <p style="display: block">
+                        Эффективное взаимодействие с клиентами, обработка
+                        запросов и заявок на услуги, заключение контрактов,
+                        проведение консультаций по услугам
+                      </p>
+                      <!--                      <button class="button-more border-t-2 border-slate-800 dark:border-slate-100 font-bold">-->
+                      <!--                        Узнать больше-->
+                      <!--                      </button>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide rounded-md flex flex-col justify-center items-center"
+              >
+                <div
+                  class="box-content w-96 h-96 overflow-hidden rounded-md m-2"
+                >
+                  <img
+                    src="assets/img/snyatkova-photo.jpg"
+                    alt="expert photo"
+                    class="rounded-md"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-bold text-center pb-4">
+                    Сняткова Наталья Павловна
+                  </h3>
+                  <div
+                    class="flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
+                  >
+                    <p class="pt-2 pb-2 font-bold">
+                      учитель – дефектолог/ логопед высшей квалификационной
+                      категории;
+                      <br />стаж профессиональной деятельности более 24 лет
+                    </p>
+
+                    <div class="text-more">
+                      <p style="display: block">
+                        Помощь обучающимся, испытывающим трудности в освоении
+                        основных общеобразовательных программ, развитии и
+                        социальной адаптации; обучающимся с тяжелыми нарушениями
+                        речи; обучающимся с задержкой психического развития;
+                        обучающимся с легкой и умеренной умственной отсталостью;
+                        обучающимся с расстройством аутистического спектра.
+                      </p>
+                      <!--                      <button-->
+                      <!--                        class="button-more border-t-2 border-slate-800 dark:border-slate-100 font-bold"-->
+                      <!--                      >-->
+                      <!--                        Узнать больше-->
+                      <!--                      </button>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
             id="button-next-experts"
-            class="swiper-navBtn swiper-button-next"
+            class="hidden lg:flex swiper-navBtn swiper-button-next"
           ></div>
           <div
             id="button-prev-experts"
-            class="swiper-navBtn swiper-button-prev"
+            class="hidden lg:flex swiper-navBtn swiper-button-prev"
           ></div>
           <div class="swiper-pagination"></div>
         </div>
