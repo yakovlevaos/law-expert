@@ -24,42 +24,64 @@ if (lightSwitches.length > 0) {
   });
 }
 
-// const elementMore = document.getElementById("slider");
-// elementMore.addEventListener("click", moreFunction);
-//
-// function moreFunction(event) {
-//   const button = event.target.className.slice(0, 11);
-//   if (button !== "button-more") return;
-//
-//   const textMore = event.target.closest(".text-more");
-//   if (textMore.firstElementChild.style.display === "none") {
-//     textMore.firstElementChild.style.display = "block";
-//     textMore.lastElementChild.textContent = "Свернуть";
-//   } else {
-//     textMore.firstElementChild.style.display = "none";
-//     textMore.lastElementChild.textContent = "Узнать больше";
-//   }
-// }
+window.addEventListener("load", initialRendering);
 
-// const elementMore = document.getElementById("yurkov-button-more");
-// elementMore.addEventListener("click", myFunction);
-// const elementLess = document.getElementById("yurkov-button-less");
-// elementLess.addEventListener("click", myFunction);
-// const text = document.getElementById("yurkov-more");
-//
-// function myFunction() {
-//   const buttonMore = elementMore;
-//   const buttonLess = elementLess;
-//   if (text.style.display === "none") {
-//     text.style.display = "block";
-//     buttonMore.style.display = "none";
-//     buttonLess.style.display = "block";
-//   } else {
-//     text.style.display = "none";
-//     buttonMore.style.display = "block";
-//     buttonLess.style.display = "none";
-//   }
-// }
+const elementMore = document.getElementById("slider");
+
+function initialRendering() {
+  const elements = elementMore.children;
+  for (const element of elements) {
+    const reviewedElement = element.lastElementChild.lastElementChild;
+    const reviewedElementLength = reviewedElement.textContent
+      .trim()
+      .split(/\s+/).length;
+    if (reviewedElementLength >= 50) {
+      const extraText = reviewedElement.textContent
+        .trim()
+        .split(/\s+/)
+        .slice(51)
+        .join(" ");
+      const extraTextLength = extraText.trim().split(/\s+/).length;
+      const subStringLength = reviewedElement.lastElementChild.textContent
+        .trim()
+        .split(/\s+/).length;
+      const subString = reviewedElement.lastElementChild.textContent
+        .trim()
+        .split(/\s+/)
+        .slice(0, subStringLength - extraTextLength)
+        .join(" ")
+        .slice(0, -1);
+      reviewedElement.lastElementChild.style.display = "none";
+      const p = document.createElement("p");
+      p.style.display = "block";
+      p.append(subString + "...");
+      reviewedElement.append(p);
+      const div = document.createElement("div");
+      div.id = "button-more";
+      div.className = "pt-3 font-bold";
+      div.append("Узнать больше");
+      reviewedElement.append(div);
+    }
+  }
+}
+elementMore.addEventListener("click", (event) => {
+  const button = event.target.id;
+  if (button !== "button-more") return;
+
+  const textMore = event.target.closest(".text-more");
+
+  const textMoreChildrenLength = textMore.children.length;
+
+  if (textMore.lastElementChild.textContent === "Узнать больше") {
+    textMore.children[textMoreChildrenLength - 2].style.display = "none";
+    textMore.children[textMoreChildrenLength - 3].style.display = "block";
+    textMore.lastElementChild.textContent = "Свернуть";
+  } else {
+    textMore.children[textMoreChildrenLength - 2].style.display = "block";
+    textMore.children[textMoreChildrenLength - 3].style.display = "none";
+    textMore.lastElementChild.textContent = "Узнать больше";
+  }
+});
 
 let swiper = new Swiper(".slide-container", {
   slidesPerView: 2,
