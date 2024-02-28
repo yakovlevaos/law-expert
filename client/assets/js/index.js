@@ -120,6 +120,43 @@ let swiper = new Swiper(".slide-container", {
   },
 });
 
+let servicesSwiper = new Swiper(".slide-services-container", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  sliderPerGroup: 4,
+  loop: true,
+  centerSlide: "true",
+  fade: "true",
+  grabCursor: "true",
+  pagination: {
+    el: "#swiper-services-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: "#button-next-services",
+    prevEl: "#button-prev-services",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});
+
 let consultSwiper = new Swiper(".slide-consult-container", {
   slidesPerView: 1,
   spaceBetween: 20,
@@ -209,6 +246,43 @@ let correctionSwiper = new Swiper(".slide-correction-container", {
   navigation: {
     nextEl: "#button-next-correction",
     prevEl: "#button-prev-correction",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    800: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
+});
+
+let mediationSwiper = new Swiper(".slide-mediation-container", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  sliderPerGroup: 4,
+  loop: true,
+  centerSlide: "true",
+  fade: "true",
+  grabCursor: "true",
+  pagination: {
+    el: "#pagination-mediation",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: "#button-next-mediation",
+    prevEl: "#button-prev-mediation",
   },
   breakpoints: {
     320: {
