@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "banner-pattern": "url('/assets/img/banner.jpg')",
+        "banner-game-pattern": "url('/assets/img/game-banner.jpg')",
       },
     },
     container: {
