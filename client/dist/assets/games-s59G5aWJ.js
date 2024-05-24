@@ -6,7 +6,7 @@
               <div class="mb-2">${e.gameName}</div>
               <img
                 class="max-w-60 rounded-md"
-                src=".././assets/img/${e.picture}.jpg"
+                src="${e.picture}"
                 alt=""
               />
             </div>

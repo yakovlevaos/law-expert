@@ -1,4 +1,5 @@
 import "../css/style.css";
+import ABZU from "../img/ABZU.jpg";
 
 const library = [
   {
@@ -232,7 +233,7 @@ const table = (arr) => {
               <div class="mb-2">${item.gameName}</div>
               <img
                 class="max-w-60 rounded-md"
-                src=".././assets/img/${item.picture}.jpg"
+                src="${item.picture}"
                 alt=""
               />
             </div>
