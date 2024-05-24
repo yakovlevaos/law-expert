@@ -277,4 +277,4 @@ const minitable = (arr) => {
 window.addEventListener("load", table(library));
 window.addEventListener("load", minitable(library));
 
-export default table;
+export { table, minitable };
