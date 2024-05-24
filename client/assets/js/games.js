@@ -1,11 +1,9 @@
 import "../css/style.css";
-import ABZU from "../img/ABZU.jpg";
-import SM1 from "../img/ABZU.jpg";
 
 const library = [
   {
     gameName: "Marvel’s Spider-man",
-    picture: SM1,
+    picture: "SM1",
     console: "PS4, PS5, ПК",
     time: "10 часов",
     description:
@@ -222,6 +220,13 @@ const library = [
   },
 ];
 
+const gallery = Object.values(
+  import.meta.glob("../img/*.{jpg,jpeg,JPEG}", {
+    eager: true,
+    as: "url",
+  })
+);
+
 const table = (arr) => {
   const html = arr
     .map(
@@ -234,7 +239,7 @@ const table = (arr) => {
               <div class="mb-2">${item.gameName}</div>
               <img
                 class="max-w-60 rounded-md"
-                src="${item.picture}"
+                src="${gallery.find((picture) => picture.toLowerCase().includes(item.picture.toLowerCase()) || "")}"
                 alt=""
               />
             </div>
