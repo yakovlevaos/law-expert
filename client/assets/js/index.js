@@ -225,10 +225,7 @@ const imageNames = Object.keys(images).map((key) => key.replace("../img/", ""));
 
 const images = import.meta.glob("../img/*.jpg");
 
-// Usage example
-Promise.all(Object.values(images)).then((loadedImages) => {
-  // Access the loaded images here
-});
+Promise.all(Object.values(images)).then((loadedImages) => {});
 
 const table = (arr) => {
   const html = arr
