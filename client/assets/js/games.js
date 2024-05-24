@@ -1,10 +1,11 @@
 import "../css/style.css";
-import picture from "../img/ABZU.jpg";
+import ABZU from "../img/ABZU.jpg";
+import SM1 from "../img/ABZU.jpg";
 
 const library = [
   {
     gameName: "Marvel’s Spider-man",
-    picture: "SM1",
+    picture: SM1,
     console: "PS4, PS5, ПК",
     time: "10 часов",
     description:
@@ -222,7 +223,6 @@ const library = [
 ];
 
 const table = (arr) => {
-  const src = picture;
   const html = arr
     .map(
       (item, index) =>
@@ -234,7 +234,7 @@ const table = (arr) => {
               <div class="mb-2">${item.gameName}</div>
               <img
                 class="max-w-60 rounded-md"
-                src="${src}"
+                src="${item.picture}"
                 alt=""
               />
             </div>
