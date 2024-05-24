@@ -1,8 +1,6 @@
 import "../css/style.css";
 
-function getImageUrl(name) {
-  return new URL(`.././assets/img/${name}.jpg`, import.meta.url).href;
-}
+const images = import.meta.glob(".././assets/img/*.jpg");
 
 const library = [
   {
@@ -235,7 +233,7 @@ const table = (arr) => {
           <div class="mb-2">${item.gameName}</div>
           <img
             class="max-w-80 rounded-md"
-            src=".././assets/img/${getImageUrl(item.picture)}.jpg"
+            src=".././assets/img/${item.picture}.jpg"
             alt=""
           />
         </div>
