@@ -24,11 +24,9 @@ if (lightSwitches.length > 0) {
   });
 }
 
-window.addEventListener("load", initialRendering);
-
 const elementMore = document.getElementById("slider");
 
-function initialRendering() {
+const initialRendering = () => {
   const elements = elementMore.children;
   for (const element of elements) {
     const reviewedElement = element.lastElementChild.lastElementChild;
@@ -63,7 +61,10 @@ function initialRendering() {
       reviewedElement.append(div);
     }
   }
-}
+};
+
+window.addEventListener("load", initialRendering);
+
 elementMore.addEventListener("click", (event) => {
   const button = event.target.id;
   if (button !== "button-more") return;

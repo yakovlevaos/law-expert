@@ -128,7 +128,6 @@
             class="w-8 md:w-10 lg:w-16 2xl:w-20"
             alt="На главную"
           />
-          На главную
         </a>
         <ul
           class="flex justify-between items-center gap-x-2 text-white xl:gap-x-8 2xl:gap-x-10"
@@ -432,7 +431,7 @@
       <section class="px-2 mb-4 pb-2">
         <a id="contacts" class="scroll-mt-28"></a>
         <h1>Контакты</h1>
-        <div class="sm:grid grid-cols-6 container mx-auto md:hidden">
+        <div class="sm:grid grid-cols-6 container mx-auto mb-10 md:hidden">
           <div class="col-span-6">
             <h2>Адрес:</h2>
             <p>г. Красноярск, улица 60 лет Октября, 102</p>
@@ -498,7 +497,7 @@
         </svg>
       </a>
     </main>
-    <footer class="bg-slate-900 border-t border-slate-300">
+    <footer class="hidden lg:flex bg-slate-900 border-t border-slate-300">
       <div class="container mx-auto flex justify-around max-sm:px-2 py-4">
         <div class="hidden md:flex flex-col text-white dark:text-white">
           <p>АНОДО "Генезис"</p>
@@ -507,11 +506,19 @@
           <p>КПП 246401001</p>
         </div>
         <div
-          class="flex flex-row justify-center items-center gap-x-4 text-white"
+          class="hidden lg:flex flex-row justify-center items-center gap-x-4 text-white"
         >
           <a href="#method">Методика</a>
           <a href="#authors">Авторы</a>
           <a href="#contacts">Контакты</a>
+          <a href="gamelib.html" target="_blank">Библиотека игр</a>
+        </div>
+        <div
+          class="flex flex-row justify-center items-center gap-x-4 text-white fixed inset-x-0 bottom-0 lg:hidden"
+        >
+          <a href="#authors">Авторы</a>
+          <a href="#contacts">Контакты</a>
+          <a href="gamelib.html" target="_blank">Библиотека игр</a>
         </div>
         <div class="hidden md:flex justify-center gap-x-10 items-center">
           <div
@@ -523,6 +530,19 @@
           <a href="https://vk.com/dmitryurk"
             ><img src="../assets/img/vk-logo.svg" alt="vk-logo" class="size-8"
           /></a>
+        </div>
+      </div>
+    </footer>
+    <footer
+      class="flex fixed inset-x-0 bottom-0 z-10 lg:hidden bg-slate-900 border-t border-slate-300"
+    >
+      <div class="container mx-auto flex justify-around max-sm:px-2 py-4">
+        <div
+          class="flex flex-row justify-center items-center gap-x-4 text-white"
+        >
+          <a href="#authors">Авторы</a>
+          <a href="#contacts">Контакты</a>
+          <a href="gamelib.html" target="_blank">Библиотека игр</a>
         </div>
       </div>
     </footer>
