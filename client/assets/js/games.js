@@ -1,5 +1,5 @@
 import "../css/style.css";
-import ABZU from "../img/ABZU.jpg";
+import picture from "../img/ABZU.jpg";
 
 const library = [
   {
@@ -222,6 +222,7 @@ const library = [
 ];
 
 const table = (arr) => {
+  const src = picture;
   const html = arr
     .map(
       (item, index) =>
@@ -233,7 +234,7 @@ const table = (arr) => {
               <div class="mb-2">${item.gameName}</div>
               <img
                 class="max-w-60 rounded-md"
-                src="${item.picture}"
+                src="${src}"
                 alt=""
               />
             </div>
@@ -254,8 +255,8 @@ const table = (arr) => {
 const minitable = (arr) => {
   const html = arr
     .map(
-      (item, index) => `<div
-      class="flex flex-col justify-center items-center pb-4 ${index === arr.length - 1 ? "" : "border-b border-slate-700 dark:border-slate-300"}"
+      (item) => `<div
+      class="flex flex-col justify-center items-center pb-4 border-b border-slate-700 dark:border-slate-300"
     >
       <div class="flex flex-col justify-center items-center">
         <div class="mb-2">${item.gameName}</div>
