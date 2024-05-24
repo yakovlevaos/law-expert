@@ -1,6 +1,6 @@
 import "../css/style.css";
 
-const images = import.meta.glob(".././assets/img/*.jpg");
+import ".././img/ABZU.jpg";
 
 const library = [
   {
