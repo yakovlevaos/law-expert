@@ -1,9 +1,13 @@
 import "../css/style.css";
 
+function getImageUrl(name) {
+  return new URL(`.././assets/img/${name}.jpg`, import.meta.url).href;
+}
+
 const library = [
   {
     gameName: "Marvel’s Spider-man",
-    picture: "SM1",
+    picture: ".././assets/img/SM1.jpg",
     console: "PS4, PS5, ПК",
     time: "10 часов",
     description:
@@ -231,7 +235,7 @@ const table = (arr) => {
           <div class="mb-2">${item.gameName}</div>
           <img
             class="max-w-80 rounded-md"
-            src=".././assets/img/${item.picture}.jpg"
+            src=".././assets/img/${getImageUrl(item.picture)}.jpg"
             alt=""
           />
         </div>
