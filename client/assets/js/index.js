@@ -1,4 +1,3 @@
-import { readdirSync } from "fs";
 import "../css/style.css";
 
 const library = [
@@ -220,12 +219,6 @@ const library = [
       "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, проблемы в семье, школьный буллинг, социальные сети, суицидальные мысли",
   },
 ];
-
-const imageNames = Object.keys(images).map((key) => key.replace("../img/", ""));
-
-const images = import.meta.glob("../img/*.jpg");
-
-Promise.all(Object.values(images)).then((loadedImages) => {});
 
 const table = (arr) => {
   const html = arr
