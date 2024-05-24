@@ -1,11 +1,10 @@
+import { readdirSync } from "fs";
 import "../css/style.css";
-
-import ".././img/ABZU.jpg";
 
 const library = [
   {
     gameName: "Marvel’s Spider-man",
-    picture: ".././assets/img/SM1.jpg",
+    picture: "SM1",
     console: "PS4, PS5, ПК",
     time: "10 часов",
     description:
@@ -221,6 +220,15 @@ const library = [
       "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, проблемы в семье, школьный буллинг, социальные сети, суицидальные мысли",
   },
 ];
+
+const imageNames = Object.keys(images).map((key) => key.replace("../img/", ""));
+
+const images = import.meta.glob("../img/*.jpg");
+
+// Usage example
+Promise.all(Object.values(images)).then((loadedImages) => {
+  // Access the loaded images here
+});
 
 const table = (arr) => {
   const html = arr
