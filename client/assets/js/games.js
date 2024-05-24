@@ -267,7 +267,7 @@ const minitable = (arr) => {
         <div class="mb-2">${item.gameName}</div>
         <img
           class="max-w-80 rounded-md"
-          src=".././assets/img/${item.picture}.jpg"
+          src="${gallery.find((picture) => picture.toLowerCase().includes(item.picture.toLowerCase()) || "")}"
           alt=""
         />
       </div>
