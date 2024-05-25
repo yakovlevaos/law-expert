@@ -27,7 +27,7 @@ const library = [
   },
   {
     gameName: "FIFA",
-    picture: "FIFA",
+    picture: "Fifa",
     console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
     time: "∞",
     description:
@@ -250,30 +250,30 @@ const table = (arr) => {
   document.querySelector("tbody").innerHTML = html;
 };
 
-// const minitable = (arr) => {
-//   const html = arr
-//     .map(
-//       (item) => `<div
-//       class="flex flex-col justify-center items-center pb-4 border-b border-slate-700 dark:border-slate-300"
-//     >
-//       <div class="flex flex-col justify-center items-center">
-//         <div class="mb-2">${item.gameName}</div>
-//         <img
-//           class="max-w-32 rounded-md"
-//           src="/images/${item.picture}.jpg"
-//           alt=""
-//         />
-//       </div>
-//       <div>${item.console}</div>
-//       <div>${item.time}</div>
-//       <div>
-//       ${item.description}
-//       </div>
-//     </div>`
-//     )
-//     .join("");
-//   document.querySelector("#minitable").innerHTML = html;
-// };
+const minitable = (arr) => {
+  const html = arr
+    .map(
+      (item) => `<div
+      class="flex flex-col justify-center items-center pb-4 border-b border-slate-700 dark:border-slate-300"
+    >
+      <div class="flex flex-col justify-center items-center">
+        <div class="mb-2">${item.gameName}</div>
+        <img
+          class="max-w-32 rounded-md"
+          src="/images/${item.picture}.jpg"
+          alt=""
+        />
+      </div>
+      <div>${item.console}</div>
+      <div>${item.time}</div>
+      <div>
+      ${item.description}
+      </div>
+    </div>`
+    )
+    .join("");
+  document.querySelector("#minitable").innerHTML = html;
+};
 
 window.addEventListener("load", table(library));
-// window.addEventListener("load", minitable(library));
+window.addEventListener("load", minitable(library));
