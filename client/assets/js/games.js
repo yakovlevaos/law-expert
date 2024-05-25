@@ -220,15 +220,6 @@ const library = [
   },
 ];
 
-// const gallery = Object.values(
-//   import.meta.glob("../img/*.{jpg,jpeg,JPEG}", {
-//     eager: true,
-//     as: "url",
-//   })
-// );
-
-// gallery.find((picture) => picture.toLowerCase().includes(item.picture.toLowerCase()) || "")
-
 const table = (arr) => {
   const html = arr
     .map(
@@ -269,7 +260,7 @@ const minitable = (arr) => {
         <div class="mb-2">${item.gameName}</div>
         <img
           class="max-w-32 rounded-md"
-          src=".././assets/img/${item.picture}.jpg"
+          src="/images/${item.picture}.jpg"
           alt=""
         />
       </div>
