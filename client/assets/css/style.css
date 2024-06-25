@@ -36,8 +36,8 @@
     color: rgb(203 213 225);
   }
 
-  a {
-    color: white;
+  a:hover {
+    color: blue;
   }
 }
 

@@ -308,3 +308,62 @@ let mediationSwiper = new Swiper(".slide-mediation-container", {
     },
   },
 });
+const tabSystem = {
+  init() {
+    document.querySelectorAll(".card").forEach((card) => {
+      const tabContainer = card.querySelector(".tabs");
+      const tabMenu = tabContainer.querySelector(".tabs-menu");
+      const tabs = Array.from(tabMenu.children);
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabSystem.toggle(card, tab.dataset.target);
+        });
+
+        // Initialize by showing the active tab's content
+        if (tab.classList.contains("is-active")) {
+          tabSystem.toggle(card, tab.dataset.target);
+        }
+      });
+    });
+  },
+  toggle(card, targetId) {
+    // Hide all tab contents within the same card
+    const contents = card.querySelectorAll(".tab-content");
+    contents.forEach((contentElement) => {
+      contentElement.style.display =
+        contentElement.id === targetId ? "block" : "none";
+    });
+
+    // Update active class in tab menu
+    const tabs = card.querySelectorAll(".tabs-menu li");
+    tabs.forEach((tab) => {
+      tab.classList.toggle("is-active", tab.dataset.target === targetId);
+    });
+  },
+};
+
+// Initialize the tab system
+tabSystem.init();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeButton = document.getElementById("closeButton");
+
+  window.openModal = function (src) {
+    modalImage.src = src;
+    modal.classList.remove("hidden");
+  };
+
+  closeButton.addEventListener("click", function () {
+    modal.classList.add("hidden");
+  });
+
+  // Optionally, close the modal when clicking outside the image
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+});
