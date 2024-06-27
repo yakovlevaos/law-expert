@@ -3,7 +3,7 @@ import "../css/style.css";
 const cardData = [
   {
     title: "Консультирование",
-    imgSrc: "/images/consultation.jpg",
+    imgSrc: "consultation",
     content: [
       "<ul><li>рецензия на психологические экспертизы;</li><li>этические экспертизы;</li><li>сопровождение несовершеннолетних в уголовном процессе.</li></ul>",
       "<p>проведение психологического консультирования подростков и их родителей (законных представителей)</p>",
@@ -194,7 +194,7 @@ cardData.forEach((card) => {
       <div class="rounded-md flex flex-col justify-center items-center">
         <h2 class="text-center">${card.title}</h2>
         <div class="flex justify-center items-center pt-5 pb-5">
-          <img src="/images/consultation.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="${card.title}">
+          <img  src="/images/${card.imgSrc}.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="${card.title}">
         </div>
         <div class="container swiper text-center">
           <div class="swiper-container child-swiper overflow-hidden">
