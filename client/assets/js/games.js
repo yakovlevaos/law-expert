@@ -20,10 +20,10 @@ const library = [
   {
     gameName: "The last of us part 1",
     picture: "TLOU",
-    console: "PS4, PS5, ПК",
+    console: "PS3, PS4, PS5, ПК",
     time: "11 часов",
     description:
-      "Институт семьи, принятие последствий за собственные решения, логическое мышление",
+      "Институт семьи, принятие последствий за собственные решения, логическое мышление, работа с потерей близких",
   },
   {
     gameName: "FIFA",
@@ -244,7 +244,7 @@ const table = (arr) => {
               ${item.description}
             </div>
           </td>
-        </tr>`
+        </tr>`,
     )
     .join("");
   document.querySelector("tbody").innerHTML = html;
@@ -269,7 +269,7 @@ const minitable = (arr) => {
       <div>
       ${item.description}
       </div>
-    </div>`
+    </div>`,
     )
     .join("");
   document.querySelector("#minitable").innerHTML = html;

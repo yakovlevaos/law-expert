@@ -1,5 +1,106 @@
 import "../css/style.css";
 
+const cardData = [
+  {
+    title: "Консультирование",
+    imgSrc: "/images/consultation.jpg",
+    content: [
+      "<ul><li>рецензия на психологические экспертизы;</li><li>этические экспертизы;</li><li>сопровождение несовершеннолетних в уголовном процессе.</li></ul>",
+      "<p>проведение психологического консультирования подростков и их родителей (законных представителей)</p>",
+      "<p>консультации по вопросам детско-родительских отношений, межличностных коммуникации и социализации детей и подростков, вопросам правового характера, связанным с воспитанием и обучением детей, профориентации, семейное консультирование)</p>",
+      "<p>реализация комплексной программы психологического сопровождения учителей общеобразовательных школ города Красноярска и Красноярского края с целью снижения виктимизации педагогов в случаях проявления агрессивного поведения школьников</p>",
+    ],
+    paginationId: "pagination-consult",
+  },
+  {
+    title: "Диагностика",
+    imgSrc: "diagnostics",
+    content: [
+      "<p>проведение психолого-педагогического обследования детей дошкольного и школьного возраста с целью определению уровня актуального развития и дальнейшего прохождения ПМПК. Составление рекомендаций по дальнейшему образовательному маршруту</p>",
+      "<p>диагностика уровня речевого развития, постановка, автоматизация и дифференциация звуков в речи</p>",
+    ],
+    paginationId: "pagination-diagnostics",
+  },
+  {
+    title: "Коррекция",
+    imgSrc: "correction",
+    content: [
+      "<p>проведение индивидуальных и групповых коррекционно-развивающих занятий с детьми дошкольного и младшего школьного возраста</p>",
+      "<p>использование нейропсихологических методик в работе с детьми с СДВГ, РАС, имеющими трудности обучения в школе, с нарушением внимания, памяти, мышления</p>",
+      "<p>проведение индивидуальных и групповых занятий с детьми старшего дошкольного возраста по подготовке к школе</p>",
+    ],
+    paginationId: "pagination-correction",
+  },
+  {
+    title: "Медиация",
+    imgSrc: "mediation",
+    content: [
+      "<p>Медиация – технология, позволяющая «услышать» друг друга и сэкономить время и ресурсы. В конфликте всегда есть выход!</p>",
+    ],
+    paginationId: "pagination-mediation",
+  },
+];
+
+const projects = [
+  {
+    id: 1,
+    title:
+      "Психологические консультации с помощью видеоигр в загородных оздоровительных лагерях",
+    image: "./assets/img/gameplayproject1.jpeg",
+    description: `
+      Дети-подростки в возрасте с 10 до 17 лет, отдыхающие в муниципальном загородном оздоровительном лагере «Ласточка», на протяжении 4-ех сезонов проходили индивидуальные психологические консультации с психологами «Генезис» с помощью новейшей авторской методики, которая в своей работе использует видеоигры в качестве инструмента. Кроме того, проведены семинары о видеоиграх и их месте в жизни, культуре и их влиянии на психологическое и эмоциональное здоровье.
+    `,
+    details: [
+      { label: "Срок реализации:", value: "Летний период 2024 года." },
+      {
+        label: "Охват:",
+        value:
+          "Более 1500 детей, проживающих на территории города Красноярска.",
+      },
+      { label: "Место проведения:", value: "Загородный лагерь «Ласточка»." },
+      {
+        label: "Источник финансирования:",
+        value:
+          "Cубсидия департамента социального развития администрации города Красноярска, собственные средства.",
+      },
+      {
+        label: "Партнеры:",
+        value:
+          "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»;<br />Загородный стационарный детский оздоровительный лагерь «Ласточка»;<br />Муниципальное молодежное автономное учреждение «ИТ-Центр».",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Киберспортивная психология",
+    image: "./assets/img/cypepsycho1.jpeg",
+    description: `
+      В рамках проекта на протяжении летнего периода 2024 года проводились на еженедельной основе киберспортивные тренировки по дисциплинам: Dota 2, Counter-strike 2, MK1 и EA FC 24 с участием киберспортивного тренера и психолога. Прорабатывались: умение работать с собственными эмоциями, повышение стрессоустойчивости, развитие коммуникативных навыков, повышение уверенности в себе. Кроме того, еженедельно проводились ценностно-смысловые дни, в рамках которых подростки совместно с психологами проходили сюжетноориентированные игры (The last of us, Ghost of Tsushima, God of war: Ragnarek), где прорабатывались: самоосознание, семейные ценности, инициатива и т.д.
+    `,
+    details: [
+      { label: "Срок реализации:", value: "Июнь-Сентябрь 2024 года." },
+      {
+        label: "Охват:",
+        value:
+          "32 подростка в возрасте 14-18 лет, проживающих в городе Красноярске.",
+      },
+      {
+        label: "Место проведения:",
+        value: "Муниципальное молодежное автономное учреждение «ИТ-Центр».",
+      },
+      {
+        label: "Источник финансирования:",
+        value: "Cубсидия в рамках конкурса «Ты-город», собственные средства.",
+      },
+      {
+        label: "Партнеры:",
+        value:
+          "Главное управление по физической культуре и спорту администрации города Красноярска;<br />Главное управление образования администрации города Красноярска;<br />Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»;<br />Муниципальное молодежное автономное учреждение «ИТ-Центр»;<br />Телеканал «Енисей».",
+      },
+    ],
+  },
+];
+
 const lightSwitches = document.querySelectorAll(".light-switch");
 if (lightSwitches.length > 0) {
   lightSwitches.forEach((lightSwitch, i) => {
@@ -84,6 +185,69 @@ elementMore.addEventListener("click", (event) => {
   }
 });
 
+const swiperWrapper = document.querySelector(".main-swiper .swiper-wrapper");
+
+cardData.forEach((card) => {
+  const swiperSlide = document.createElement("div");
+  swiperSlide.className = "swiper-slide";
+  swiperSlide.innerHTML = `
+      <div class="rounded-md flex flex-col justify-center items-center">
+        <h2 class="text-center">${card.title}</h2>
+        <div class="flex justify-center items-center pt-5 pb-5">
+          <img src="/images/consultation.jpg" class="w-1/2 opacity-85 rounded-3xl" alt="${card.title}">
+        </div>
+        <div class="container swiper text-center">
+          <div class="swiper-container child-swiper overflow-hidden">
+            <div class="swiper-wrapper pb-5">
+              ${card.content.map((content) => `<div class="swiper-slide px-2">${content}</div>`).join("")}
+            </div>
+            <div id="${card.paginationId}" class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  swiperWrapper.appendChild(swiperSlide);
+});
+
+const mainSwiper = new Swiper(".main-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+cardData.forEach((card) => {
+  new Swiper(`.child-swiper:has(#${card.paginationId})`, {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    nested: true,
+    grabCursor: "true",
+    pagination: {
+      el: `#${card.paginationId}`,
+      clickable: true,
+      dynamicBullets: true,
+    },
+  });
+});
+
 let swiper = new Swiper(".slide-container", {
   slidesPerView: 2,
   spaceBetween: 40,
@@ -121,193 +285,18 @@ let swiper = new Swiper(".slide-container", {
   },
 });
 
-let servicesSwiper = new Swiper(".slide-services-container", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  sliderPerGroup: 4,
+let swiperGames = new Swiper(".swiper-games-container", {
   loop: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
   pagination: {
-    el: "#swiper-services-pagination",
+    el: ".swiper-games-pagination",
     clickable: true,
-    dynamicBullets: true,
   },
   navigation: {
-    nextEl: "#button-next-services",
-    prevEl: "#button-prev-services",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
+    nextEl: ".swiper-games-button-next",
+    prevEl: ".swiper-games-button-prev",
   },
 });
 
-let consultSwiper = new Swiper(".slide-consult-container", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  sliderPerGroup: 4,
-  loop: true,
-  nested: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
-  pagination: {
-    el: "#pagination-consult",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: "#button-next-consult",
-    prevEl: "#button-prev-consult",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
-});
-
-let diagnosticsSwiper = new Swiper(".slide-diagnostics-container", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  sliderPerGroup: 4,
-  loop: true,
-  nested: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
-  pagination: {
-    el: "#pagination-diagnostics",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: "#button-next-diagnostics",
-    prevEl: "#button-prev-diagnostics",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
-});
-let correctionSwiper = new Swiper(".slide-correction-container", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  sliderPerGroup: 4,
-  loop: true,
-  nested: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
-  pagination: {
-    el: "#pagination-correction",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: "#button-next-correction",
-    prevEl: "#button-prev-correction",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
-});
-
-let mediationSwiper = new Swiper(".slide-mediation-container", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  sliderPerGroup: 4,
-  loop: true,
-  nested: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
-  pagination: {
-    el: "#pagination-mediation",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: "#button-next-mediation",
-    prevEl: "#button-prev-mediation",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
-});
 const tabSystem = {
   init() {
     document.querySelectorAll(".card").forEach((card) => {

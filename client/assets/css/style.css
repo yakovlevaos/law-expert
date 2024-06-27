@@ -42,15 +42,11 @@
 }
 
 .swiper-navBtn {
-  color: #000;
-  height: 40px;
-  width: 40px;
-  background: #fff;
-  border-radius: 50%;
+  color: #64748b;
 }
 .swiper-navBtn::before,
 .swiper-navBtn::after {
-  font-size: 18px;
+  font-size: 40px;
 }
 .swiper-pagination-bullet {
   background-color: #000;
