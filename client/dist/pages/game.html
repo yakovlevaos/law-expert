@@ -30,6 +30,10 @@
       property="og:image"
       content="https://genesis-expert.ru/docs/edu-help-1.jpg"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="icon" href="/docs/favicon.ico" type="image/x-icon" />
     <link
       rel="icon"
@@ -75,8 +79,8 @@
 
     <title>Центр игровой психологической поддержки</title>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-9p4a8sJU.js"></script>
-    <script type="module" crossorigin src="/assets/index-fuydXneA.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/style-BkPFenLh.css">
+    <script type="module" crossorigin src="/assets/index-rtJJ7JGu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style-M7xevGj4.css">
   </head>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -219,7 +223,7 @@
     </header>
     <main>
       <section
-        class="hidden lg:flex flex-col gap-y-20 md:size-full md:bg-cover md:bg-banner-game-pattern justify-center p-20 opacity-85"
+        class="hidden lg:flex flex-col gap-y-48 md:size-full md:bg-cover md:bg-banner-game-pattern justify-center pt-10 pb-30 opacity-85"
       >
         <h1
           class="flex justify-center items-center text-2xl lg:text-4xl text-slate-50 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
@@ -227,24 +231,7 @@
           Центр игровой психологической поддержки
         </h1>
 
-        <div class="flex flex-row justify-center items-center">
-          <h1
-            class="text-2xl lg:text-4xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] pb-0 inline text-center"
-          >
-            Стоимость консультации &mdash;&nbsp;
-          </h1>
-          <h1
-            class="text-2xl lg:text-4xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] line-through decoration-4 pb-0"
-          >
-            1500
-          </h1>
-          <h1
-            class="text-2xl lg:text-4xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] pb-0"
-          >
-            &nbsp;1000 рублей
-          </h1>
-        </div>
-        <div>
+        <div class="m-20">
           <h1 class="text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             Центр игровой психологической поддержки работает с помощью
             инновационной методики, суть которой заключается в консультировании
@@ -318,7 +305,7 @@
         <div
           class="container swiper mt-5 mb-5 flex justify-center items-center"
         >
-          <div class="slide-container overflow-hidden">
+          <div class="slide-container experts-games overflow-hidden">
             <div id="slider" class="swiper-wrapper pb-5">
               <div
                 class="swiper-slide rounded-md flex flex-col justify-center items-center"
@@ -416,34 +403,48 @@
                   </div>
                 </div>
               </div>
-              <div>
-                <h3 class="font-bold text-center pb-4">
-                  Евгений Сергеевич Эгле
-                </h3>
-                <div class="flex justify-center items-center gap-x-3">
-                  <a href="/docs/egle-1.pdf" target="_blank"
-                    ><img src="/assets/egle-1-CBxuQ0gR.jpg" class="w-10" alt=""
-                  /></a>
-                  <a href="/docs/egle-2.pdf" target="_blank"
-                    ><img src="/assets/egle-2-c4Mo2D_t.jpg" class="w-10" alt=""
-                  /></a>
-                  <a href="/docs/egle-3.pdf" target="_blank"
-                    ><img src="/assets/egle-3-ozQlA7hK.jpg" class="w-10" alt=""
-                  /></a>
-                </div>
+              <div
+                class="swiper-slide rounded-md flex flex-col justify-center items-center"
+              >
                 <div
-                  class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
+                  class="flex justify-center w-96 h-96 overflow-hidden rounded-md m-2"
                 >
-                  <p class="pt-2 pb-2 font-bold">
-                    Руководитель социально-психологической службы МАОУ СШ № 150
-                  </p>
-                  <p>Педагог-психолог высшей категории, медиатор.</p>
-                  Медиация:
-                  <ul>
-                    <li>детско-родительских отношений;</li>
-                    <li>супружеских споров;</li>
-                    <li>при расторжении брака.</li>
-                  </ul>
+                  <img
+                    src="/assets/egle-photo-XvbqrjpR.jpg"
+                    alt="expert photo"
+                    class="rounded-md"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-bold text-center pb-4">
+                    Евгений Сергеевич Эгле
+                  </h3>
+                  <div class="flex justify-center items-center gap-x-3">
+                    <a href="/docs/egle-1.pdf" target="_blank"
+                      ><img src="/assets/egle-1-CBxuQ0gR.jpg" class="w-10" alt=""
+                    /></a>
+                    <a href="/docs/egle-2.pdf" target="_blank"
+                      ><img src="/assets/egle-2-c4Mo2D_t.jpg" class="w-10" alt=""
+                    /></a>
+                    <a href="/docs/egle-3.pdf" target="_blank"
+                      ><img src="/assets/egle-3-ozQlA7hK.jpg" class="w-10" alt=""
+                    /></a>
+                  </div>
+                  <div
+                    class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
+                  >
+                    <p class="pt-2 pb-2 font-bold">
+                      Руководитель социально-психологической службы МАОУ СШ №
+                      150
+                    </p>
+                    <p>Педагог-психолог высшей категории, медиатор.</p>
+                    Медиация:
+                    <ul>
+                      <li>детско-родительских отношений;</li>
+                      <li>супружеских споров;</li>
+                      <li>при расторжении брака.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

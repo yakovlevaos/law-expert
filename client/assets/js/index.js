@@ -125,6 +125,42 @@ if (lightSwitches.length > 0) {
   });
 }
 
+let swiperGameExperts = new Swiper(".slide-container.experts-games", {
+  slidesPerView: 2,
+  spaceBetween: 40,
+  loop: true,
+  centerSlide: "true",
+  fade: "true",
+  grabCursor: "true",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: "#button-next-experts",
+    prevEl: "#button-prev-experts",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+  },
+});
+
 const elementMore = document.getElementById("slider");
 
 const initialRendering = () => {
@@ -251,7 +287,6 @@ cardData.forEach((card) => {
 let swiper = new Swiper(".slide-container", {
   slidesPerView: 2,
   spaceBetween: 40,
-  sliderPerGroup: 4,
   loop: true,
   centerSlide: "true",
   fade: "true",
