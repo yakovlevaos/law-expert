@@ -2,223 +2,657 @@ import "../css/style.css";
 
 const library = [
   {
-    gameName: "Marvel’s Spider-man",
+    videoGame: "Marvel’s Spider-man",
+    platform: ["PS4", "PS5", "ПК"],
+    duration: "10 часов",
+    type: "Одиночная",
+    genre: ["Приключенческий боевик", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "институт семьи",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "логическое мышление",
+    ],
     picture: "SM1",
-    console: "PS4, PS5, ПК",
-    time: "10 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, институт семьи, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, логическое мышление",
   },
   {
-    gameName: "Marvel’s Spider-man 2",
+    videoGame: "Marvel’s Spider-man 2",
+    platform: ["PS5"],
+    duration: "12 часов",
+    type: "Одиночная",
+    genre: ["Приключенческий боевик", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "институт семьи",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "работа с агрессией",
+      "логическое мышление",
+    ],
     picture: "SM2",
-    console: "PS5",
-    time: "12 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, институт семьи, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, работа с агрессией, логическое мышление",
   },
   {
-    gameName: "The last of us part 1",
+    videoGame: "The last of us part 1",
+    platform: ["PS3", "PS4", "PS5", "ПК"],
+    duration: "11 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Институт семьи",
+      "принятие последствий за собственные решения",
+      "логическое мышление",
+    ],
     picture: "TLOU",
-    console: "PS3, PS4, PS5, ПК",
-    time: "11 часов",
-    description:
-      "Институт семьи, принятие последствий за собственные решения, логическое мышление, работа с потерей близких",
   },
   {
-    gameName: "FIFA",
+    videoGame: "FIFA",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "∞",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Спортивный симулятор",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "умение работать в команде",
+      "тактическое мышление",
+    ],
     picture: "Fifa",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "∞",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, умение работать в команде, тактическое мышление",
   },
   {
-    gameName: "NHL",
+    videoGame: "NHL",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "∞",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Спортивный симулятор",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "умение работать в команде",
+      "тактическое мышление",
+    ],
     picture: "NHL",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "∞",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, умение работать в команде, тактическое мышление",
   },
   {
-    gameName: "NBA",
+    videoGame: "NBA",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "∞",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Спортивный симулятор",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "умение работать в команде",
+      "тактическое мышление",
+    ],
     picture: "NBA",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "∞",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, умение работать в команде, тактическое мышление",
   },
   {
-    gameName: "Batman: Arkham collection (3 игры)",
+    videoGame: "Batman: Arkham Collection",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "7-16 часов",
+    type: ["Одиночная"],
+    genre: "Приключенческий боевик, Песочница",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "логическое мышление",
+    ],
     picture: "BAT",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "1. 7 часов <br/> 2. 7 часов <br/> 3. 16 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, логическое мышление",
   },
   {
-    gameName: "Horizon zero dawn",
+    videoGame: "Horizon Zero Dawn",
+    platform: ["PS4", "PS5", "ПК"],
+    duration: "12 часов",
+    type: ["Одиночная"],
+    genre: "Приключенческий боевик, Песочница",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "логическое мышление",
+      "тактическое мышление",
+    ],
     picture: "horizonzerodawn",
-    console: "PS4, PS5, ПК",
-    time: "12 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, логическое мышление, тактическое мышление",
   },
   {
-    gameName:
-      "Crash Bandicoot N. Sane Trilogy,  <br/> Crash Bandicoot 4: It’s about time",
+    videoGame: [
+      "Crash Bandicoot N. Sane Trilogy",
+      "Crash Bandicoot 4: It’s About duration",
+    ],
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "2-6 часов",
+    type: ["Одиночная"],
+    genre: "Платформер",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
     picture: "CB",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "1. 2 часа<br/> 2. 3 часа<br/>3. 4 часа<br/> 4. 6 часов",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, логическое мышление",
   },
   {
-    gameName: "Red Dead Redemption 2",
+    videoGame: "Red Dead Redemption 2",
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "50 часов",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: "Приключенческий боевик, Песочница",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+      "поиска своего места в жизни",
+      "осмысленность своего бытия",
+    ],
     picture: "RDR2",
-    console: "PS4, PS5, ПК, Xbox",
-    time: "50 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности, поиска своего места в жизни, осмысленность своего бытия",
   },
   {
-    gameName: "The Elder Scrolls V: Skyrim",
+    videoGame: "The Elder Scrolls V: Skyrim",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "12 часов",
+    type: ["Одиночная"],
+    genre: "RPG, Песочница",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+    ],
     picture: "SK",
-    console: "PS3, PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "12 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения",
   },
   {
-    gameName: "Ghost of Tsushima",
+    videoGame: "Ghost of Tsushima",
+    platform: ["PS4", "PS5", "ПК"],
+    duration: "28 часов",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: "Приключенческий боевик, Песочница",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+      "поиска своего места в жизни",
+      "осмысленность своего бытия",
+    ],
     picture: "GOT",
-    console: "PS4, PS5, ПК",
-    time: "28 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности, поиска своего места в жизни, осмысленность своего бытия",
   },
   {
-    gameName:
+    videoGame:
       "Lego Games (более десятка игр по разным франшизам: Marvel, DC, Star Wars, Harry Potter)",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "5-10 часов",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Аркада",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
     picture: "Lego",
-    console: "PS3, PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "5-10 часов каждая",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, логическое мышление",
   },
   {
-    gameName:
-      "Spongebob Squarepants Battle for Bikini Bottom Rehydrated, Spongebob Squarepants the cosmic shake",
+    videoGame: [
+      "Spongebob Squarepants Battle for Bikini Bottom Rehydrated",
+      "Spongebob Squarepants the Cosmic Shake",
+    ],
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "6 часов",
+    type: ["Одиночная"],
+    genre: "Платформер",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
     picture: "SB",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "1. 6 часов<br/> 2. 6 часов",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, логическое мышление",
   },
   {
-    gameName:
+    videoGame:
       "Серия Assassin`s Creed (более 10 игр серии, действия которых разворачиваются в разных временных эпохах)",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "10-15 часов",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: ["Приключенческий боевик", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+      "поиск своего места в жизни",
+      "осмысленность своего бытия",
+    ],
     picture: "AC",
-    console: "PS3, PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "Не менее 10 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности, поиска своего места в жизни, осмысленность своего бытия",
   },
   {
-    gameName: " Серия игр Uncharted",
+    videoGame: "Серия игр Uncharted",
+    platform: ["PS3", "PS4", "PS5", "ПК"],
+    duration: "4-11 часов",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "поиск своего места в жизни",
+      "осмысленность своего бытия",
+      "логическое мышление",
+      "тактическое мышление",
+    ],
     picture: "U",
-    console: "PS3, PS4, PS5, ПК ",
-    time: "4-11 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, поиска своего места в жизни, осмысленность своего бытия, логическое мышление, тактическое мышление",
   },
   {
-    gameName: "Infamous: Second son",
+    videoGame: "Infamous: Second son",
+    platform: ["PS4", "PS5"],
+    duration: "7 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+      "поиск своего места в жизни",
+      "осмысленность своего бытия",
+      "логическое мышление",
+      "тактическое мышление",
+    ],
     picture: "ISS",
-    console: "PS4, PS5",
-    time: "7 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности, поиска своего места в жизни, осмысленность своего бытия, логическое мышление, тактическое мышление",
   },
   {
-    gameName: "Spyro The Dragon: Reignited Trilogy",
+    videoGame: "Spyro The Dragon: Reignited Trilogy",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "4-6 часов",
+    type: "Одиночная",
+    genre: "Платформер",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
     picture: "ST",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "15 часов<br/>(общее время за 3 части)",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, логическое мышление",
   },
   {
-    gameName: "Серия игр Ratchet and Clank",
+    videoGame: "Серия игр Ratchet and Clank",
+    platform: ["PS3", "PS4", "PS5", "ПК"],
+    duration: "5-10 часов",
+    type: "Одиночная",
+    genre: ["Приключенческий боевик", "Платформер"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "логическое мышление",
+      "тактическое мышление",
+    ],
     picture: "RaC",
-    console: "PS3, PS4, PS5, ПК",
-    time: "",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, логическое мышление, тактическое мышление",
   },
   {
-    gameName: "Хогвартс: Наследие ",
+    videoGame: "Хогвартс: Наследие",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "18 часов",
+    type: "Одиночная",
+    genre: ["RPG", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+    ],
     picture: "HL",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "18 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности",
   },
   {
-    gameName: "Days Gone",
+    videoGame: "Days Gone",
+    platform: ["PS4", "PS5", "ПК"],
+    duration: "20 часов",
+    type: "Одиночная",
+    genre: ["Приключенческий боевик", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+    ],
     picture: "DG",
-    console: "PS4, PS5, ПК",
-    time: "20 часов",
-    description:
-      "Личностные компетенции, моральная составляющая, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности",
   },
   {
-    gameName: "God of War,<br/>God of War: Ragnarok ",
+    videoGame: ["God of War", "God of War: Ragnarok"],
+    platform: ["PS4", "PS5", "ПК"],
+    duration: "15-30 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "вопросы преданности",
+      "поиск своего места в жизни",
+      "осмысленность своего бытия",
+      "мужественность",
+    ],
     picture: "GOW",
-    console: "PS4, PS5, ПК",
-    time: "1. 16 часов<br/>2. 30 часов ",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, вопросы преданности, поиска своего места в жизни, осмысленность своего бытия, мужественность",
   },
   {
-    gameName: "Journey",
+    videoGame: "Journey",
+    platform: ["PS3", "PS4", "PS5", "ПК"],
+    duration: "2 часа",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: "Приключения",
+    competencies: "Медиативная игра",
     picture: "J",
-    console: "PS3, PS4, PS5, ПК",
-    time: "2 часа",
-    description: "Медиативная игра",
   },
   {
-    gameName: "Flower",
+    videoGame: "Flower",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "2 часа",
+    type: "Одиночная",
+    genre: "Пазл",
+    competencies: "Медиативная игра",
     picture: "Fl",
-    console: "PS3, PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "2 часа",
-    description: "Медиативная игра",
   },
   {
-    gameName: "ABZU",
+    videoGame: "ABZU",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "2 часа",
+    type: "Одиночная",
+    genre: "Приключения",
+    competencies: "Медиативная игра",
     picture: "ABZU",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "2 часа",
-    description: "Медиативная игра",
   },
   {
-    gameName: "Sonic Forces",
+    videoGame: "Sonic Forces",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "3 часа",
+    type: "Одиночная",
+    genre: "Платформер",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
     picture: "SF",
-    console: "PS4, PS5, ПК, Xbox, Nintendo Switch",
-    time: "3 часа",
-    description:
-      "Мотивированность, настрой на победу, принятие поражений, логическое мышление",
   },
   {
-    gameName: "Silent Hill: short message",
+    videoGame: "Silent Hill: short message",
+    platform: "PS5",
+    duration: "2 часа",
+    type: "Одиночная",
+    genre: "Survival horror",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "проблемы в семье",
+      "школьный буллинг",
+      "социальные сети",
+      "суицидальные мысли",
+    ],
     picture: "SH",
-    console: "PS5 ",
-    time: "2 часа",
-    description:
-      "Личностные компетенции, моральная составляющая, работа с ответственностью, принятие последствий за собственные решения, работа с потерей близких, проблемы в семье, школьный буллинг, социальные сети, суицидальные мысли",
+  },
+  {
+    videoGame: "Minecraft",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "∞",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: "Песочница",
+    competencies: [
+      "Креативность",
+      "абстрактное мышление",
+      "творчество",
+      "целеустремленность",
+      "навыки планирования своих действий",
+      "структурно-логическое мышление",
+    ],
+    picture: "Minecraft",
+  },
+  {
+    videoGame: ["Injustice", "Injustice 2"],
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
+    duration: "∞",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Файтинг",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "умение работать в команде",
+      "тактическое мышление",
+    ],
+    picture: "Injustice",
+  },
+  {
+    videoGame: "It takes two",
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "10 часов",
+    type: ["Мультиплеерная", "Split screen"],
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Институт семьи",
+      "принятие последствий за собственные решения",
+      "логическое мышление",
+    ],
+    picture: "ITT",
+  },
+  {
+    videoGame: ["Fallout 3", "Fallout New Vegas", "Fallout 4", "Fallout 76"],
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
+    duration: "5-20 часов",
+    type: ["Одиночная", "Мультиплеерная"],
+    genre: ["RPG", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "институт семьи",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "логическое мышление",
+    ],
+    picture: "Fallout",
+  },
+  {
+    videoGame: "The Elder Scrolls IV: Oblivion",
+    platform: ["PS3", "ПК", "Xbox"],
+    duration: "6 часов",
+    type: "Одиночная",
+    genre: ["RPG", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+    ],
+    picture: "ES4",
+  },
+  {
+    videoGame: "The Elder Scrolls III: Morrowind",
+    platform: ["ПК", "Xbox"],
+    duration: "8 часов",
+    type: "Одиночная",
+    genre: ["RPG", "Песочница"],
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+    ],
+    picture: "ES",
+  },
+  {
+    videoGame: "Guardians of the Galaxy",
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "13 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "институт семьи",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "логическое мышление",
+    ],
+    picture: "GOTG",
+  },
+  {
+    videoGame: "Kena: Bridge of Spirits",
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "7 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "логическое мышление",
+    ],
+    picture: "Kena",
+  },
+  {
+    videoGame: "Teenage Mutant Ninja Turtles: Shredder's Revenge",
+    platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "2 часа",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: "Beat ’em up",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "умение работать в команде",
+      "тактическое мышление",
+    ],
+    picture: "TMNT",
+  },
+  {
+    videoGame: "Stray",
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "5 часов",
+    type: "Одиночная",
+    genre: "Приключения",
+    competencies: [
+      "Мотивированность",
+      "личностные компетенции",
+      "моральная составляющая",
+      "логическое мышление",
+    ],
+    picture: "Stray",
+  },
+  {
+    videoGame: ["Star Wars Jedi: Fallen order", "Star Wars Jedi: Survivor"],
+    platform: ["PS4", "PS5", "ПК", "Xbox"],
+    duration: "12-15 часов",
+    type: "Одиночная",
+    genre: "Приключенческий боевик",
+    competencies: [
+      "Личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+      "работа с потерей близких",
+      "работа с агрессией",
+      "логическое мышление",
+    ],
+    picture: "SW",
+  },
+  {
+    videoGame: "Super Mario Odyssey",
+    platform: "Nintendo Switch",
+    duration: "6 часов",
+    type: "Одиночная",
+    genre: "Платформер",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+    ],
+    picture: "SMO",
+  },
+  {
+    videoGame: "Серия игр Marvel Ultimate Alliance",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "7-15 часов",
+    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    genre: ["Приключенческий боевик", "RPG"],
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+      "личностные компетенции",
+      "моральная составляющая",
+      "работа с ответственностью",
+      "принятие последствий за собственные решения",
+    ],
+    picture: "MUA",
+  },
+  {
+    videoGame: [
+      "The Legend of Zelda: Tears of the Kingdom",
+      "The Legend of Zelda: Breath of the Wild",
+    ],
+    platform: "Nintendo Switch",
+    duration: "15 часов",
+    type: "Одиночная",
+    genre: ["Приключенческий боевик", "Песочница"],
+    competencies: [
+      "Креативность",
+      "абстрактное мышление",
+      "творчество",
+      "целеустремленность",
+      "навыки планирования своих действий",
+      "структурно-логическое мышление",
+    ],
+    picture: "Zelda",
   },
 ];
+
+const displayVertical = (property) => {
+  return Array.isArray(property)
+    ? `<ul>${property.map((item) => `<li>${item}</li>`).join("")}</ul>`
+    : `<div>${property}</div>`;
+};
+
+const displayComma = (property) => {
+  return Array.isArray(property)
+    ? `<div>${property.map((item) => `<span> ${item}</span>`)}</div>`
+    : `<div>${property}</div>`;
+};
 
 const table = (arr) => {
   const html = arr
@@ -229,7 +663,7 @@ const table = (arr) => {
         >
           <td class="px-6 py-2">
             <div class="flex flex-col justify-center items-center">
-              <div class="mb-2">${item.gameName}</div>
+              <div class="mb-2">${item.videoGame}</div>
               <img
                 class="max-w-60 rounded-md"
                 src="/images/${item.picture}.jpg"
@@ -237,11 +671,13 @@ const table = (arr) => {
               />
             </div>
           </td>
-          <td class="px-6 py-2 min-w-52"><div>${item.console}</div></td>
-          <td class="px-6 py-2"><div>${item.time}</div></td>
-          <td class="px-6 py-2">
+          <td class="px-2 py-2 min-w-52"><div>${displayVertical(item.platform)}</div></td>
+          <td class="px-2 py-2"><div>${item.duration}</div></td>
+          <td class="px-2 py-2"><div>${displayVertical(item.type)}</div></td>
+          <td class="px-2 py-2"><div>${displayVertical(item.genre)}</div></td>
+          <td class="px-2 py-2">
             <div>
-              ${item.description}
+              ${displayComma(item.competencies)}
             </div>
           </td>
         </tr>`,
@@ -257,17 +693,19 @@ const minitable = (arr) => {
       class="flex flex-col justify-center items-center pb-4 border-b border-slate-700 dark:border-slate-300"
     >
       <div class="flex flex-col justify-center items-center">
-        <div class="mb-2">${item.gameName}</div>
+        <div class="mb-2">${displayComma(item.videoGame)}</div>
         <img
           class="max-w-32 rounded-md"
           src="/images/${item.picture}.jpg"
           alt=""
         />
       </div>
-      <div>${item.console}</div>
-      <div>${item.time}</div>
-      <div>
-      ${item.description}
+      <div>${displayComma(item.platform)}</div>
+      <div>${item.duration}</div>
+      <div>${displayComma(item.type)}</div>
+      <div>${displayComma(item.genre)}</div>
+      <div class="pl-2 text-justify">
+      ${displayComma(item.competencies)}
       </div>
     </div>`,
     )
