@@ -890,14 +890,40 @@
       <section class="px-2 mb-4 pb-2">
         <a id="video" class="scroll-mt-28"></a>
         <h1 class="text-center">Видео</h1>
-        <div class="flex justify-center items-center w-full">
-          <iframe
-            src="https://vk.com/video_ext.php?oid=-48690112&id=456268249&hd=2&autoplay=0"
-            width="853"
-            height="480"
-            allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-            allowfullscreen
-          ></iframe>
+        <div
+          class="container swiper mt-5 mb-5 flex justify-center items-center"
+        >
+          <div class="slide-container video overflow-hidden">
+            <div id="videoSlider" class="swiper-wrapper pb-5">
+              <div class="swiper-slide flex justify-center items-center">
+                <iframe
+                  src="https://vk.com/video_ext.php?oid=-48690112&id=456268249&hd=2&autoplay=0"
+                  width="853"
+                  height="480"
+                  allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="swiper-slide flex justify-center items-center">
+                <iframe
+                  src="https://vk.com/video_ext.php?oid=-216706470&id=456239028&hd=2"
+                  width="853"
+                  height="480"
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div
+              id="button-next-video"
+              class="hidden lg:flex swiper-navBtn swiper-button-next"
+            ></div>
+            <div
+              id="button-prev-video"
+              class="hidden lg:flex swiper-navBtn swiper-button-prev"
+            ></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
       <section

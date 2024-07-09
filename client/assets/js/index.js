@@ -391,3 +391,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+var swiperVideo = new Swiper(".video", {
+  slidesPerView: 1,
+  loop: true,
+  loopedSlides: 2,
+  navigation: {
+    nextEl: "#button-next-video",
+    prevEl: "#button-prev-video",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
