@@ -46,6 +46,7 @@ const library = [
       "Институт семьи",
       "принятие последствий за собственные решения",
       "логическое мышление",
+      "суицидальные мысли",
     ],
     picture: "TLOU",
   },
@@ -369,7 +370,7 @@ const library = [
     duration: "2 часа",
     type: ["Одиночная", "Мультиплеерная"],
     genre: "Приключения",
-    competencies: "Медиативная игра",
+    competencies: "медитативная игра",
     picture: "J",
   },
   {
@@ -378,7 +379,7 @@ const library = [
     duration: "2 часа",
     type: "Одиночная",
     genre: "Пазл",
-    competencies: "Медиативная игра",
+    competencies: "медитативная игра",
     picture: "Fl",
   },
   {
@@ -387,7 +388,7 @@ const library = [
     duration: "2 часа",
     type: "Одиночная",
     genre: "Приключения",
-    competencies: "Медиативная игра",
+    competencies: "медитативная игра",
     picture: "ABZU",
   },
   {
