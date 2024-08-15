@@ -2269,6 +2269,11 @@ const library = [
   },
 ];
 
+const numberOfGames = (arr) => {
+  const totalNumber = arr.length;
+  const html = totalNumber;
+  document.getElementById("total").innerHTML = html;
+};
 const displayVertical = (property) => {
   return Array.isArray(property)
     ? `<ul>${property.map((item) => `<li>${item}</li>`).join("")}</ul>`
@@ -2342,3 +2347,4 @@ const minitable = (arr) => {
 
 window.addEventListener("load", table(library));
 window.addEventListener("load", minitable(library));
+window.addEventListener("load", numberOfGames(library));
