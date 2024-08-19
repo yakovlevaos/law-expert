@@ -19,6 +19,24 @@ const library = [
     picture: "SM1",
   },
   {
+    videoGame: "Серия игр Devil May Cry 1-5",
+    platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
+    duration: "10 часов",
+    type: "Одиночная",
+    genre: "Hack and slash",
+    competencies: [
+      "Мотивированность",
+      "настрой на победу",
+      "принятие поражений",
+      "логическое мышление",
+      "личностные компетенции",
+      "моральная составляющая",
+      "работа с агрессией",
+      "институт семьи",
+    ],
+    picture: "DMC",
+  },
+  {
     videoGame: "Marvel’s Spider-man 2",
     platform: ["PS5"],
     duration: "12 часов",
@@ -899,7 +917,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Dead or Alive",
+    picture: "DeadOrAlive",
   },
   {
     videoGame: "Knack, Knack 2",
@@ -927,7 +945,7 @@ const library = [
       "принятие поражений",
       "логическое мышление",
     ],
-    picture: "Unravel 2",
+    picture: "Unravel2",
   },
   {
     videoGame: "Ice Age: Scrat's Nutty Adventure",
@@ -941,7 +959,7 @@ const library = [
       "принятие поражений",
       "логическое мышление",
     ],
-    picture: "Ice Age: Scrat's Nutty Adventure",
+    picture: "IceAgeNutty",
   },
   {
     videoGame: "Kao the Kangaroo",
@@ -955,7 +973,7 @@ const library = [
       "принятие поражений",
       "логическое мышление",
     ],
-    picture: "Kao the Kangaroo",
+    picture: "KaoTheKangaroo",
   },
   {
     videoGame: "Marvel’s Spider-man Miles Morales",
@@ -972,7 +990,7 @@ const library = [
       "работа с потерей близких",
       "логическое мышление",
     ],
-    picture: "Marvel’s Spider-man Miles Morales",
+    picture: "MarvelsSpiderManMilesMorales",
   },
   {
     videoGame: "Portal 2",
@@ -986,7 +1004,7 @@ const library = [
       "структурно-логическое мышление",
       "пространственное мышление",
     ],
-    picture: "Portal 2",
+    picture: "Portal2",
   },
   {
     videoGame: "A Way Out",
@@ -1003,7 +1021,7 @@ const library = [
       "работа с потерей близких",
       "логическое мышление",
     ],
-    picture: "A Way Out",
+    picture: "aWayOut",
   },
   {
     videoGame: "Серия игр Mass Effect",
@@ -1020,7 +1038,7 @@ const library = [
       "работа с потерей близких",
       "логическое мышление",
     ],
-    picture: "Mass Effect",
+    picture: "MassEffect",
   },
   {
     videoGame: "Riders Republic",
@@ -1033,7 +1051,7 @@ const library = [
       "настрой на победу",
       "принятие поражений",
     ],
-    picture: "Riders Republic",
+    picture: "RidersRepublic",
   },
   {
     videoGame: "Crash Team Racing Nitro-Fueled",
@@ -1046,7 +1064,7 @@ const library = [
       "настрой на победу",
       "принятие поражений",
     ],
-    picture: "Crash Team Racing Nitro-Fueled",
+    picture: "CTR",
   },
   {
     videoGame: "Resident Evil 2 Remake",
@@ -1062,7 +1080,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 2 Remake",
+    picture: "ResidentEvil2Remake",
   },
   {
     videoGame: "Resident Evil 3 Remake",
@@ -1078,7 +1096,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 3 Remake",
+    picture: "ResidentEvil3Remake",
   },
   {
     videoGame: "Mirror's Edge: Catalyst",
@@ -1097,7 +1115,7 @@ const library = [
       "принятие последствий за собственные решения",
       "логическое мышление",
     ],
-    picture: "Mirror's Edge: Catalyst",
+    picture: "MirrorsEdgeCatalyst",
   },
   {
     videoGame: "Resident Evil 7",
@@ -1113,7 +1131,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 7",
+    picture: "ResidentEvil7",
   },
   {
     videoGame: "Resident Evil 8: Village",
@@ -1129,7 +1147,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 8: Village",
+    picture: "ResidentEvil8Village",
   },
   {
     videoGame: "Mario Kart 8",
@@ -1142,7 +1160,7 @@ const library = [
       "настрой на победу",
       "принятие поражений",
     ],
-    picture: "Mario Kart 8",
+    picture: "MarioKart8",
   },
   {
     videoGame: "Sackboy: A Big Adventure",
@@ -1156,7 +1174,7 @@ const library = [
       "целеустремленность",
       "структурно-логическое мышление",
     ],
-    picture: "Sackboy: A Big Adventure",
+    picture: "Sackboy",
   },
   {
     videoGame: "Naruto X Boruto: Ultimate Ninja Storm Connections",
@@ -1179,7 +1197,7 @@ const library = [
       "поиск своего места в жизни",
       "осмысленность своего бытия",
     ],
-    picture: "Naruto X Boruto: Ultimate Ninja Storm Connections",
+    picture: "NarutoXBoruto",
   },
   {
     videoGame: "Серия игр Marvel vs. Capcom",
@@ -1194,7 +1212,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Серия игр Marvel vs. Capcom",
+    picture: "MarvelvsCapcom",
   },
   {
     videoGame: "Resident Evil 5",
@@ -1210,7 +1228,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 5",
+    picture: "ResidentEvil5",
   },
   {
     videoGame: "Resident Evil 6",
@@ -1226,7 +1244,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Resident Evil 6",
+    picture: "ResidentEvil6",
   },
   {
     videoGame: "Left 4 Dead",
@@ -1242,7 +1260,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Left 4 Dead",
+    picture: "Left4Dead",
   },
   {
     videoGame: "Half-life 2",
@@ -1260,7 +1278,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "Half-life 2",
+    picture: "Halflife2",
   },
   {
     videoGame: "Tomb Raider",
@@ -1276,7 +1294,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "Tomb Raider",
+    picture: "TombRaider",
   },
   {
     videoGame: "Ninja Gaiden: Master Collection",
@@ -1293,7 +1311,7 @@ const library = [
       "моральная составляющая",
       "работа с агрессией",
     ],
-    picture: "Ninja Gaiden: Master Collection",
+    picture: "NinjaGaiden",
   },
   {
     videoGame: "MultiVersus",
@@ -1323,7 +1341,7 @@ const library = [
       "принятие последствий за собственные решения",
       "логическое мышление",
     ],
-    picture: "Prince of Persia: The Lost Crown",
+    picture: "PrinceOoPersiaTheLostCrown",
   },
   {
     videoGame: "Серия игр Metro",
@@ -1341,7 +1359,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "Серия игр Metro",
+    picture: "Metro",
   },
   {
     videoGame: "Back 4 Blood",
@@ -1357,7 +1375,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Back 4 Blood",
+    picture: "Back4Blood",
   },
   {
     videoGame: "Серия игр Gran Turismo",
@@ -1371,7 +1389,7 @@ const library = [
       "принятие поражений",
       "дисциплинированность",
     ],
-    picture: "Серия игр Gran Turismo",
+    picture: "GranTurismo",
   },
   {
     videoGame: "Серия игр Dark Souls",
@@ -1388,7 +1406,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Серия игр Dark Souls",
+    picture: "DarkSouls",
   },
   {
     videoGame: "Bloodborne",
@@ -1422,7 +1440,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Sekiro: Shadows Die Twice",
+    picture: "Sekiro",
   },
   {
     videoGame: "Death Stranding",
@@ -1437,7 +1455,7 @@ const library = [
       "принятие последствий за собственные решения",
       "логическое мышление",
     ],
-    picture: "Death Stranding",
+    picture: "DeathStranding",
   },
   {
     videoGame: "Gotham Knights",
@@ -1453,7 +1471,7 @@ const library = [
       "работа с потерей близких",
       "логическое мышление",
     ],
-    picture: "Gotham Knights",
+    picture: "GothamKnights",
   },
   {
     videoGame: "No Man's Sky: Beyond",
@@ -1471,7 +1489,7 @@ const library = [
       "навыки планирования своих действий",
       "структурно-логическое мышление",
     ],
-    picture: "No Man's Sky: Beyond",
+    picture: "NoMansSkyBeyond",
   },
   {
     videoGame: "Biomutant",
@@ -1503,7 +1521,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Elden Ring",
+    picture: "EldenRing",
   },
   {
     videoGame: "Demon's Souls",
@@ -1520,7 +1538,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Demon's Souls",
+    picture: "DemonsSouls",
   },
   {
     videoGame: "Lies of P",
@@ -1537,7 +1555,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Lies of P",
+    picture: "LiesOfP",
   },
   {
     videoGame: "Серия игр WWE",
@@ -1552,7 +1570,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Серия игр WWE",
+    picture: "WWE",
   },
   {
     videoGame: "Серия игр UFC",
@@ -1567,7 +1585,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Серия игр UFC",
+    picture: "UFC",
   },
   {
     videoGame: ["Luigi's mansion 2 HD, Luigi's mansion 3"],
@@ -1581,7 +1599,7 @@ const library = [
       "структурно-логическое мышление",
       "пространственное мышление",
     ],
-    picture: "Luigi's mansion 2 HD, Luigi's mansion 3",
+    picture: "LuigisMansion",
   },
   {
     videoGame: "Avatar: Frontiers of Pandora",
@@ -1597,7 +1615,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "Avatar: Frontiers of Pandora",
+    picture: "AvatarFrontiersOfPandora",
   },
   {
     videoGame: "Counter-Strike 2",
@@ -1614,7 +1632,7 @@ const library = [
       "дисциплинированность",
       "терпение",
     ],
-    picture: "Counter-Strike 2",
+    picture: "CounterStrike2",
   },
   {
     videoGame: "Dota 2",
@@ -1631,7 +1649,7 @@ const library = [
       "дисциплинированность",
       "терпение",
     ],
-    picture: "Dota 2",
+    picture: "Dota2",
   },
   {
     videoGame: "DC Universe Online",
@@ -1647,7 +1665,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "DC Universe Online",
+    picture: "DCUniverseOnline",
   },
   {
     videoGame: "Dead Space Remake",
@@ -1663,7 +1681,7 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Dead Space Remake",
+    picture: "DeadSpaceRemake",
   },
   {
     videoGame: "Серия игр Forza Horizon",
@@ -1677,7 +1695,7 @@ const library = [
       "принятие поражений",
       "дисциплинированность",
     ],
-    picture: "Серия игр Forza Horizon",
+    picture: "ForzaHorizon",
   },
   {
     videoGame: "Hi-Fi Rush",
@@ -1692,7 +1710,7 @@ const library = [
       "логическое мышление",
       "личностные компетенции",
     ],
-    picture: "Hi-Fi Rush",
+    picture: "HiFiRush",
   },
   {
     videoGame: "Starfield",
@@ -1722,7 +1740,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "The Lord of the Rings: Gollum",
+    picture: "LOTRGollum",
   },
   {
     videoGame: "Серия игр Need for Speed",
@@ -1736,7 +1754,7 @@ const library = [
       "принятие поражений",
       "дисциплинированность",
     ],
-    picture: "Серия игр Need for Speed",
+    picture: "NeedForSpeed",
   },
   {
     videoGame: "Sifu",
@@ -1770,7 +1788,7 @@ const library = [
       "дисциплинированность",
       "работа с агрессией",
     ],
-    picture: "Серия игр Crysis",
+    picture: "Crysis",
   },
   {
     videoGame: "Серия игр Doom",
@@ -1784,7 +1802,7 @@ const library = [
       "принятие поражений",
       "тактическое мышление",
     ],
-    picture: "Серия игр Doom",
+    picture: "Doom",
   },
   {
     videoGame: "Серия игр Mafia",
@@ -1802,7 +1820,7 @@ const library = [
       "поиск своего места в жизни",
       "осмысленность своего бытия",
     ],
-    picture: "Серия игр Mafia",
+    picture: "Mafia",
   },
   {
     videoGame: "Marvel’s Avengers",
@@ -1818,7 +1836,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Marvel’s Avengers",
+    picture: "MarvelsAvengers",
   },
   {
     videoGame: ["Nioh", "Nioh 2"],
@@ -1835,7 +1853,7 @@ const library = [
       "работа с агрессией",
       "терпение",
     ],
-    picture: "Nioh, Nioh 2",
+    picture: "Nioh",
   },
   {
     videoGame: "Star Wars: Squadrons",
@@ -1849,7 +1867,7 @@ const library = [
       "принятие поражений",
       "дисциплинированность",
     ],
-    picture: "Star Wars: Squadrons",
+    picture: "StarWarsSquadrons",
   },
   {
     videoGame: "Streets of Rage 4",
@@ -1864,7 +1882,7 @@ const library = [
       "умение работать в команде",
       "тактическое мышление",
     ],
-    picture: "Streets of Rage 4",
+    picture: "StreetsOfRage4",
   },
   {
     videoGame: ["Darksiders", "Darksiders 2", "Darksiders 3"],
@@ -1898,7 +1916,7 @@ const library = [
       "моральная составляющая",
       "работа с агрессией",
     ],
-    picture: "Darksiders Genesis",
+    picture: "DarksidersGenesis",
   },
   {
     videoGame: "Shadow of the Colossus",
@@ -1913,7 +1931,7 @@ const library = [
       "логическое мышление",
       "тактическое мышление",
     ],
-    picture: "Shadow of the Colossus",
+    picture: "ShadowOfTheColossus",
   },
   {
     videoGame: "Super Smash Bros. Ultimate",
@@ -1928,7 +1946,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Super Smash Bros. Ultimate",
+    picture: "SuperSmashBrosUltimate",
   },
   {
     videoGame: "Cuphead",
@@ -1977,7 +1995,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Star Wars: Battlefront, Star Wars: Battlefront II",
+    picture: "StarWarsBattlefront",
   },
   {
     videoGame: ["The Adventures of Sherlock Holmes"],
@@ -1993,7 +2011,7 @@ const library = [
       "творчество",
       "целеустремленность",
     ],
-    picture: "The Adventures of Sherlock Holmes",
+    picture: "TheAdventuresOfSherlockHolmes",
   },
   {
     videoGame: ["Dragon's Dogma: Dark Arisen", "Dragon's Dogma 2"],
@@ -2007,7 +2025,7 @@ const library = [
       "работа с ответственностью",
       "принятие последствий за собственные решения",
     ],
-    picture: "Dragon's Dogma: Dark Arisen, Dragon's Dogma 2",
+    picture: "DragonsDogma",
   },
   {
     videoGame: ["Pumpkin Jack"],
@@ -2021,7 +2039,7 @@ const library = [
       "принятие поражений",
       "логическое мышление",
     ],
-    picture: "Pumpkin Jack",
+    picture: "PumpkinJack",
   },
   {
     videoGame: ["Splinter Cell"],
@@ -2038,7 +2056,7 @@ const library = [
       "логическое мышление",
       "терпение",
     ],
-    picture: "Splinter Cell",
+    picture: "SplinterCell",
   },
   {
     videoGame: ["Red Dead Redemption"],
@@ -2056,7 +2074,7 @@ const library = [
       "поиск своего места в жизни",
       "осмысленность своего бытия",
     ],
-    picture: "Red Dead Redemption",
+    picture: "RedDeadRedemption",
   },
   {
     videoGame: ["Alone in the Dark (2008)"],
@@ -2075,7 +2093,7 @@ const library = [
       "креативность",
       "структурно-логическое мышление",
     ],
-    picture: "Alone in the Dark (2008)",
+    picture: "AloneInTheDark",
   },
   {
     videoGame: ["Prototype", "Prototype 2"],
@@ -2090,7 +2108,7 @@ const library = [
       "принятие последствий за собственные решения",
       "работа с потерей близких",
     ],
-    picture: "Prototype, Prototype 2",
+    picture: "Prototype",
   },
   {
     videoGame: ["Fable"],
@@ -2120,7 +2138,7 @@ const library = [
       "личностные компетенции",
       "моральная составляющая",
     ],
-    picture: "Alice: Madness Returns",
+    picture: "AliceMadnessReturns",
   },
   {
     videoGame: ["Battletoads"],
@@ -2151,10 +2169,10 @@ const library = [
       "логическое мышление",
       "работа со страхами",
     ],
-    picture: "Dead Space, Dead Space 2, Dead Space 3",
+    picture: "DS23",
   },
   {
-    videoGame: ["Gears of War"],
+    videoGame: ["Серия игр Gears of War"],
     platform: ["ПК", "Xbox"],
     duration: "9 часов",
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
@@ -2167,10 +2185,10 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Gears of War",
+    picture: "GearsOfWar",
   },
   {
-    videoGame: ["Halo"],
+    videoGame: ["Серия игр Halo"],
     platform: ["ПК", "Xbox"],
     duration: "5 часов",
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
@@ -2197,7 +2215,7 @@ const library = [
       "работа с ответственностью",
       "принятие последствий за собственные решения",
     ],
-    picture: "Watch Dogs",
+    picture: "WatchDogs",
   },
   {
     videoGame: ["Ryse: Son of Rome"],
@@ -2212,7 +2230,7 @@ const library = [
       "принятие последствий за собственные решения",
       "работа с потерей близких",
     ],
-    picture: "Ryse: Son of Rome",
+    picture: "Ryse",
   },
   {
     videoGame: [
@@ -2230,8 +2248,7 @@ const library = [
       "работа с ответственностью",
       "принятие последствий за собственные решения",
     ],
-    picture:
-      "S.T.A.L.K.E.R.: Тень Чернобыля, S.T.A.L.K.E.R.: Чистое небо, S.T.A.L.K.E.R.: Зов Припяти",
+    picture: "STALKER",
   },
   {
     videoGame: ["Call of Duty 2"],
@@ -2248,7 +2265,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Call of Duty 2",
+    picture: "CallOfDuty2",
   },
   {
     videoGame: ["Call of Duty: World War II"],
@@ -2265,7 +2282,7 @@ const library = [
       "тактическое мышление",
       "дисциплинированность",
     ],
-    picture: "Call of Duty: World War II",
+    picture: "CallOfDutyWorldWarII",
   },
 ];
 
@@ -2273,6 +2290,10 @@ const numberOfGames = (arr) => {
   const totalNumber = arr.length;
   const html = totalNumber;
   document.getElementById("total").innerHTML = html;
+};
+
+const sortGames = (arr) => {
+  return arr.sort((a, b) => (a.videoGame > b.videoGame ? 1 : -1));
 };
 const displayVertical = (property) => {
   return Array.isArray(property)
@@ -2287,7 +2308,8 @@ const displayComma = (property) => {
 };
 
 const table = (arr) => {
-  const html = arr
+  const sortedArray = sortGames(arr);
+  const html = sortedArray
     .map(
       (item, index) =>
         `<tr
