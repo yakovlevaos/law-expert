@@ -1247,7 +1247,7 @@ const library = [
     picture: "ResidentEvil6",
   },
   {
-    videoGame: "Left 4 Dead",
+    videoGame: ["Left 4 Dead", "Left 4 Dead 2"],
     platform: ["ПК", "Xbox"],
     duration: "10 часов",
     type: ["Одиночная", "Мультиплеерная"],
@@ -1970,7 +1970,7 @@ const library = [
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: "∞",
     type: "Мультиплеерная",
-    genre: ["Королевской битвы", "Онлайн-игра"],
+    genre: ["Королевская битва", "Онлайн-игра"],
     competencies: [
       "Мотивированность",
       "настрой на победу",
@@ -2042,7 +2042,7 @@ const library = [
     picture: "PumpkinJack",
   },
   {
-    videoGame: ["Splinter Cell"],
+    videoGame: ["Серия игр Splinter Cell"],
     platform: ["PS3", "ПК", "Xbox"],
     duration: "5 часов",
     type: ["Одиночная", "Мультиплеерная"],
@@ -2293,7 +2293,19 @@ const numberOfGames = (arr) => {
 };
 
 const sortGames = (arr) => {
-  return arr.sort((a, b) => (a.videoGame > b.videoGame ? 1 : -1));
+  return arr.sort((a, b) => {
+    const cleanTitle = (title) => {
+      if (Array.isArray(title)) {
+        title = title[0];
+      }
+      return typeof title === "string"
+        ? title.replace("Серия игр", "").trim()
+        : title;
+    };
+    const titleA = cleanTitle(a.videoGame);
+    const titleB = cleanTitle(b.videoGame);
+    return titleA > titleB ? 1 : -1;
+  });
 };
 const displayVertical = (property) => {
   return Array.isArray(property)
