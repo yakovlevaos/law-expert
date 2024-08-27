@@ -1998,7 +1998,7 @@ const library = [
     picture: "StarWarsBattlefront",
   },
   {
-    videoGame: ["The Adventures of Sherlock Holmes"],
+    videoGame: ["Серия игр The Adventures of Sherlock Holmes"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: "10 часов",
     type: "Одиночная",
@@ -2286,6 +2286,75 @@ const library = [
   },
 ];
 
+// const dropdownData = {
+//   genre: {
+//     1: "Genre 1",
+//     2: "Genre 2",
+//     3: "Genre 3",
+//   },
+//   platform: {
+//     1: "Platform 1",
+//     2: "Platform 2",
+//     3: "Platform 3",
+//   },
+//   // Add more categories as needed
+// };
+//
+// const createDropdownMenu = (containerId, title, data) => {
+//   const container = document.getElementById(containerId);
+//
+//   const dropdownButton = document.createElement("button");
+//   dropdownButton.className =
+//     "inline-flex justify-between w-full rounded-md px-4 py-2 text-sm font-medium hover:bg-slate-500";
+//   dropdownButton.setAttribute("id", `${containerId}Button`);
+//   dropdownButton.textContent = title;
+//
+//   // Create the dropdown menu
+//   const dropdownMenu = document.createElement("div");
+//   dropdownMenu.className =
+//     "hidden flex flex-col absolute origin-top-left mt-2 rounded-md shadow-lg bg-slate-500 ring-1 ring-black ring-opacity-5 focus:outline-none";
+//   dropdownMenu.setAttribute("id", `${containerId}Menu`);
+//
+//   const dropdownContent = document.createElement("div");
+//   dropdownContent.className = "py-1";
+//   dropdownContent.setAttribute("role", "none");
+//
+//   for (const [value, label] of Object.entries(data)) {
+//     const labelElement = document.createElement("label");
+//     labelElement.className = "flex p-2 text-sm text-white";
+//
+//     const inputElement = document.createElement("input");
+//     inputElement.type = "checkbox";
+//     inputElement.value = value;
+//     inputElement.className = "";
+//
+//     const inputText = document.createElement("span");
+//     inputText.className = "text-nowrap p-2";
+//     inputText.innerHTML = label;
+//
+//     labelElement.appendChild(inputElement);
+//     labelElement.appendChild(inputText);
+//     dropdownContent.appendChild(labelElement);
+//   }
+//
+//   dropdownMenu.appendChild(dropdownContent);
+//
+//   // Append the button and menu to the container
+//   container.appendChild(dropdownButton);
+//   container.appendChild(dropdownMenu);
+//
+//   // Add event listener for toggling the dropdown
+//   dropdownButton.addEventListener("click", () => {
+//     dropdownMenu.classList.toggle("hidden");
+//     dropdownIcon.classList.toggle("rotate-180");
+//   });
+// };
+//
+// document.addEventListener("DOMContentLoaded", () => {
+//   createDropdownMenu("genreDropdownContainer", "Жанр", dropdownData.genre);
+//   // Add more dropdowns as needed
+// });
+
 const numberOfGames = (arr) => {
   const totalNumber = arr.length;
   const html = totalNumber;
@@ -2299,7 +2368,7 @@ const sortGames = (arr) => {
         title = title[0];
       }
       return typeof title === "string"
-        ? title.replace("Серия игр", "").trim()
+        ? title.replace("Серия игр", "").trim().toLowerCase()
         : title;
     };
     const titleA = cleanTitle(a.videoGame);
@@ -2382,3 +2451,15 @@ const minitable = (arr) => {
 window.addEventListener("load", table(library));
 window.addEventListener("load", minitable(library));
 window.addEventListener("load", numberOfGames(library));
+document.getElementById("dropdownButton").addEventListener("click", () => {
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  const dropdownIcon = document.getElementById("dropdownIcon");
+
+  dropdownMenu.classList.toggle("hidden");
+
+  if (!dropdownMenu.classList.contains("hidden")) {
+    dropdownIcon.classList.add("rotate-180");
+  } else {
+    dropdownIcon.classList.remove("rotate-180");
+  }
+});
