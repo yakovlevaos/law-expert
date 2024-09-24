@@ -76,7 +76,7 @@
     <title>Центр игровой психологической поддержки</title>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-9p4a8sJU.js"></script>
     <script type="module" crossorigin src="/assets/index-8aGo7tAb.js"></script>
-    <script type="module" crossorigin src="/assets/games-3aMlDOWy.js"></script>
+    <script type="module" crossorigin src="/assets/games-WCTPDuGc.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/style-coor8lJE.css">
   </head>
   <!-- Yandex.Metrika counter -->
@@ -299,7 +299,12 @@
             <thead>
               <tr class="text-slate-900 dark:text-slate-100">
                 <th class="px-2 py-2">Видеоигра</th>
-                <th class="px-2 py-2">Платформа</th>
+                <th class="px-2 py-2 max-w-60">
+                  <div
+                    id="platformDropdownContainer"
+                    class="relative inline-block text-left"
+                  ></div>
+                </th>
                 <th class="px-2 py-2 max-w-60">
                   Продолжительность основной сюжетной линии (приблизительная)
                 </th>
@@ -308,13 +313,13 @@
                   Мультиплеерные/<br />
                   Split screen
                 </th>
-                <!--                <th class="px-2 py-2 max-w-60">-->
-                <!--                  <div-->
-                <!--                    id="genreDropdownContainer"-->
-                <!--                    class="relative inline-block text-left"-->
-                <!--                  ></div>-->
-                <!--                </th>-->
-                <th class="px-2 py-2">Жанр</th>
+                <th class="px-2 py-2 max-w-60">
+                  <div
+                    id="genreDropdownContainer"
+                    class="relative inline-block text-left"
+                  ></div>
+                </th>
+
                 <th class="px-2 py-2">Компетенции</th>
               </tr>
             </thead>

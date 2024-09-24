@@ -2286,96 +2286,141 @@ const library = [
   },
 ];
 
-// const dropdownData = {
-//   genre: {
-//     1: "Genre 1",
-//     2: "Genre 2",
-//     3: "Genre 3",
-//   },
-//   platform: {
-//     1: "Platform 1",
-//     2: "Platform 2",
-//     3: "Platform 3",
-//   },
-//   // Add more categories as needed
-// };
-//
-// const createDropdownMenu = (containerId, title, data) => {
-//   const container = document.getElementById(containerId);
-//
-//   const dropdownButton = document.createElement("button");
-//   dropdownButton.className =
-//     "inline-flex justify-between w-full rounded-md px-4 py-2 text-sm font-medium hover:bg-slate-500";
-//   dropdownButton.setAttribute("id", `${containerId}Button`);
-//   dropdownButton.textContent = title;
-//
-//   // Create the dropdown menu
-//   const dropdownMenu = document.createElement("div");
-//   dropdownMenu.className =
-//     "hidden flex flex-col absolute origin-top-left mt-2 rounded-md shadow-lg bg-slate-500 ring-1 ring-black ring-opacity-5 focus:outline-none";
-//   dropdownMenu.setAttribute("id", `${containerId}Menu`);
-//
-//   const dropdownContent = document.createElement("div");
-//   dropdownContent.className = "py-1";
-//   dropdownContent.setAttribute("role", "none");
-//
-//   for (const [value, label] of Object.entries(data)) {
-//     const labelElement = document.createElement("label");
-//     labelElement.className = "flex p-2 text-sm text-white";
-//
-//     const inputElement = document.createElement("input");
-//     inputElement.type = "checkbox";
-//     inputElement.value = value;
-//     inputElement.className = "";
-//
-//     const inputText = document.createElement("span");
-//     inputText.className = "text-nowrap p-2";
-//     inputText.innerHTML = label;
-//
-//     labelElement.appendChild(inputElement);
-//     labelElement.appendChild(inputText);
-//     dropdownContent.appendChild(labelElement);
-//   }
-//
-//   dropdownMenu.appendChild(dropdownContent);
-//
-//   // Append the button and menu to the container
-//   container.appendChild(dropdownButton);
-//   container.appendChild(dropdownMenu);
-//
-//   // Add event listener for toggling the dropdown
-//   dropdownButton.addEventListener("click", () => {
-//     dropdownMenu.classList.toggle("hidden");
-//     dropdownIcon.classList.toggle("rotate-180");
-//   });
-// };
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//   createDropdownMenu("genreDropdownContainer", "Жанр", dropdownData.genre);
-//   // Add more dropdowns as needed
-// });
+const dropdownData = {
+  genre: {
+    1: "Приключенческий боевик",
+    2: "Приключения",
+    3: "Survival horror",
+    4: "Песочница",
+    5: "Beat ’em up",
+    6: "Шутер",
+    7: "RPG",
+    8: "Экшн",
+    9: "Хардкор",
+    10: "Платформер",
+    11: "Спортивный симулятор",
+    12: "Hack and slash",
+    13: "Файтинг",
+    14: "Многопользовательская онлайн боевая арена",
+    15: "Пазл",
+  },
+  platform: {
+    1: "PS3",
+    2: "PS4",
+    3: "PS5",
+    4: "ПК",
+    5: "Xbox",
+    6: "Nintendo Switch",
+  },
+  // Add more categories as needed
+};
 
+const filterArray = {
+  platform: [],
+  genre: [],
+};
+
+const createDropdownMenu = (containerId, title, data, type) => {
+  const container = document.getElementById(containerId);
+
+  const dropdownButton = document.createElement("button");
+  dropdownButton.className =
+    "inline-flex justify-between w-full rounded-md px-4 py-2 text-sm font-medium hover:bg-slate-500";
+  dropdownButton.setAttribute("id", `${containerId}Button`);
+
+  const buttonContent = document.createElement("span");
+  buttonContent.textContent = title;
+
+  const dropdownIcon = document.createElement("span");
+  dropdownIcon.innerHTML = "&#x25BC;";
+  dropdownIcon.className = "ml-2 transition-transform duration-300";
+
+  dropdownButton.appendChild(buttonContent);
+  dropdownButton.appendChild(dropdownIcon);
+
+  const dropdownMenu = document.createElement("div");
+  dropdownMenu.className =
+    "hidden flex flex-col absolute origin-top-left mt-2 whitespace-nowrap rounded-md shadow-lg bg-slate-500 ring-1 ring-black ring-opacity-5 focus:outline-none";
+  dropdownMenu.setAttribute("id", `${containerId}Menu`);
+
+  const dropdownContent = document.createElement("div");
+  dropdownContent.className = "py-1";
+  dropdownContent.setAttribute("role", "none");
+
+  for (const [value, label] of Object.entries(data)) {
+    const labelElement = document.createElement("label");
+    labelElement.className = "flex px-2 py-0.5 text-sm text-white";
+
+    const inputElement = document.createElement("input");
+    inputElement.type = "checkbox";
+    inputElement.value = value;
+    inputElement.className = "";
+
+    const inputText = document.createElement("span");
+    inputText.className = "p-2";
+    inputText.innerHTML = label;
+
+    labelElement.appendChild(inputElement);
+    labelElement.appendChild(inputText);
+    dropdownContent.appendChild(labelElement);
+
+    inputElement.addEventListener("change", (event) => {
+      if (event.target.checked) {
+        filterArray[type].push(label);
+      } else {
+        const index = filterArray[type].indexOf(label);
+        if (index !== -1) {
+          filterArray[type].splice(index, 1);
+        }
+      }
+      updateFilteredGames(library);
+    });
+  }
+
+  dropdownMenu.appendChild(dropdownContent);
+
+  container.appendChild(dropdownButton);
+  container.appendChild(dropdownMenu);
+
+  dropdownButton.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+    dropdownIcon.innerHTML = dropdownMenu.classList.contains("hidden")
+      ? "&#x25BC;"
+      : "&#x25B2;";
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  createDropdownMenu(
+    "genreDropdownContainer",
+    "Жанр",
+    dropdownData.genre,
+    "genre",
+  );
+  createDropdownMenu(
+    "platformDropdownContainer",
+    "Платформа",
+    dropdownData.platform,
+    "platform",
+  );
+});
 const numberOfGames = (arr) => {
   const totalNumber = arr.length;
-  const html = totalNumber;
-  document.getElementById("total").innerHTML = html;
+  document.getElementById("total").innerHTML = totalNumber;
 };
 
 const sortGames = (arr) => {
   return arr.sort((a, b) => {
     const cleanTitle = (title) => {
-      if (Array.isArray(title)) {
-        title = title[0];
-      }
+      if (Array.isArray(title)) title = title[0];
       return typeof title === "string"
         ? title.replace("Серия игр", "").trim().toLowerCase()
         : title;
     };
-    const titleA = cleanTitle(a.videoGame);
-    const titleB = cleanTitle(b.videoGame);
-    return titleA > titleB ? 1 : -1;
+    return cleanTitle(a.videoGame) > cleanTitle(b.videoGame) ? 1 : -1;
   });
 };
+
 const displayVertical = (property) => {
   return Array.isArray(property)
     ? `<ul>${property.map((item) => `<li>${item}</li>`).join("")}</ul>`
@@ -2447,19 +2492,25 @@ const minitable = (arr) => {
     .join("");
   document.querySelector("#minitable").innerHTML = html;
 };
+const filterGames = (games) => {
+  const { genre, platform } = filterArray;
 
-window.addEventListener("load", table(library));
-window.addEventListener("load", minitable(library));
-window.addEventListener("load", numberOfGames(library));
-document.getElementById("dropdownButton").addEventListener("click", () => {
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  const dropdownIcon = document.getElementById("dropdownIcon");
+  return games.filter((game) => {
+    const genreMatch =
+      genre.length === 0 || genre.some((g) => game.genre.includes(g));
+    const platformMatch =
+      platform.length === 0 || platform.some((p) => game.platform.includes(p));
+    return genreMatch && platformMatch;
+  });
+};
 
-  dropdownMenu.classList.toggle("hidden");
+const updateFilteredGames = (games) => {
+  const filteredGames = filterGames(games);
+  table(filteredGames);
+  minitable(filteredGames);
+};
 
-  if (!dropdownMenu.classList.contains("hidden")) {
-    dropdownIcon.classList.add("rotate-180");
-  } else {
-    dropdownIcon.classList.remove("rotate-180");
-  }
+window.addEventListener("load", () => {
+  updateFilteredGames(library);
+  numberOfGames(library);
 });
