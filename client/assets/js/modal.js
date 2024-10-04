@@ -1,24 +1,28 @@
-export function initializeModal() {
-  document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-    const closeButton = document.getElementById("closeButton");
+export const initModal = () => {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeButton = document.getElementById("closeButton");
 
-    window.openModal = function (src) {
-      modalImage.src = src;
-      modal.classList.remove("hidden");
-      console.log("sdfd");
-    };
+  if (!modal || !modalImage || !closeButton) {
+    console.error("Modal elements are missing from the DOM.");
+    return;
+  }
 
-    closeButton.addEventListener("click", function () {
-      modal.classList.add("hidden");
-    });
+  const openModal = (src) => {
+    modalImage.src = src;
+    modal.classList.remove("hidden");
+  };
 
-    // Optionally, close the modal when clicking outside the image
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        modal.classList.add("hidden");
-      }
-    });
+  const closeModal = () => {
+    modal.classList.add("hidden");
+  };
+
+  closeButton.addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
   });
-}
+
+  return openModal;
+};
