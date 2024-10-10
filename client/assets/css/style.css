@@ -56,3 +56,27 @@
     display: none;
   }
 }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+iframe {
+  width: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.card-screenshot {
+  display: block;
+  max-width: 90%;
+  max-height: 32rem; /* Adjust this to your preference */
+  margin: 0 auto;
+}

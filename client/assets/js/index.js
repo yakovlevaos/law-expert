@@ -1,5 +1,13 @@
 import "../css/style.css";
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+import { loadExperts, initializeSwiper, initialRendering } from "./experts.js";
+
+window.addEventListener("load", () => {
+  loadExperts();
+  initializeSwiper();
+  initialRendering();
+});
 
 const cardData = [
   {
@@ -42,66 +50,6 @@ const cardData = [
   },
 ];
 
-const projects = [
-  {
-    id: 1,
-    title:
-      "Психологические консультации с помощью видеоигр в загородных оздоровительных лагерях",
-    image: "./assets/img/gameplayproject1.jpeg",
-    description: `
-      Дети-подростки в возрасте с 10 до 17 лет, отдыхающие в муниципальном загородном оздоровительном лагере «Ласточка», на протяжении 4-ех сезонов проходили индивидуальные психологические консультации с психологами «Генезис» с помощью новейшей авторской методики, которая в своей работе использует видеоигры в качестве инструмента. Кроме того, проведены семинары о видеоиграх и их месте в жизни, культуре и их влиянии на психологическое и эмоциональное здоровье.
-    `,
-    details: [
-      { label: "Срок реализации:", value: "Летний период 2024 года." },
-      {
-        label: "Охват:",
-        value:
-          "Более 1500 детей, проживающих на территории города Красноярска.",
-      },
-      { label: "Место проведения:", value: "Загородный лагерь «Ласточка»." },
-      {
-        label: "Источник финансирования:",
-        value:
-          "Cубсидия департамента социального развития администрации города Красноярска, собственные средства.",
-      },
-      {
-        label: "Партнеры:",
-        value:
-          "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»;<br />Загородный стационарный детский оздоровительный лагерь «Ласточка»;<br />Муниципальное молодежное автономное учреждение «ИТ-Центр».",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Киберспортивная психология",
-    image: "./assets/img/cypepsycho1.jpeg",
-    description: `
-      В рамках проекта на протяжении летнего периода 2024 года проводились на еженедельной основе киберспортивные тренировки по дисциплинам: Dota 2, Counter-strike 2, MK1 и EA FC 24 с участием киберспортивного тренера и психолога. Прорабатывались: умение работать с собственными эмоциями, повышение стрессоустойчивости, развитие коммуникативных навыков, повышение уверенности в себе. Кроме того, еженедельно проводились ценностно-смысловые дни, в рамках которых подростки совместно с психологами проходили сюжетноориентированные игры (The last of us, Ghost of Tsushima, God of war: Ragnarek), где прорабатывались: самоосознание, семейные ценности, инициатива и т.д.
-    `,
-    details: [
-      { label: "Срок реализации:", value: "Июнь-Сентябрь 2024 года." },
-      {
-        label: "Охват:",
-        value:
-          "32 подростка в возрасте 14-18 лет, проживающих в городе Красноярске.",
-      },
-      {
-        label: "Место проведения:",
-        value: "Муниципальное молодежное автономное учреждение «ИТ-Центр».",
-      },
-      {
-        label: "Источник финансирования:",
-        value: "Cубсидия в рамках конкурса «Ты-город», собственные средства.",
-      },
-      {
-        label: "Партнеры:",
-        value:
-          "Главное управление по физической культуре и спорту администрации города Красноярска;<br />Главное управление образования администрации города Красноярска;<br />Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»;<br />Муниципальное молодежное автономное учреждение «ИТ-Центр»;<br />Телеканал «Енисей».",
-      },
-    ],
-  },
-];
-
 const lightSwitches = document.querySelectorAll(".light-switch");
 if (lightSwitches.length > 0) {
   lightSwitches.forEach((lightSwitch, i) => {
@@ -125,102 +73,6 @@ if (lightSwitches.length > 0) {
     });
   });
 }
-
-let swiperGameExperts = new Swiper(".slide-container.experts-games", {
-  slidesPerView: 2,
-  spaceBetween: 40,
-  loop: true,
-  centerSlide: "true",
-  fade: "true",
-  grabCursor: "true",
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: {
-    nextEl: "#button-next-experts",
-    prevEl: "#button-prev-experts",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-  },
-});
-
-const elementMore = document.getElementById("slider");
-
-const initialRendering = () => {
-  const elements = elementMore.children;
-  for (const element of elements) {
-    const reviewedElement = element.lastElementChild.lastElementChild;
-    const reviewedElementLength = reviewedElement.textContent
-      .trim()
-      .split(/\s+/).length;
-    if (reviewedElementLength >= 50) {
-      const extraText = reviewedElement.textContent
-        .trim()
-        .split(/\s+/)
-        .slice(51)
-        .join(" ");
-      const extraTextLength = extraText.trim().split(/\s+/).length;
-      const subStringLength = reviewedElement.lastElementChild.textContent
-        .trim()
-        .split(/\s+/).length;
-      const subString = reviewedElement.lastElementChild.textContent
-        .trim()
-        .split(/\s+/)
-        .slice(0, subStringLength - extraTextLength)
-        .join(" ")
-        .slice(0, -1);
-      reviewedElement.lastElementChild.style.display = "none";
-      const p = document.createElement("p");
-      p.style.display = "block";
-      p.append(subString + "...");
-      reviewedElement.append(p);
-      const div = document.createElement("div");
-      div.id = "button-more";
-      div.className = "pt-3 font-bold";
-      div.append("Узнать больше");
-      reviewedElement.append(div);
-    }
-  }
-};
-
-window.addEventListener("load", initialRendering);
-
-elementMore.addEventListener("click", (event) => {
-  const button = event.target.id;
-  if (button !== "button-more") return;
-
-  const textMore = event.target.closest(".text-more");
-
-  const textMoreChildrenLength = textMore.children.length;
-
-  if (textMore.lastElementChild.textContent === "Узнать больше") {
-    textMore.children[textMoreChildrenLength - 2].style.display = "none";
-    textMore.children[textMoreChildrenLength - 3].style.display = "block";
-    textMore.lastElementChild.textContent = "Свернуть";
-  } else {
-    textMore.children[textMoreChildrenLength - 2].style.display = "block";
-    textMore.children[textMoreChildrenLength - 3].style.display = "none";
-    textMore.lastElementChild.textContent = "Узнать больше";
-  }
-});
 
 const swiperWrapper = document.querySelector(".main-swiper .swiper-wrapper");
 
@@ -285,7 +137,7 @@ cardData.forEach((card) => {
   });
 });
 
-let swiper = new Swiper(".slide-container", {
+let swiper = new Swiper(".slide-container.experts-general", {
   slidesPerView: 2,
   spaceBetween: 40,
   loop: true,
@@ -321,82 +173,8 @@ let swiper = new Swiper(".slide-container", {
   },
 });
 
-let swiperGames = new Swiper(".swiper-games-container", {
-  loop: true,
-  pagination: {
-    el: ".swiper-games-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-games-button-next",
-    prevEl: ".swiper-games-button-prev",
-  },
-});
-
-const tabSystem = {
-  init() {
-    document.querySelectorAll(".card").forEach((card) => {
-      const tabContainer = card.querySelector(".tabs");
-      const tabMenu = tabContainer.querySelector(".tabs-menu");
-      const tabs = Array.from(tabMenu.children);
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabSystem.toggle(card, tab.dataset.target);
-        });
-
-        // Initialize by showing the active tab's content
-        if (tab.classList.contains("is-active")) {
-          tabSystem.toggle(card, tab.dataset.target);
-        }
-      });
-    });
-  },
-  toggle(card, targetId) {
-    // Hide all tab contents within the same card
-    const contents = card.querySelectorAll(".tab-content");
-    contents.forEach((contentElement) => {
-      contentElement.style.display =
-        contentElement.id === targetId ? "block" : "none";
-    });
-
-    // Update active class in tab menu
-    const tabs = card.querySelectorAll(".tabs-menu li");
-    tabs.forEach((tab) => {
-      tab.classList.toggle("is-active", tab.dataset.target === targetId);
-    });
-  },
-};
-
-// Initialize the tab system
-tabSystem.init();
-
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("imageModal");
-  const modalImage = document.getElementById("modalImage");
-  const closeButton = document.getElementById("closeButton");
-
-  window.openModal = function (src) {
-    modalImage.src = src;
-    modal.classList.remove("hidden");
-  };
-
-  closeButton.addEventListener("click", function () {
-    modal.classList.add("hidden");
-  });
-
-  // Optionally, close the modal when clicking outside the image
-  modal.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.classList.add("hidden");
-    }
-  });
-});
-
-var swiperVideo = new Swiper(".video", {
+const swiperVideo = new Swiper(".swiper-container.video", {
   slidesPerView: 1,
-  loop: true,
-  loopedSlides: 2,
   navigation: {
     nextEl: "#button-next-video",
     prevEl: "#button-prev-video",

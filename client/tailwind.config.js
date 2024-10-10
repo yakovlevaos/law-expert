@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: ["./*.{html,js}", "./pages/**/*.{html,js}"],
+  content: [
+    "./*.html", // All HTML files in the root directory
+    "./*.js", // All JS files in the root directory
+    "./pages/**/*.{html,js}", // All HTML and JS files in the pages directory and its subdirectories
+    "./assets/**/*.{html,js}", // If you have HTML or JS in the public directory
+  ],
+
   theme: {
     extend: {
       backgroundImage: {
