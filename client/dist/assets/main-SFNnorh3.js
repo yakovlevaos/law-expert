@@ -1,4 +1,4 @@
-import{S as l}from"./index-5ofnAfXG.js";import{i as o}from"./modal-Yooto6kQ.js";const c=[{index:1,title:"Психологические консультации с помощью видеоигр",period:"Летний период 2024 года.",coverage:"Более 1500 детей, проживающих на территории города Красноярска.",place:"Загородный лагерь «Ласточка».",funding:"Cубсидия департамента социального развития администрации города Красноярска, собственные средства.",partners:["Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»","Загородный стационарный детский оздоровительный лагерь «Ласточка»","Муниципальное молодежное автономное учреждение «ИТ-Центр»"],description:`Дети-подростки в возрасте с 10 до 17 лет, отдыхающие в
+import{S as l}from"./index-FC4BFEKm.js";import{i as o}from"./modal-Yooto6kQ.js";const c=[{index:1,title:"Психологические консультации с помощью видеоигр",period:"Летний период 2024 года.",coverage:"Более 1500 детей, проживающих на территории города Красноярска.",place:"Загородный лагерь «Ласточка».",funding:"Cубсидия департамента социального развития администрации города Красноярска, собственные средства.",partners:["Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»","Загородный стационарный детский оздоровительный лагерь «Ласточка»","Муниципальное молодежное автономное учреждение «ИТ-Центр»"],description:`Дети-подростки в возрасте с 10 до 17 лет, отдыхающие в
       муниципальном загородном оздоровительном лагере «Ласточка», на
       протяжении 4-ех сезонов проходили индивидуальные
       психологические консультации с психологами «Генезис» с помощью
@@ -25,7 +25,7 @@ import{S as l}from"./index-5ofnAfXG.js";import{i as o}from"./modal-Yooto6kQ.js";
         <table class="table border-separate border-spacing-y-2 dark:bg-slate-900 bg-slate-100 dark:text-slate-100 text-slate-900 w-full">
           <tbody>
             <tr>
-              <td class="hidden md:w-1/3 pr-2 mb-0" rowspan="4">
+              <td class="max-sm:hidden w-1/3 pr-2 mb-0" rowspan="4">
                 <img src="/images/${t.images[0]}.jpeg" alt="Image ${e}" class="w-full cursor-pointer card-screenshot" />
               </td>
               <td class="font-bold">Срок реализации:</td>
@@ -55,7 +55,7 @@ import{S as l}from"./index-5ofnAfXG.js";import{i as o}from"./modal-Yooto6kQ.js";
           <img
             src="/images/${t.images[0]}.jpeg"
             alt="Видеоигры1"
-            class="hidden md:block md:w-1/3 md:cursor-pointer md:pr-4 md:card-screenshot"
+            class="max-sm:hidden w-1/3 h-full cursor-pointer pr-4 card-screenshot"
           />
           <p>${t.description}</p>
         </div>

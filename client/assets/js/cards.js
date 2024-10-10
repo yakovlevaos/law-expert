@@ -140,7 +140,7 @@ const createCard = (project, index) => {
         <table class="table border-separate border-spacing-y-2 dark:bg-slate-900 bg-slate-100 dark:text-slate-100 text-slate-900 w-full">
           <tbody>
             <tr>
-              <td class="hidden md:w-1/3 pr-2 mb-0" rowspan="4">
+              <td class="max-sm:hidden w-1/3 pr-2 mb-0" rowspan="4">
                 <img src="/images/${project.images[0]}.jpeg" alt="Image ${index}" class="w-full cursor-pointer card-screenshot" />
               </td>
               <td class="font-bold">Срок реализации:</td>
@@ -170,7 +170,7 @@ const createCard = (project, index) => {
           <img
             src="/images/${project.images[0]}.jpeg"
             alt="Видеоигры1"
-            class="hidden md:block md:w-1/3 md:cursor-pointer md:pr-4 md:card-screenshot"
+            class="max-sm:hidden w-1/3 h-full cursor-pointer pr-4 card-screenshot"
           />
           <p>${project.description}</p>
         </div>
