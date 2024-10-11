@@ -30,10 +30,6 @@
       property="og:image"
       content="https://genesis-expert.ru/docs/edu-help-1.jpg"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
     <link rel="icon" href="/docs/favicon.ico" type="image/x-icon" />
     <link
       rel="icon"
@@ -289,91 +285,16 @@
         <div
           class="container swiper mt-5 mb-5 flex justify-center items-center"
         >
-          <div class="slide-container experts-games overflow-hidden">
-            <div id="slider" class="swiper-wrapper pb-5">
-              <div
-                class="swiper-slide rounded-md flex flex-col justify-center items-center"
-              >
-                <div
-                  class="flex justify-center w-96 h-96 overflow-hidden rounded-md m-2"
-                >
-                  <img
-                    src="../assets/img/fedotikov-photo.jpeg"
-                    alt="expert photo"
-                    class="rounded-md"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-bold text-center pb-4">
-                    Федотиков Матвей Александрович
-                  </h3>
-                  <div
-                    class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
-                  >
-                    <p class="pt-2 pb-2 font-bold">
-                      педагог-психолог МАОУ СШ № 158 «Грани», председатель
-                      научного сектора студенческого совета института
-                      психолого-педагогического образования КГПУ им В.П.
-                      Астафьева, первый в России практик-психолог, использующий
-                      в работе видеоигры
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="swiper-slide rounded-md flex flex-col justify-center items-center"
-              >
-                <div
-                  class="flex justify-center w-96 h-96 overflow-hidden rounded-md m-2"
-                >
-                  <img
-                    src="../assets/img/egle-photo.jpg"
-                    alt="expert photo"
-                    class="rounded-md"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-bold text-center pb-4">
-                    Евгений Сергеевич Эгле
-                  </h3>
-                  <div class="flex justify-center items-center gap-x-3">
-                    <a href="/docs/egle-1.pdf" target="_blank"
-                      ><img src="../assets/img/egle-1.jpg" class="w-10" alt=""
-                    /></a>
-                    <a href="/docs/egle-2.pdf" target="_blank"
-                      ><img src="../assets/img/egle-2.jpg" class="w-10" alt=""
-                    /></a>
-                    <a href="/docs/egle-3.pdf" target="_blank"
-                      ><img src="../assets/img/egle-3.jpg" class="w-10" alt=""
-                    /></a>
-                  </div>
-                  <div
-                    class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5"
-                  >
-                    <p class="pt-2 pb-2 font-bold">
-                      Руководитель социально-психологической службы МАОУ СШ №
-                      150
-                    </p>
-                    <p>Педагог-психолог высшей категории, медиатор.</p>
-                    Медиация:
-                    <ul>
-                      <li>детско-родительских отношений;</li>
-                      <li>супружеских споров;</li>
-                      <li>при расторжении брака.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="swiper-container experts overflow-hidden">
+            <div id="slider" class="swiper-wrapper pb-5"></div>
           </div>
           <div
             id="button-next-experts"
-            class="hidden lg:flex swiper-navBtn swiper-button-next"
+            class="max-sm:hidden flex swiper-navBtn swiper-button-next"
           ></div>
           <div
             id="button-prev-experts"
-            class="hidden lg:flex swiper-navBtn swiper-button-prev"
+            class="max-sm:hidden flex swiper-navBtn swiper-button-prev"
           ></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -499,7 +420,31 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="../assets/js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="../assets/js/gamelib.js"></script>
+    <script>
+      const lightSwitches = document.querySelectorAll(".light-switch");
+      if (lightSwitches.length > 0) {
+        lightSwitches.forEach((lightSwitch, i) => {
+          if (localStorage.getItem("dark-mode") === "true") {
+            lightSwitch.checked = true;
+          }
+          lightSwitch.addEventListener("change", () => {
+            const { checked } = lightSwitch;
+            lightSwitches.forEach((el, n) => {
+              if (n !== i) {
+                el.checked = checked;
+              }
+            });
+            if (lightSwitch.checked) {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("dark-mode", true);
+            } else {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("dark-mode", false);
+            }
+          });
+        });
+      }
+    </script>
   </body>
 </html>

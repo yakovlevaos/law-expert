@@ -77,11 +77,13 @@
     <title>
       «Центр психолого-педагогического сопровождения «Генезис» &#8212; ГЕНЕЗИС
     </title>
-    <script type="module" crossorigin src="/assets/main-3FQI6W6_.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/index-1O3jh5MZ.js">
+    <script type="module" crossorigin src="/assets/main-jcK7-Fln.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-9p4a8sJU.js">
+    <link rel="modulepreload" crossorigin href="/assets/experts-_4Jq_B0P.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-A8In8M8O.js">
     <link rel="modulepreload" crossorigin href="/assets/modal-Yooto6kQ.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-_IaQhIwT.css">
-    <link rel="stylesheet" crossorigin href="/assets/style-ZUCrMyEf.css">
+    <link rel="stylesheet" crossorigin href="/assets/style-DSSnTavS.css">
+    <link rel="stylesheet" crossorigin href="/assets/experts-_IaQhIwT.css">
     <link rel="stylesheet" crossorigin href="/assets/main-mnVxPep1.css">
   </head>
   <!-- Yandex.Metrika counter -->
@@ -286,8 +288,12 @@
             class="container swiper mt-5 mb-5 flex justify-center items-center main-swiper"
           >
             <div class="swiper-wrapper"></div>
-            <div class="swiper-button-next swiper-navBtn"></div>
-            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div
+              class="max-sm:hidden flex swiper-navBtn swiper-button-next"
+            ></div>
+            <div
+              class="max-sm:hidden flex swiper-navBtn swiper-button-prev"
+            ></div>
           </div>
 
           <div class="lg:grid grid-cols-12 mx-auto px-10">
@@ -307,11 +313,11 @@
           </div>
           <div
             id="button-next-experts"
-            class="hidden lg:flex swiper-navBtn swiper-button-next"
+            class="max-sm:hidden flex swiper-navBtn swiper-button-next"
           ></div>
           <div
             id="button-prev-experts"
-            class="hidden lg:flex swiper-navBtn swiper-button-prev"
+            class="max-sm:hidden flex swiper-navBtn swiper-button-prev"
           ></div>
           <div class="swiper-pagination"></div>
         </div>
@@ -342,26 +348,36 @@
           <div class="swiper-container video overflow-hidden">
             <div id="videoSlider" class="swiper-wrapper pb-5">
               <div class="swiper-slide">
-                <iframe
-                  src="https://vk.com/video_ext.php?oid=-216706470&id=456239028&hd=2"
-                  width="853"
-                  height="480"
-                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                  allowfullscreen
-                ></iframe>
+                <div class="max-sm:w-full flex justify-center items-center">
+                  <iframe
+                    src="https://vk.com/video_ext.php?oid=-216706470&id=456239028&hd=2"
+                    width="853"
+                    height="480"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
-              <div class="swiper-slide flex justify-center items-center">
-                <iframe
-                  src="https://vk.com/video_ext.php?oid=-48690112&id=456268249&hd=2&autoplay=0"
-                  width="853"
-                  height="480"
-                  allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                  allowfullscreen
-                ></iframe>
+              <div class="swiper-slide">
+                <div class="max-sm:w-full flex justify-center items-center">
+                  <iframe
+                    src="https://vk.com/video_ext.php?oid=-48690112&id=456268249&hd=2&autoplay=0"
+                    width="853"
+                    height="480"
+                    allow="encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
             </div>
-            <div id="button-next-video" class="swiper-button-next"></div>
-            <div id="button-prev-video" class="swiper-button-prev"></div>
+            <div
+              id="button-next-video"
+              class="max-sm:hidden flex swiper-navBtn swiper-button-next"
+            ></div>
+            <div
+              id="button-prev-video"
+              class="max-sm:hidden flex swiper-navBtn swiper-button-prev"
+            ></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>

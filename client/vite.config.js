@@ -9,6 +9,7 @@ export default defineConfig({
         game: resolve(__dirname, "pages/game.html"),
         gamelib: resolve(__dirname, "pages/gamelib.html"),
         games: resolve(__dirname, "assets/js/games.js"),
+        gameslibjs: resolve(__dirname, "assets/js/gamelib.js"),
       },
     },
   },

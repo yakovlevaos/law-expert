@@ -2910,6 +2910,12 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownData.duration,
     "duration",
   );
+  createDropdownMenu(
+    "modeDropdownContainer",
+    "Режим",
+    dropdownData.mode,
+    "mode",
+  );
 });
 const numberOfGames = (arr) => {
   const totalNumber = arr.length;
