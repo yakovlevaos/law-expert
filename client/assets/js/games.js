@@ -6,7 +6,7 @@ const library = [
     index: 0,
     videoGame: "Marvel’s Spider-man",
     platform: ["PS4", "PS5", "ПК"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -26,7 +26,7 @@ const library = [
     index: 1,
     videoGame: "Серия игр Devil May Cry 1-5",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: "Hack and slash",
     competencies: [
@@ -48,7 +48,7 @@ const library = [
     index: 2,
     videoGame: "Marvel’s Spider-man 2",
     platform: ["PS5"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -69,7 +69,7 @@ const library = [
     index: 3,
     videoGame: "The last of us part 1",
     platform: ["PS3", "PS4", "PS5", "ПК"],
-    duration: "11 часов",
+    duration: ["11 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -86,7 +86,7 @@ const library = [
     index: 4,
     videoGame: "Серия игр FIFA",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Спортивный симулятор",
     competencies: [
@@ -105,7 +105,7 @@ const library = [
     index: 5,
     videoGame: "Серия игр NHL",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Спортивный симулятор",
     competencies: [
@@ -124,7 +124,7 @@ const library = [
     index: 6,
     videoGame: "Серия игр NBA",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Спортивный симулятор",
     competencies: [
@@ -143,7 +143,7 @@ const library = [
     index: 7,
     videoGame: "Серия игр Batman: Arkham",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "7-16 часов",
+    duration: ["7-16 часов", "длинная"],
     type: ["Одиночная"],
     genre: "Приключенческий боевик, Песочница",
     competencies: [
@@ -163,7 +163,7 @@ const library = [
     index: 8,
     videoGame: ["Horizon Zero Dawn", "Horizon Forbidden West"],
     platform: ["PS4", "PS5", "ПК"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: ["Одиночная"],
     genre: "Приключенческий боевик, Песочница",
     competencies: [
@@ -186,7 +186,7 @@ const library = [
       "Crash Bandicoot 4: It’s About duration",
     ],
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "2-6 часов",
+    duration: ["2-6 часов", "средняя"],
     type: ["Одиночная"],
     genre: "Платформер",
     competencies: [
@@ -204,7 +204,7 @@ const library = [
     index: 10,
     videoGame: "Red Dead Redemption 2",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "50 часов",
+    duration: ["50 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: "Приключенческий боевик, Песочница",
     competencies: [
@@ -225,7 +225,7 @@ const library = [
     index: 11,
     videoGame: "The Elder Scrolls V: Skyrim",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: ["Одиночная"],
     genre: "RPG, Песочница",
     competencies: [
@@ -242,7 +242,7 @@ const library = [
     index: 12,
     videoGame: "Ghost of Tsushima",
     platform: ["PS4", "PS5", "ПК"],
-    duration: "28 часов",
+    duration: ["28 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: "Приключенческий боевик, Песочница",
     competencies: [
@@ -265,7 +265,7 @@ const library = [
     videoGame:
       "Серия игр Lego Games (более десятка игр по разным франшизам: Marvel, DC, Star Wars, Harry Potter)",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "5-10 часов",
+    duration: ["5-10 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Аркада",
     competencies: [
@@ -285,7 +285,7 @@ const library = [
       "Spongebob Squarepants the Cosmic Shake",
     ],
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: ["Одиночная"],
     genre: "Платформер",
     competencies: [
@@ -303,7 +303,7 @@ const library = [
     videoGame:
       "Серия игр Assassin`s Creed (более 10 игр серии, действия которых разворачиваются в разных временных эпохах)",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "10-15 часов",
+    duration: ["10-15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -327,7 +327,7 @@ const library = [
     index: 16,
     videoGame: "Серия игр Uncharted",
     platform: ["PS3", "PS4", "PS5", "ПК"],
-    duration: "4-11 часов",
+    duration: ["4-11 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Приключенческий боевик",
     competencies: [
@@ -349,7 +349,7 @@ const library = [
     index: 17,
     videoGame: "Infamous: Second son",
     platform: ["PS4", "PS5"],
-    duration: "7 часов",
+    duration: ["7 часов", "средняя"],
     type: "Одиночная",
     genre: "Приключенческий боевик",
     competencies: [
@@ -372,7 +372,7 @@ const library = [
     index: 18,
     videoGame: "Spyro The Dragon: Reignited Trilogy",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "4-6 часов",
+    duration: ["4-6 часов", "средняя"],
     type: "Одиночная",
     genre: "Приключения",
     competencies: [
@@ -389,7 +389,7 @@ const library = [
     index: 19,
     videoGame: "Серия игр Ratchet and Clank",
     platform: ["PS3", "PS4", "PS5", "ПК"],
-    duration: "5-10 часов",
+    duration: ["5-10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Платформер"],
     competencies: [
@@ -407,7 +407,7 @@ const library = [
     index: 20,
     videoGame: "Hogwarts Legacy",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "18 часов",
+    duration: ["18 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -426,7 +426,7 @@ const library = [
     index: 21,
     videoGame: "Days Gone",
     platform: ["PS4", "PS5", "ПК"],
-    duration: "20 часов",
+    duration: ["20 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -445,7 +445,7 @@ const library = [
     index: 22,
     videoGame: ["God of War", "God of War: Ragnarok"],
     platform: ["PS4", "PS5", "ПК"],
-    duration: "15-30 часов",
+    duration: ["15-30 часов", "длинная"],
     type: "Одиночная",
     genre: "Приключенческий боевик",
     competencies: [
@@ -468,7 +468,7 @@ const library = [
     index: 23,
     videoGame: "Journey",
     platform: ["PS3", "PS4", "PS5", "ПК"],
-    duration: "2 часа",
+    duration: ["2 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: "Приключения",
     competencies: "медитативная игра",
@@ -480,7 +480,7 @@ const library = [
     index: 24,
     videoGame: "Flower",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "2 часа",
+    duration: ["2 часа", "малая"],
     type: "Одиночная",
     genre: "Пазл",
     competencies: "медитативная игра",
@@ -493,7 +493,7 @@ const library = [
     index: 25,
     videoGame: "ABZU",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "2 часа",
+    duration: ["2 часа", "малая"],
     type: "Одиночная",
     genre: "Приключения",
     competencies: "медитативная игра",
@@ -506,7 +506,7 @@ const library = [
     index: 26,
     videoGame: "Sonic Forces",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: "Одиночная",
     genre: "Платформер",
     competencies: [
@@ -523,7 +523,7 @@ const library = [
     index: 27,
     videoGame: "Silent Hill: short message",
     platform: "PS5",
-    duration: "2 часа",
+    duration: ["2 часа", "малая"],
     type: "Одиночная",
     genre: "Survival horror",
     competencies: [
@@ -545,7 +545,7 @@ const library = [
     index: 28,
     videoGame: "Minecraft",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: "Песочница",
     competencies: [
@@ -564,7 +564,7 @@ const library = [
     index: 29,
     videoGame: ["Injustice", "Injustice 2"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Файтинг",
     competencies: [
@@ -582,7 +582,7 @@ const library = [
     index: 30,
     videoGame: "It takes two",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: ["Мультиплеерная", "Split screen"],
     genre: "Приключенческий боевик",
     competencies: [
@@ -598,7 +598,7 @@ const library = [
     index: 31,
     videoGame: "Fallout 3",
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -619,7 +619,7 @@ const library = [
     index: 32,
     videoGame: "Fallout New Vegas",
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -640,7 +640,7 @@ const library = [
     index: 33,
     videoGame: "Fallout 4",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -661,7 +661,7 @@ const library = [
     index: 34,
     videoGame: "Fallout 76",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "40 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -682,7 +682,7 @@ const library = [
     index: 35,
     videoGame: "The Elder Scrolls IV: Oblivion",
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -699,7 +699,7 @@ const library = [
     index: 36,
     videoGame: "The Elder Scrolls III: Morrowind",
     platform: ["ПК", "Xbox"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -716,7 +716,7 @@ const library = [
     index: 37,
     videoGame: "Guardians of the Galaxy",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "13 часов",
+    duration: ["13 часов", "длинная"],
     type: "Одиночная",
     genre: "Приключенческий боевик",
     competencies: [
@@ -737,7 +737,7 @@ const library = [
     index: 38,
     videoGame: "Kena: Bridge of Spirits",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "7 часов",
+    duration: ["7 часов", "средняя"],
     type: "Одиночная",
     genre: "Приключенческий боевик",
     competencies: [
@@ -754,7 +754,7 @@ const library = [
     index: 39,
     videoGame: "Teenage Mutant Ninja Turtles: Shredder's Revenge",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "2 часа",
+    duration: ["2 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Beat ’em up",
     competencies: [
@@ -772,7 +772,7 @@ const library = [
     index: 40,
     videoGame: "Stray",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: "Одиночная",
     genre: "Приключения",
     competencies: [
@@ -789,7 +789,7 @@ const library = [
     index: 41,
     videoGame: ["Star Wars Jedi: Fallen order", "Star Wars Jedi: Survivor"],
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "12-15 часов",
+    duration: ["12-15 часов", "длинная"],
     type: "Одиночная",
     genre: "Приключенческий боевик",
     competencies: [
@@ -809,7 +809,7 @@ const library = [
     index: 42,
     videoGame: "Super Mario Odyssey",
     platform: "Nintendo Switch",
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: "Платформер",
     competencies: [
@@ -826,7 +826,7 @@ const library = [
     index: 43,
     videoGame: "Серия игр Marvel Ultimate Alliance",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "7-15 часов",
+    duration: ["7-15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Приключенческий боевик", "RPG"],
     competencies: [
@@ -850,7 +850,7 @@ const library = [
       "The Legend of Zelda: Breath of the Wild",
     ],
     platform: "Nintendo Switch",
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -870,7 +870,7 @@ const library = [
     videoGame:
       "Marvel’s Midnight Suns (официально выходила только на англ. языке, есть любительский перевод на ПК)",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "100 часов",
+    duration: ["100 часов", "длинная"],
     type: "Одиночная",
     genre: ["Пошаговая стратегия, Тактическая ролевая игра"],
     competencies: [
@@ -896,7 +896,7 @@ const library = [
     index: 46,
     videoGame: "Серия игр Mortal Kombat",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Файтинг",
     competencies: [
@@ -914,7 +914,7 @@ const library = [
     index: 47,
     videoGame: "Sonic Frontiers",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: "Одиночная",
     genre: "Платформер",
     competencies: [
@@ -933,7 +933,7 @@ const library = [
       "Mario + Rabbids Kingdom Battle, Mario + Rabbids Sparks of Hope",
     ],
     platform: "Nintendo Switch",
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Пошаговая стратегия", "Тактическая ролевая игра"],
     competencies: [
@@ -950,7 +950,7 @@ const library = [
     index: 49,
     videoGame: "Серия игр Little Big Planet",
     platform: ["PS3", "PS4", "PS5"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Платформер", "Головоломка", "Конструктор уровней"],
     competencies: [
@@ -968,7 +968,7 @@ const library = [
     index: 50,
     videoGame: ["Middle-earth: Shadow of Mordor, Middle-earth: Shadow of War"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "14 часов",
+    duration: ["14 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -986,7 +986,7 @@ const library = [
     index: 51,
     videoGame: "Tony Hawk's Pro Skater 1 + 2",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1003,7 +1003,7 @@ const library = [
     index: 52,
     videoGame: "Серия игр The Sims",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Одиночная",
     genre: "Симулятор жизни",
     competencies: [
@@ -1023,7 +1023,7 @@ const library = [
     index: 53,
     videoGame: ["Resident Evil 4, Resident Evil 4 Remake"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "14 часов",
+    duration: ["14 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1042,7 +1042,7 @@ const library = [
     index: 54,
     videoGame: "Серия игр Street Fighter",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Файтинг",
     competencies: [
@@ -1060,7 +1060,7 @@ const library = [
     index: 55,
     videoGame: "Серия игр Tekken",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Файтинг",
     competencies: [
@@ -1078,7 +1078,7 @@ const library = [
     index: 56,
     videoGame: "Серия игр SoulCalibur",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: "Файтинг",
     competencies: [
@@ -1096,7 +1096,7 @@ const library = [
     index: 57,
     videoGame: "Серия игр Dead or Alive",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Файтинг"],
     competencies: [
@@ -1114,7 +1114,7 @@ const library = [
     index: 58,
     videoGame: "Knack, Knack 2",
     platform: ["PS4", "PS5"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: ["Одиночная", "Split screen"],
     genre: ["Платформер"],
     competencies: [
@@ -1131,7 +1131,7 @@ const library = [
     index: 59,
     videoGame: "Unravel 2",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Split screen"],
     genre: ["Платформер"],
     competencies: [
@@ -1148,7 +1148,7 @@ const library = [
     index: 60,
     videoGame: "Ice Age: Scrat's Nutty Adventure",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: "Одиночная",
     genre: ["Платформер"],
     competencies: [
@@ -1165,7 +1165,7 @@ const library = [
     index: 61,
     videoGame: "Kao the Kangaroo",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: "Одиночная",
     genre: ["Платформер"],
     competencies: [
@@ -1182,7 +1182,7 @@ const library = [
     index: 62,
     videoGame: "Marvel’s Spider-man Miles Morales",
     platform: ["PS4", "PS5", "ПК"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -1202,7 +1202,7 @@ const library = [
     index: 63,
     videoGame: "Portal 2",
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Головоломка"],
     competencies: [
@@ -1219,7 +1219,7 @@ const library = [
     index: 64,
     videoGame: "A Way Out",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Мультиплеерная", "Split screen"],
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -1240,7 +1240,7 @@ const library = [
     index: 65,
     videoGame: "Серия игр Mass Effect",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "20-30 часов",
+    duration: ["20-30 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "RPG", "Песочница"],
     competencies: [
@@ -1260,7 +1260,7 @@ const library = [
     index: 66,
     videoGame: "Riders Republic",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1276,7 +1276,7 @@ const library = [
     index: 67,
     videoGame: "Crash Team Racing Nitro-Fueled",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1293,7 +1293,7 @@ const library = [
     index: 68,
     videoGame: "Resident Evil 2 Remake",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1312,7 +1312,7 @@ const library = [
     index: 69,
     videoGame: "Resident Evil 3 Remake",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1331,7 +1331,7 @@ const library = [
     index: 70,
     videoGame: "Mirror's Edge: Catalyst",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Паркур"],
     competencies: [
@@ -1353,7 +1353,7 @@ const library = [
     index: 71,
     videoGame: "Resident Evil 7",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "7 часов",
+    duration: ["7 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1372,7 +1372,7 @@ const library = [
     index: 72,
     videoGame: "Resident Evil 8: Village",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "13 часов",
+    duration: ["13 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1391,7 +1391,7 @@ const library = [
     index: 73,
     videoGame: "Mario Kart 8",
     platform: ["Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1407,7 +1407,7 @@ const library = [
     index: 74,
     videoGame: "Sackboy: A Big Adventure",
     platform: ["PS4", "PS5"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Платформер", "Головоломка"],
     competencies: [
@@ -1424,7 +1424,7 @@ const library = [
     index: 75,
     videoGame: "Naruto X Boruto: Ultimate Ninja Storm Connections",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "13 часов",
+    duration: ["13 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Файтинг"],
     competencies: [
@@ -1450,7 +1450,7 @@ const library = [
     index: 76,
     videoGame: "Серия игр Marvel vs. Capcom",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Файтинг"],
     competencies: [
@@ -1468,7 +1468,7 @@ const library = [
     index: 77,
     videoGame: "Resident Evil 5",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1487,7 +1487,7 @@ const library = [
     index: 78,
     videoGame: "Resident Evil 6",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "17 часов",
+    duration: ["17 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -1506,7 +1506,7 @@ const library = [
     index: 79,
     videoGame: ["Left 4 Dead", "Left 4 Dead 2"],
     platform: ["ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Шутер", "Survival horror"],
     competencies: [
@@ -1525,7 +1525,7 @@ const library = [
     index: 80,
     videoGame: "Half-life 2",
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -1547,7 +1547,7 @@ const library = [
     index: 81,
     videoGame: "Tomb Raider",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -1566,7 +1566,7 @@ const library = [
     index: 82,
     videoGame: "Ninja Gaiden: Master Collection",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Hack and slash"],
     competencies: [
@@ -1586,7 +1586,7 @@ const library = [
     index: 83,
     videoGame: "MultiVersus",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Файтинг"],
     competencies: [
@@ -1604,7 +1604,7 @@ const library = [
     index: 84,
     videoGame: "Prince of Persia: The Lost Crown",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "17 часов",
+    duration: ["17 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -1622,7 +1622,7 @@ const library = [
     index: 85,
     videoGame: "Серия игр Metro",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -1643,7 +1643,7 @@ const library = [
     index: 86,
     videoGame: "Back 4 Blood",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Шутер", "Survival horror"],
     competencies: [
@@ -1663,7 +1663,7 @@ const library = [
     index: 87,
     videoGame: "Серия игр Gran Turismo",
     platform: ["PS3", "PS4", "PS5"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор", "Гоночный симулятор"],
     competencies: [
@@ -1681,7 +1681,7 @@ const library = [
     index: 88,
     videoGame: "Серия игр Dark Souls",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "40 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1702,7 +1702,7 @@ const library = [
     index: 89,
     videoGame: "Bloodborne",
     platform: ["PS4", "PS5"],
-    duration: "40 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1723,7 +1723,7 @@ const library = [
     index: 90,
     videoGame: "Sekiro: Shadows Die Twice",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "12 часов",
+    duration: ["40 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1743,7 +1743,7 @@ const library = [
     index: 91,
     videoGame: "Death Stranding",
     platform: ["PS4", "PS5", "ПК"],
-    duration: "30 часов",
+    duration: ["30 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключения"],
     competencies: [
@@ -1762,7 +1762,7 @@ const library = [
     index: 92,
     videoGame: "Gotham Knights",
     platform: ["PS5", "ПК", "Xbox"],
-    duration: "12 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -1782,7 +1782,7 @@ const library = [
     index: 93,
     videoGame: "No Man's Sky: Beyond",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "40 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключения", "Песочница"],
     competencies: [
@@ -1803,7 +1803,7 @@ const library = [
     index: 94,
     videoGame: "Biomutant",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "RPG"],
     competencies: [
@@ -1822,7 +1822,7 @@ const library = [
     index: 95,
     videoGame: "Elden Ring",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "40 часов",
+    duration: ["40 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1844,7 +1844,7 @@ const library = [
     index: 96,
     videoGame: "Demon's Souls",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1866,7 +1866,7 @@ const library = [
     index: 97,
     videoGame: "Lies of P",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "20 часов",
+    duration: ["20 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -1886,7 +1886,7 @@ const library = [
     index: 98,
     videoGame: "Серия игр WWE",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "7 часов",
+    duration: ["7 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1904,7 +1904,7 @@ const library = [
     index: 99,
     videoGame: "Серия игр UFC",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Спортивный симулятор"],
     competencies: [
@@ -1922,7 +1922,7 @@ const library = [
     index: 100,
     videoGame: ["Luigi's mansion 2 HD, Luigi's mansion 3"],
     platform: ["Nintendo Switch"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Головоломка"],
     competencies: [
@@ -1939,7 +1939,7 @@ const library = [
     index: 101,
     videoGame: "Avatar: Frontiers of Pandora",
     platform: ["PS5", "ПК", "Xbox"],
-    duration: "14 часов",
+    duration: ["14 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -1959,7 +1959,7 @@ const library = [
     index: 102,
     videoGame: "Counter-Strike 2",
     platform: ["ПК"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Шутер"],
     competencies: [
@@ -1980,7 +1980,7 @@ const library = [
     index: 103,
     videoGame: "Dota 2",
     platform: ["ПК"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Многопользовательская онлайн боевая арена"],
     competencies: [
@@ -2001,7 +2001,7 @@ const library = [
     index: 104,
     videoGame: "DC Universe Online",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Массовая многопользовательская онлайн-игра"],
     competencies: [
@@ -2021,7 +2021,7 @@ const library = [
     index: 105,
     videoGame: "Dead Space Remake",
     platform: ["PS5", "ПК", "Xbox"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -2041,7 +2041,7 @@ const library = [
     index: 106,
     videoGame: "Серия игр Forza Horizon",
     platform: ["ПК", "Xbox"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Гоночный симулятор"],
     competencies: [
@@ -2058,7 +2058,7 @@ const library = [
     index: 108,
     videoGame: "Hi-Fi Rush",
     platform: ["PS5", "ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: "Одиночная",
     genre: ["Ритм-игра", "Hack and slash"],
     competencies: [
@@ -2076,7 +2076,7 @@ const library = [
     index: 109,
     videoGame: "Starfield",
     platform: ["ПК", "Xbox"],
-    duration: "23 часа",
+    duration: ["23 часа", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "RPG"],
     competencies: [
@@ -2094,7 +2094,7 @@ const library = [
     index: 110,
     videoGame: "The Lord of the Rings: Gollum",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключения"],
     competencies: [
@@ -2112,7 +2112,7 @@ const library = [
     index: 111,
     videoGame: "Серия игр Need for Speed",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Гоночный симулятор"],
     competencies: [
@@ -2129,7 +2129,7 @@ const library = [
     index: 112,
     videoGame: "Sifu",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "4 часа",
+    duration: ["4 часа", "малая"],
     type: "Одиночная",
     genre: ["Экшн", "Файтинг"],
     competencies: [
@@ -2148,7 +2148,7 @@ const library = [
     index: 113,
     videoGame: "Серия игр Crysis",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "8 часов",
+    duration: ["8 часов", "средняя"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -2170,7 +2170,7 @@ const library = [
     index: 114,
     videoGame: "Серия игр Doom",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "16 часов",
+    duration: ["16 часов", "длинная"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -2188,7 +2188,7 @@ const library = [
     index: 115,
     videoGame: "Серия игр Mafia",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -2209,7 +2209,7 @@ const library = [
     index: 116,
     videoGame: "Marvel’s Avengers",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -2228,7 +2228,7 @@ const library = [
     index: 117,
     videoGame: ["Nioh", "Nioh 2"],
     platform: ["PS4", "PS5", "ПК"],
-    duration: "22 часа",
+    duration: ["22 часа", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Экшн", "Хардкор"],
     competencies: [
@@ -2248,7 +2248,7 @@ const library = [
     index: 118,
     videoGame: "Star Wars: Squadrons",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "7 часов",
+    duration: ["7 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Шутер", "Космический симулятор"],
     competencies: [
@@ -2265,7 +2265,7 @@ const library = [
     index: 119,
     videoGame: "Streets of Rage 4",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Beat ’em up"],
     competencies: [
@@ -2283,7 +2283,7 @@ const library = [
     index: 120,
     videoGame: ["Darksiders", "Darksiders 2", "Darksiders 3"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "13 часов",
+    duration: ["13 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Hack and slash", "RPG"],
     competencies: [
@@ -2304,7 +2304,7 @@ const library = [
     index: 121,
     videoGame: "Darksiders Genesis",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "11 часов",
+    duration: ["11 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Приключенческий боевик", "Hack and slash"],
     competencies: [
@@ -2325,7 +2325,7 @@ const library = [
     index: 122,
     videoGame: "Shadow of the Colossus",
     platform: ["PS3", "PS4", "PS5"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: "Одиночная",
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -2343,7 +2343,7 @@ const library = [
     index: 123,
     videoGame: "Super Smash Bros. Ultimate",
     platform: ["Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Файтинг"],
     competencies: [
@@ -2361,7 +2361,7 @@ const library = [
     index: 124,
     videoGame: "Cuphead",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Run and gun", "Хардкор", "Платформер"],
     competencies: [
@@ -2382,7 +2382,7 @@ const library = [
     index: 125,
     videoGame: "Fortnite",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Королевская битва", "Онлайн-игра"],
     competencies: [
@@ -2404,7 +2404,7 @@ const library = [
     index: 126,
     videoGame: ["Star Wars: Battlefront", "Star Wars: Battlefront II"],
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "∞",
+    duration: ["∞", "бесконечная"],
     type: "Мультиплеерная",
     genre: ["Шутер"],
     competencies: [
@@ -2423,7 +2423,7 @@ const library = [
     index: 127,
     videoGame: ["Серия игр The Adventures of Sherlock Holmes"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключения", "Головоломка"],
     competencies: [
@@ -2442,7 +2442,7 @@ const library = [
     index: 128,
     videoGame: ["Dragon's Dogma: Dark Arisen", "Dragon's Dogma 2"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -2460,7 +2460,7 @@ const library = [
     index: 129,
     videoGame: ["Pumpkin Jack"],
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "4 часа",
+    duration: ["4 часа", "малая"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Платформер"],
     competencies: [
@@ -2477,7 +2477,7 @@ const library = [
     index: 130,
     videoGame: ["Серия игр Splinter Cell"],
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик", "Стэлс-экшн"],
     competencies: [
@@ -2497,7 +2497,7 @@ const library = [
     index: 131,
     videoGame: ["Red Dead Redemption"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -2518,7 +2518,7 @@ const library = [
     index: 132,
     videoGame: ["Alone in the Dark (2008)"],
     platform: ["PS3", "ПК"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Survival horror", "Песочница"],
     competencies: [
@@ -2546,7 +2546,7 @@ const library = [
     index: 133,
     videoGame: ["Prototype", "Prototype 2"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -2564,7 +2564,7 @@ const library = [
     index: 134,
     videoGame: ["Серия игр Fable"],
     platform: ["ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: "Одиночная",
     genre: ["RPG", "Песочница"],
     competencies: [
@@ -2582,7 +2582,7 @@ const library = [
     index: 135,
     videoGame: ["Alice: Madness Returns"],
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "12 часов",
+    duration: ["12 часов", "длинная"],
     type: "Одиночная",
     genre: ["Приключенческий боевик"],
     competencies: [
@@ -2606,7 +2606,7 @@ const library = [
     index: 136,
     videoGame: ["Battletoads"],
     platform: ["ПК", "Xbox"],
-    duration: "3 часа",
+    duration: ["3 часа", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Beat ’em up"],
     competencies: [
@@ -2625,7 +2625,7 @@ const library = [
     index: 137,
     videoGame: ["Dead Space", "Dead Space 2", "Dead Space 3"],
     platform: ["PS3", "ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик", "Survival horror"],
     competencies: [
@@ -2645,7 +2645,7 @@ const library = [
     index: 138,
     videoGame: ["Серия игр Gears of War"],
     platform: ["ПК", "Xbox"],
-    duration: "9 часов",
+    duration: ["9 часов", "средняя"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Приключенческий боевик", "Шутер"],
     competencies: [
@@ -2665,7 +2665,7 @@ const library = [
     index: 139,
     videoGame: ["Серия игр Halo"],
     platform: ["ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Мультиплеерная", "Split screen"],
     genre: ["Шутер"],
     competencies: [
@@ -2685,7 +2685,7 @@ const library = [
     index: 140,
     videoGame: ["Watch Dogs"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
-    duration: "15 часов",
+    duration: ["15 часов", "длинная"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик", "Песочница"],
     competencies: [
@@ -2702,7 +2702,7 @@ const library = [
     index: 141,
     videoGame: ["Ryse: Son of Rome"],
     platform: ["ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Приключенческий боевик", "Hack and slash"],
     competencies: [
@@ -2724,7 +2724,7 @@ const library = [
       "S.T.A.L.K.E.R.: Зов Припяти",
     ],
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "10 часов",
+    duration: ["10 часов", "средняя"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -2741,7 +2741,7 @@ const library = [
     index: 143,
     videoGame: ["Call of Duty 2"],
     platform: ["ПК", "Xbox"],
-    duration: "6 часов",
+    duration: ["6 часов", "средняя"],
     type: "Одиночная",
     genre: ["Шутер"],
     competencies: [
@@ -2762,7 +2762,7 @@ const library = [
     index: 144,
     videoGame: ["Call of Duty: World War II"],
     platform: ["PS4", "PS5", "ПК", "Xbox"],
-    duration: "5 часов",
+    duration: ["5 часов", "малая"],
     type: ["Одиночная", "Мультиплеерная"],
     genre: ["Шутер"],
     competencies: [
@@ -2813,13 +2813,52 @@ const dropdownData = {
     3: "длинная",
     4: "бесконечная",
   },
+  type: {
+    1: "Одиночная",
+    2: "Мультиплеерная",
+    3: "Split screen",
+  },
 };
 
 const filterArray = {
   platform: [],
   genre: [],
   duration: [],
+  type: [],
 };
+
+const faq = [
+  {
+    index: 0,
+    question: "На чем играть?",
+    answer: [
+      "PS – игровая консоль Playstation.",
+      "ПК – персональный компьютер, ноутбук или Steam Deck.",
+    ],
+  },
+  {
+    index: 1,
+    question: "Какие бывают игры?",
+    answer: [
+      "Split screen – игры с возможностью играть на одной консоли 2-м и более игрокам",
+      "Песочница – игры с большой свободой действий.",
+      "RPG – ролевая игра, для которой характерны: возможность создавать главного героя, развивать характеристики подконтрольных игроку персонажей, выбирать варианты ответных реплик в диалогах с неигровыми персонажами, своими действиями влиять на ход внутриигровых нарративов.",
+      "Платформер – игры с упором на прыжках по платформам.",
+      "Beat ’em up – игры с акцентом на рукопашные схватки.",
+      "Hack and slash – игры, в которых происходит в основном истребление множества противников в ближнем бою с помощью разнообразного оружия.",
+      "Survival horror – игры с упором на выживание, нагнетание атмосферы страха",
+    ],
+  },
+  {
+    index: 2,
+    question: "Как могут помочь видеоигры?",
+    answer: [
+      "Видеоигры могут научить ценным навыкам, таким как решение проблем, ответственность за принятие решений и стратегии преодоления трудностей. Видеоигры также могут моделировать сценарии реальной жизни, позволяя людям практиковать и совершенствовать социальные навыки в безопасной и контролируемой среде.",
+      "Игра может быть ресурсом развития. Инструментом, через который ребенок познает мир, познает себя.",
+      "Данная библиотека видеоигр рекомендуется как психологам, которые хотят проводить консультации по нашей авторской методике, так и родителям, которые хотят провести больше времени со своим ребенком, создавая крепкие и доверительные отношения.",
+    ],
+  },
+];
 
 const createDropdownMenu = (containerId, title, data, type) => {
   const container = document.getElementById(containerId);
@@ -2893,12 +2932,6 @@ const createDropdownMenu = (containerId, title, data, type) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   createDropdownMenu(
-    "genreDropdownContainer",
-    "Жанр",
-    dropdownData.genre,
-    "genre",
-  );
-  createDropdownMenu(
     "platformDropdownContainer",
     "Платформа",
     dropdownData.platform,
@@ -2906,15 +2939,22 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   createDropdownMenu(
     "durationDropdownContainer",
-    "Длительность",
+    "Продолжительность основной сюжетной линии (приблизительная)",
     dropdownData.duration,
     "duration",
   );
+
   createDropdownMenu(
-    "modeDropdownContainer",
-    "Режим",
-    dropdownData.mode,
-    "mode",
+    "typeDropdownContainer",
+    "Режим игры",
+    dropdownData.type,
+    "type",
+  );
+  createDropdownMenu(
+    "genreDropdownContainer",
+    "Жанр",
+    dropdownData.genre,
+    "genre",
   );
 });
 const numberOfGames = (arr) => {
@@ -2958,7 +2998,7 @@ const addGameAccordionContent = (index, gameDescription, screenshots) => {
   const accordionContent = document.getElementById(`accordionContent-${index}`);
 
   accordionContent.innerHTML = `
-    <td colspan="6" class="p-6 bg-gray-100 dark:bg-gray-700">
+    <td colspan="6" class="p-6 bg-gray-300 dark:bg-gray-700">
       <p>${description}</p>
       <div class="flex justify-between pt-2">
         ${screenshots
@@ -3029,6 +3069,83 @@ const toggleGameAccordion = (index) => {
   }
 };
 
+document.getElementById("faq").addEventListener("click", function (e) {
+  if (e.target && e.target.matches("button[id^='accordionFaqButton-']")) {
+    const index = e.target.getAttribute("data-index");
+    toggleFaqAccordion(index);
+  }
+});
+
+const addFaqAccordionContent = (index, question, answer) => {
+  const accordionFaqContent = document.getElementById(
+    `accordionFaqContent-${index}`,
+  );
+
+  accordionFaqContent.innerHTML = `
+    <div class="p-6 bg-slate-300 dark:bg-slate-700">
+      <div class="flex flex-col w-full">
+        ${answer
+          .map(
+            (item) => `
+            <div>${item}</div>
+          `,
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+};
+
+const toggleFaqAccordion = (index) => {
+  const item = faq.find((item) => item.index == index);
+
+  const faqContent = document.getElementById(`accordionFaqContent-${index}`);
+  const faqButtonRow = document.getElementById(
+    `accordionFaqButtonRow-${index}`,
+  );
+  const faqButton = document.getElementById(`accordionFaqButton-${index}`);
+
+  if (faqContent.classList.contains("hidden")) {
+    const question = item.question;
+    const answer = item.answer;
+
+    // Add content to the accordion
+    addFaqAccordionContent(index, question, answer);
+
+    faqContent.classList.remove("hidden");
+    faqButtonRow.classList.remove("border-b", "border-slate-500");
+    faqContent.classList.add("border-b", "border-slate-500");
+    faqButton.innerHTML = `${item.question} &#x25B2;`;
+  } else {
+    faqContent.classList.add("hidden");
+    faqButtonRow.classList.add("border-b", "border-slate-500");
+    faqContent.classList.remove("border-b", "border-slate-500");
+    faqButton.innerHTML = `${item.question} &#x25BC;`;
+  }
+};
+
+const faqBlock = (arr) => {
+  const html = arr
+    .map(
+      (item) => `<div
+                  id="accordionFaqButtonRow-${item.index}"
+                  class="border-b border-slate-500"
+                >
+                    <div class="flex justify-center w-full bg-slate-300 dark:bg-slate-700">
+                      <button
+                        id="accordionFaqButton-${item.index}"
+                        data-index="${item.index}"
+                        class="text-slate-900 dark:text-slate-100  py-4 focus:outline-none"
+                      >
+                        ${item.question} &#x25BC;
+                      </button>
+                    </div>
+                </div>
+                <div id="accordionFaqContent-${item.index}" class="hidden"></div>`,
+    )
+    .join("");
+  document.getElementById("faq").innerHTML = html;
+};
 const table = (arr) => {
   const sortedArray = sortGames(arr);
   const html = sortedArray
@@ -3045,7 +3162,7 @@ const table = (arr) => {
             <div>${displayVertical(item.platform)}</div>
           </td>
           <td class="px-2 py-2">
-            <div>${item.duration}</div>
+            <div>${item.duration[0]}</div>
           </td>
           <td class="px-2 py-2">
             <div>${displayVertical(item.type)}</div>
@@ -3066,7 +3183,7 @@ const table = (arr) => {
             </div>
           </td>
         </tr>
-        <tr id="accordionContent-${item.index}" class="hidden"></tr>
+        <tr id="accordionContent-${item.index}"></tr>
 `,
     )
     .join("");
@@ -3088,7 +3205,7 @@ const minitable = (arr) => {
         />
       </div>
       <div>${displayComma(item.platform)}</div>
-      <div>${item.duration}</div>
+      <div>${item.duration[0]}</div>
       <div>${displayComma(item.type)}</div>
       <div>${displayComma(item.genre)}</div>
       <div class="pl-2 text-justify">
@@ -3100,14 +3217,18 @@ const minitable = (arr) => {
   document.querySelector("#minitable").innerHTML = html;
 };
 const filterGames = (games) => {
-  const { genre, platform } = filterArray;
+  const { genre, platform, type, duration } = filterArray;
 
   return games.filter((game) => {
     const genreMatch =
       genre.length === 0 || genre.some((g) => game.genre.includes(g));
     const platformMatch =
       platform.length === 0 || platform.some((p) => game.platform.includes(p));
-    return genreMatch && platformMatch;
+    const typeMatch =
+      type.length === 0 || type.some((p) => game.type.includes(p));
+    const durationMatch =
+      duration.length === 0 || duration.some((p) => game.duration.includes(p));
+    return genreMatch && platformMatch && typeMatch && durationMatch;
   });
 };
 
@@ -3118,6 +3239,7 @@ const updateFilteredGames = (games) => {
 };
 
 window.addEventListener("load", () => {
+  faqBlock(faq);
   updateFilteredGames(library);
   numberOfGames(library);
 });

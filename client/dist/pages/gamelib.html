@@ -74,12 +74,12 @@
     </script>
     <title>Центр игровой психологической поддержки</title>
     <script type="module" crossorigin src="/assets/modulepreload-polyfill-9p4a8sJU.js"></script>
-    <script type="module" crossorigin src="/assets/experts-_4Jq_B0P.js"></script>
-    <script type="module" crossorigin src="/assets/index-A8In8M8O.js"></script>
+    <script type="module" crossorigin src="/assets/experts-pOnZu0xn.js"></script>
+    <script type="module" crossorigin src="/assets/index-QDeZSVzN.js"></script>
     <script type="module" crossorigin src="/assets/modal-Yooto6kQ.js"></script>
-    <script type="module" crossorigin src="/assets/games--IAezqD4.js"></script>
+    <script type="module" crossorigin src="/assets/games-_IK0U3ro.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/experts-_IaQhIwT.css">
-    <link rel="stylesheet" crossorigin href="/assets/style-DSSnTavS.css">
+    <link rel="stylesheet" crossorigin href="/assets/style-HTB5GrrL.css">
   </head>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -265,50 +265,11 @@
             Общее количество видеоигр в библиотеке на сегодняшний день:
             <span id="total"></span>
           </div>
-          <div>Сокращения и термины:</div>
-          <div class="flex flex-col gap-y-2 text-sm">
-            <div>
-              <span class="font-bold">PS</span> – игровая консоль Playstation.
-            </div>
-            <div>
-              <span class="font-bold">ПК</span> – персональный компьютер,
-              ноутбук или Steam Deck.
-            </div>
-            <div>
-              <span class="font-bold">Split screen</span>
-              – игры с возможностью играть на одной консоли 2-м и более игрокам.
-            </div>
-            <div>
-              <span class="font-bold">Песочница</span> – игры с большой свободой
-              действий.
-            </div>
-            <div>
-              <span class="font-bold">RPG</span> – ролевая игра, для которой
-              характерны: возможность создавать главного героя, развивать
-              характеристики подконтрольных игроку персонажей, выбирать варианты
-              ответных реплик в диалогах с неигровыми персонажами, своими
-              действиями влиять на ход внутриигровых нарративов.
-            </div>
-            <div>
-              <span class="font-bold">Платформер</span> – игры с упором на
-              прыжках по платформам.
-            </div>
-            <div>
-              <span class="font-bold">Beat ’em up</span> – игры с акцентом на
-              рукопашные схватки.
-            </div>
-            <div>
-              <span class="font-bold">Hack and slash</span> – игры, в которых
-              происходит в основном истребление множества противников в ближнем
-              бою с помощью разнообразного оружия.
-            </div>
-            <div>
-              <span class="font-bold">Survival horror </span> – игры с упором на
-              выживание, нагнетание атмосферы страха.
-            </div>
-          </div>
         </div>
-
+        <div class="flex flex-col justify-center items-center w-full">
+          <h2 class="py-5">FAQ</h2>
+          <div class="flex flex-col w-full" id="faq"></div>
+        </div>
         <div class="hidden md:block mt-10">
           <table class="table-auto">
             <thead>
@@ -321,16 +282,16 @@
                   ></div>
                 </th>
                 <th class="px-2 py-2 max-w-60">
-                  Продолжительность основной сюжетной линии (приблизительная)
+                  <div
+                    id="durationDropdownContainer"
+                    class="relative inline-block text-left"
+                  ></div>
                 </th>
                 <th class="px-2 py-2 max-w-60">
                   <div
-                    id="modeDropdownContainer"
+                    id="typeDropdownContainer"
                     class="relative inline-block text-left"
                   ></div>
-                  Одиночные/<br />
-                  Мультиплеерные/<br />
-                  Split screen
                 </th>
                 <th class="px-2 py-2 max-w-60">
                   <div
@@ -342,7 +303,7 @@
                 <th class="px-2 py-2">Компетенции</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="table"></tbody>
           </table>
         </div>
         <div id="minitable" class="flex flex-col md:hidden"></div>
