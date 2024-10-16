@@ -3024,7 +3024,7 @@ const library = [
     picture: "Ryse",
     detailedDescription: "",
     screenshots: [
-      "Ryse Son of Rome 1",
+      "RyseSon of Rome 1",
       "Ryse Son of Rome 2",
       "Ryse Son of Rome 3",
     ],
