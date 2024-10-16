@@ -21,7 +21,11 @@ const library = [
     picture: "SM1",
     detailedDescription:
       "Очередная история про дружелюбного соседа Человека-паука. Питер Паркер геройствует под маской паучка уже 8 лет, а в свободное от геройств время работает вместе с Отто Октавиусом помощником ученого. На пути Человека-паука встретятся множество злодеев, в том числе зловещая шестерка. Питер Паркер столкнется как с серьезными врагами, так и с тяжелыми моральными выборами. Marvel`s Spider-man имеет эффектную и динамичную боевую систему, в которой активно используется окружение и гаджеты. А по Нью-Йорку, который доступен для исследования в открытом мире, паучок может передвигаться с помощью красивейших полетов на паутине.",
-    screenshots: [],
+    screenshots: [
+      "Marvel's Spider-Man 1",
+      "Marvel's Spider-Man 2",
+      "Marvel's Spider-Man 3",
+    ],
   },
   {
     index: 1,
@@ -105,7 +109,7 @@ const library = [
     ],
     picture: "Fifa",
     detailedDescription: "Популярнейший футбольный симулятор.",
-    screenshots: [],
+    screenshots: ["FIFA 1", "FIFA 2", "FIFA 3"],
   },
   {
     index: 5,
@@ -124,7 +128,7 @@ const library = [
     ],
     picture: "NHL",
     detailedDescription: "Спортивный хоккейный симулятор.",
-    screenshots: [],
+    screenshots: ["NHL 1", "NHL 2", "NHL 3"],
   },
   {
     index: 6,
@@ -143,7 +147,7 @@ const library = [
     ],
     picture: "NBA",
     detailedDescription: "Спортивный баскетбольный симулятор.",
-    screenshots: [],
+    screenshots: ["NBA 1", "NBA 2", "NBA 3"],
   },
   {
     index: 7,
@@ -184,7 +188,11 @@ const library = [
     picture: "horizonzerodawn",
     detailedDescription:
       "Игры серии рассказывают о варианте постапокалипсиса, в котором сочетается первобытность и современные технологии, в том числе механических существ, напоминающих животных. Главная героиня – девушка Элой, раскрывает тайны мира и ищет информацию о своем прошлом. В вашем распоряжении находится открытый мир, который полон красоты и опасностей. ",
-    screenshots: [],
+    screenshots: [
+      "Horizon Zero Dawn 1",
+      "Horizon Zero Dawn 2",
+      "Horizon Zero Dawn 3",
+    ],
   },
   {
     index: 9,
@@ -231,7 +239,11 @@ const library = [
     picture: "RDR2",
     detailedDescription:
       "Сиквел Red Dead Redemption является предысторией первой части. Банда бандитов, которые, несмотря на свой образ жизни, друг другу как настоящая семья, пытаются найти способ украсть деньги, чтобы воплотить свой план по спокойной и беззаботной жизни. Главный герой Артур Морган – правая рука главаря банды Датч. Игра максимально приближена к реализму, имеет неторопливый темп, большой и разношерстный открытый мир, множество второстепенных активностей и необязательных сюжетных заданий. Кроме того, мир игры генерирует множество случайных событий, которые происходят в открытом мире.",
-    screenshots: [],
+    screenshots: [
+      "Red Dead Redemption 2 1",
+      "Red Dead Redemption 2 2",
+      "Red Dead Redemption 2 3",
+    ],
   },
   {
     index: 11,
@@ -274,7 +286,11 @@ const library = [
     picture: "GOT",
     detailedDescription:
       "Самураи острова Цусима вынуждены противостоять армии монголов, которые безжалостно захватывают остров. Главный герой самурай Дзин Сакай с малых лет воспитывался настоящим воином с честью и всегда придерживался правил. Однако когда под ударом находятся его дом и близкие, он вопреки мнению своего дяди становится на путь призрака и начинает сражаться не по самурайским канонам. Игра имеет открытый мир и проработанную боевую систему с 4-мя вариантами стоек, каждая из которых рассчитана на определенных противников.",
-    screenshots: [],
+    screenshots: [
+      "Ghost of Tsushima 1",
+      "Ghost of Tsushima 2",
+      "Ghost of Tsushima 3",
+    ],
   },
   {
     index: 13,
@@ -293,7 +309,7 @@ const library = [
     picture: "Lego",
     detailedDescription:
       "Игры Lego в основном основываются на различных популярных франшизах: Властелин колец, Гарри Поттер, Звездные войны, Индиана Джонс, Marvel, DC, Пираты Карибского моря и т.д., но также имеются и свои уникальные игры: Lego undercover, Lego worlds, Lego ninjago и др. Вам под управление предоставляется множество персонажей, выполненных в лего стиле, а игровой процесс делает упор на головоломки и простую боевую систему.",
-    screenshots: [],
+    screenshots: ["Lego 1", "Lego 2", "Lego 3"],
   },
   {
     index: 14,
@@ -313,7 +329,11 @@ const library = [
     ],
     picture: "SB",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Spongebob Squarepants 1",
+      "Spongebob Squarepants 2",
+      "Spongebob Squarepants 3",
+    ],
   },
   {
     index: 15,
@@ -384,7 +404,11 @@ const library = [
     picture: "ISS",
     detailedDescription:
       "Третья часть серии, которая рассказывает о противостоянии людей с суперспособностями (называемых в игре биотеррористами) и департамента единой защиты. Протагонистом в Infamous: Второй сын выступает Делсин Роу, который неожиданно открывает у себя возможность копировать способности других сверхлюдей. В игре вам будет доступно 4 суперспособности: дым, неон, компьютерная и бетон. В игре для исследования доступен открытый мир, который представлен в виде города Сиэтл. В игре также есть возможность выбирать сторону добра или зла, что влияет на незначительную часть сюжета, цвет способностей и некоторые задания.",
-    screenshots: [],
+    screenshots: [
+      "Infamous Second son 1",
+      "Infamous Second son 2",
+      "Infamous Second son 3",
+    ],
   },
   {
     index: 18,
@@ -401,7 +425,11 @@ const library = [
     ],
     picture: "ST",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Spyro The Dragon Reignited Trilogy 1",
+      "Spyro The Dragon Reignited Trilogy 2",
+      "Spyro The Dragon Reignited Trilogy 3",
+    ],
   },
   {
     index: 19,
@@ -420,7 +448,11 @@ const library = [
     picture: "RaC",
     detailedDescription:
       "Серия игр Ratchet and Clank посвящена ярким приключениям космических рейнджеров: представителя расы Ломбакс по имени Рэтчет и его друга-робота Кланк. В каждой из игр они отправляются на встречу опасности, чтобы спасти галактику от вселенского зла. Игры серии известны яркой графикой, которая в последних играх напоминают пиксеровские и диснеевские мультфильмы, креативным дизайном оружия и хорошим юмором, который проявляется как в сюжете, так и в игровом процессе.",
-    screenshots: [],
+    screenshots: [
+      "Ratchet and Clank 1",
+      "Ratchet and Clank 2",
+      "Ratchet and Clank 3",
+    ],
   },
   {
     index: 20,
@@ -440,7 +472,11 @@ const library = [
     picture: "HL",
     detailedDescription:
       "Видеоигра, основанная на одной из самых популярных франшиз – вселенной Гарри Поттера. В отличии от фильмов и других видеоигр по вселенной, Хогвартс: Наследие не пересказывает события книг о Гарри Поттере, а повествует о событиях, которые случились задолго до рождения мальчика, который выжил. Вы создаете своего собственного персонажа и выбираете факультет, на котором он будет учиться. Помимо уроков волшебства вас ждет поиск разгадки происхождения особой магии, которую может использовать главный герой, и сражение с озлобленными гоблинами, которые вступают в конфликт с магами. В игре большой открытый мир, несколько способов передвижения, десятки заклинаний и множество других интересных игровых механик, которые созданы с большой любовью ко вселенной Гарри Поттера.",
-    screenshots: [],
+    screenshots: [
+      "Hogwarts Legacy 1",
+      "Hogwarts Legacy 2",
+      "Hogwarts Legacy 3",
+    ],
   },
   {
     index: 21,
@@ -482,7 +518,11 @@ const library = [
     picture: "GOW",
     detailedDescription:
       "God of war 2018 года выпуска является неким перезапуском серии. Прошлые игры были основаны на греческой мифологии, а данные 2 части серии посвящены скандинавской. Полубог Кратос и его сын Атрей потеряли любимую жену и мать и отправляются в опасное приключения, чтобы исполнить ее последнюю волю. Герои будут перемещаться в разные миры, сражаться с разнообразными противниками и решать нетрудные головоломки.",
-    screenshots: [],
+    screenshots: [
+      "God of War Ragnarok 1",
+      "God of War Ragnarok 2",
+      "God of War Ragnarok 3",
+    ],
   },
   {
     index: 23,
@@ -495,7 +535,7 @@ const library = [
     picture: "J",
     detailedDescription:
       "Необычная медитативная игра, где вы в роли неизвестного путника пытаетесь добраться до неизвестной горы сквозь огромную пустыню. Сопровождать вас будет другой такой же игрок (или искусственный интеллект, в случае если игрок не подключился), с которым вы пройдете этот путь вместе. Очень загадочная, красивая и спокойная игра, не похожая на другие.",
-    screenshots: [],
+    screenshots: ["Journey 1", "Journey 2", "Journey 3"],
   },
   {
     index: 24,
@@ -508,7 +548,7 @@ const library = [
     picture: "Fl",
     detailedDescription:
       "Медитативная игра в жанре пазл, где вы управляете потоком ветра в цветочном поле и собираете лепестки различных цветов.",
-    screenshots: [],
+    screenshots: ["Flower 1", "Flower 2", "Flower 3"],
   },
   {
     index: 25,
@@ -538,7 +578,7 @@ const library = [
     ],
     picture: "SF",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Sonic Forces 1", "Sonic Forces 2", "Sonic Forces 3"],
   },
   {
     index: 27,
@@ -560,7 +600,11 @@ const library = [
     ],
     picture: "SH",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Silent Hill short message 1",
+      "Silent Hill short message 2",
+      "Silent Hill short message 3",
+    ],
   },
   {
     index: 28,
@@ -580,7 +624,7 @@ const library = [
     picture: "Minecraft",
     detailedDescription:
       "Minecraft предоставляет возможность исследовать и строить миры, состоящие из блоков разных материалов. Игра предлагает два основных режима: в режиме выживания необходимо собирать ресурсы и защищаться от врагов, а в креативном режиме игроки имеют неограниченные возможности для строительства и создания.",
-    screenshots: [],
+    screenshots: ["Minecraft 1", "Minecraft 2", "Minecraft 3"],
   },
   {
     index: 29,
@@ -599,7 +643,7 @@ const library = [
     picture: "Injustice",
     detailedDescription:
       "Серия файтингов от разработчиков популярной франшизы Mortal Kombat, которая хоть с первого взгляда и похожа на МК, но имеет свою боевую механику и уникальные элементы игрового процесса. В вашем распоряжении самые популярные герои и злодеи вселенной комиксов DC: Бэтмен, Супермен, Чудо-женщина, Флэш, Джокер, Красный Колпак и многие другие. Кроме того, в игру заглянули и гостевые персонажи: Рейден, Хэллбой, Черепашки ниндзя и другие. Сюжет серии происходит в альтернативной реальности, где Супермен становится злодеем после того, как Джокер обманом заставляет его убить Лоис Лейн.",
-    screenshots: [],
+    screenshots: ["Injustice 1", "Injustice 2", "Injustice 3"],
   },
   {
     index: 30,
@@ -616,7 +660,7 @@ const library = [
     picture: "ITT",
     detailedDescription:
       "Игра, которую можно пройти только в кооперативе (вдвоем). В центре сюжета семейная пара, которая находится на грани развода. И вот неожиданно Волшебная книга о любви превращает их в маленьких кукол. И чтобы вернуть прежний облик, мужу и жене необходимо забыть про разногласия и работать сообща.",
-    screenshots: [],
+    screenshots: ["It takes two 1", "It takes two 2", "It takes two 3"],
   },
   {
     index: 31,
@@ -637,7 +681,7 @@ const library = [
     picture: "Fallout3",
     detailedDescription:
       "Fallout – серия игр в жанре RPG, выполненные в постапокалипсическом ретрофутуристическом стиле. Спустя многие годы после ядерной войны, главный герой выходит из подземного убежища в большой открытый мир, где его встретят множество приключений и опасностей.",
-    screenshots: [],
+    screenshots: ["Fallout 3 1", "Fallout 3 2", "Fallout 3 3"],
   },
   {
     index: 32,
@@ -658,7 +702,11 @@ const library = [
     picture: "FalloutNV",
     detailedDescription:
       "Fallout – серия игр в жанре RPG, выполненные в постапокалипсическом ретрофутуристическом стиле. В отличие от других частей игры, главный герой начинает свой путь не из подземного убежища, а уже на поверхности и для него окружающий мир, переживший ядерную войну, не является чем-то новым. ",
-    screenshots: [],
+    screenshots: [
+      "Fallout New Vegas 1",
+      "Fallout New Vegas 2",
+      "Fallout New Vegas 3",
+    ],
   },
   {
     index: 33,
@@ -679,7 +727,7 @@ const library = [
     picture: "Fallout4",
     detailedDescription:
       "Fallout – серия игр в жанре RPG, выполненные в постапокалипсическом ретрофутуристическом стиле. Главный герой просыпается в криокамере, в которую поместили его и его семью после начала ядерной войны. Жену главного героя убивают и похищают младенца. И теперь отец отправляется в неизведанный для него мир для того, чтобы найти своего ребенка.",
-    screenshots: [],
+    screenshots: ["Fallout 4 1", "Fallout 4 2", "Fallout 4 3"],
   },
   {
     index: 34,
@@ -700,7 +748,7 @@ const library = [
     picture: "Fallout76",
     detailedDescription:
       "Fallout – серия игр в жанре RPG, выполненные в постапокалипсическом ретрофутуристическом стиле. Главный герой пропускает выход на поверхность из подземного убежища и с ужасом выясняет, что его ждет на поверхности.",
-    screenshots: [],
+    screenshots: ["Fallout 76 1", "Fallout 76 2", "Fallout 76 3"],
   },
   {
     index: 35,
@@ -763,7 +811,11 @@ const library = [
     picture: "GOTG",
     detailedDescription:
       "Игра повествует о новом приключении известной космической команды супергеройской вселенной MARVEL – стражах галактики. Под управление вам будет доступен только лидер команды – Питер Квилл, он же Звездный Лорд, но остальные члены команды будут помогать вам во время сражений, а также всегда сопровождать главного героя интересными и смешными диалогами.",
-    screenshots: [],
+    screenshots: [
+      "Guardians of the Galaxy 1",
+      "Guardians of the Galaxy 2",
+      "Guardians of the Galaxy 3",
+    ],
   },
   {
     index: 38,
@@ -781,7 +833,11 @@ const library = [
     picture: "Kena",
     detailedDescription:
       "Кена – главная героиня, обладает магическими способностями и является молодой проводницей духов. Однажды на своем пути она встречает злые силы и монстров, которые захватывают лес. Кена использует в борьбе с монстрами не только свой посох и магию, но и маленьких духовных компаньонов, тленышей. Визуально игра напоминает пиксаровский или диснеевский мультфильм. ",
-    screenshots: [],
+    screenshots: [
+      "Kena Bridge of Spirits 1",
+      "Kena Bridge of Spirits 2",
+      "Kena Bridge of Spirits 3",
+    ],
   },
   {
     index: 39,
@@ -799,7 +855,11 @@ const library = [
     ],
     picture: "TMNT",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Teenage Mutant Ninja Turtles Shredder's Revenge 1",
+      "Teenage Mutant Ninja Turtles Shredder's Revenge 2",
+      "Teenage Mutant Ninja Turtles Shredder's Revenge 3",
+    ],
   },
   {
     index: 40,
@@ -816,7 +876,7 @@ const library = [
     ],
     picture: "Stray",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Stray 1", "Stray 2", "Stray 3"],
   },
   {
     index: 41,
@@ -836,7 +896,11 @@ const library = [
     ],
     picture: "SW",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Star Wars Jedi Survivor 1",
+      "Star Wars Jedi Survivor 2",
+      "Star Wars Jedi Survivor 3",
+    ],
   },
   {
     index: 42,
@@ -853,7 +917,11 @@ const library = [
     ],
     picture: "SMO",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Super Mario Odyssey 1",
+      "Super Mario Odyssey 2",
+      "Super Mario Odyssey 3",
+    ],
   },
   {
     index: 43,
@@ -875,7 +943,11 @@ const library = [
     picture: "MUA",
     detailedDescription:
       "Герои (и даже некоторые злодеи) вселенной Marvel, в том числе Человек-паук, фантастическая четверка, мстители, люди икс и другие объединяются для того, чтобы спасти мир от зла. Уникальность игрового процесса заключается в возможности играть командой супергероев, состоящих из 4-ех человек, между которыми вы можете переключаться прямо во время игры. Боевая система сочетает в себе различные комбо удары и спец-приемы. Игра имеет элементы RPG, которые позволяют прокачивать способности героев и усиления команды по своему усмотрению. ",
-    screenshots: [],
+    screenshots: [
+      "Marvel Ultimate Alliance 1",
+      "Marvel Ultimate Alliance 2",
+      "Marvel Ultimate Alliance 3",
+    ],
   },
   {
     index: 44,
@@ -929,7 +1001,11 @@ const library = [
     picture: "MMS",
     detailedDescription:
       "Marvel’s Midnight Suns - это нестандартная для супергеройки игра, которая выполнена в жанре тактической ролевой игры. Вы создаете своего персонажа Охотника, которые присоединяется к команде известных супергероев Marvel. С ними потребуется выстраивать дружеские отношения для получения новых способностей. Игра использует пошаговую боевую систему, где каждый ход игрока предоставляет возможность использовать карты для выполнения действий.",
-    screenshots: [],
+    screenshots: [
+      "Marvel’s Midnight Suns 1",
+      "Marvel’s Midnight Suns 2",
+      "Marvel’s Midnight Suns 3",
+    ],
   },
   {
     index: 46,
@@ -948,7 +1024,7 @@ const library = [
     picture: "MortalKombat",
     detailedDescription:
       "Популярная серия файтингов, которая отличается низким порогом вхождения (достаточно простым освоением игровых механик в сравнении с другими файтингами) и жестокостью. ",
-    screenshots: [],
+    screenshots: ["Mortal Kombat 1", "Mortal Kombat 2", "Mortal Kombat 3"],
   },
   {
     index: 47,
@@ -965,7 +1041,11 @@ const library = [
     ],
     picture: "SonicFrontiers",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Sonic Frontiers 1",
+      "Sonic Frontiers 2",
+      "Sonic Frontiers 3",
+    ],
   },
   {
     index: 48,
@@ -985,7 +1065,11 @@ const library = [
     picture: "MarioRabbids",
     detailedDescription:
       "Миры известных водопроводчиков и смышленых кроликов смешались между собой и теперь героям необходимо сплотиться, чтобы восстановить порядок в Грибном королевстве. Игровой процесс представляет из себя стратегические пошаговые бои, в которых необходимо использовать особенности местности, чтобы обхитрить противника и получить тактическое преимущество.",
-    screenshots: [],
+    screenshots: [
+      "Mario + Rabbids Kingdom Battle 2",
+      "Mario + Rabbids Kingdom Battle 3",
+      "Mario + Rabbids Sparks of Hope 1",
+    ],
   },
   {
     index: 49,
@@ -1004,7 +1088,11 @@ const library = [
     picture: "LittleBigPlanet",
     detailedDescription:
       "С первого взгляда серия игр может напомнить стандартные платформеры, только про вязанных персонажей. Однако, ранее у вас была возможность создавать как свои собственные уровни, так и играть в уровни, созданные другими игроками. Но, к сожалению, в 2024 году по техническим причинам сервера игры отключили и на сегодняшний день нет возможности загрузить сторонние уровни (а также купить игру в цифровом магазине).",
-    screenshots: [],
+    screenshots: [
+      "Little Big Planet 1",
+      "Little Big Planet 2",
+      "Little Big Planet 3",
+    ],
   },
   {
     index: 50,
@@ -1023,7 +1111,11 @@ const library = [
     picture: "MiddleEarth",
     detailedDescription:
       "Серия игр основана на известной франшизе «Властелин колец» и визуально берет за основу трилогию фильмов Питера Джэксона. Действия игры происходят между событиями «Хоббита» и «Властелина колец». Игровой процесс предлагает эффектную боевую систему, возможность оседлать ездовых животных, а также уникальную систему «Нэмезис». Данная система случайным образом генерирует вражеских орков, их поведение, появление. У вас есть возможность свергнуть командира либо переманить на свою сторону. При этом союзники могут неожиданно предать или погибнуть, защищая вас в пылу битвы.",
-    screenshots: [],
+    screenshots: [
+      "Middle-earth Shadow of War 1",
+      "Middle-earth Shadow of War 2",
+      "Middle-earth Shadow of War 3",
+    ],
   },
   {
     index: 51,
@@ -1084,7 +1176,11 @@ const library = [
     picture: "ResidentEvil4",
     detailedDescription:
       "Главный герой игры - Леон Кеннеди, которые ранее работал бывшим офицером полиции Ракун-сити, и который в свой первый рабочий день столкнулся лицом к лицу с эпидемией зомби, теперь является агентом Правительства США. Он отправляется на поиски Эшли Грэм - дочери Президента США. Поиски приводят Леона в небольшую испанскую деревушку, где он встречает странных жителей и сектантов, которые мешают ему спасти Эшли. Оригинальная Resident Evil 4 от ремейка в графическом плане, игровых механиках и некоторых уровнях. У ремейка современная графика и более динамичный игровой процесс. При этом каждая из игр имеет свою уникальную атмосферу.",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 4 1",
+      "Resident Evil 4 2",
+      "Resident Evil 4 3",
+    ],
   },
   {
     index: 54,
@@ -1102,7 +1198,7 @@ const library = [
     ],
     picture: "StreetFighter",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Street Fighter 1", "Street Fighter 2", "Street Fighter 3"],
   },
   {
     index: 55,
@@ -1120,7 +1216,7 @@ const library = [
     ],
     picture: "Tekken",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Tekken 1", "Tekken 2", "Tekken 3"],
   },
   {
     index: 56,
@@ -1138,7 +1234,7 @@ const library = [
     ],
     picture: "SoulCalibur",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["SoulCalibur 1", "SoulCalibur 2", "SoulCalibur 3"],
   },
   {
     index: 57,
@@ -1174,7 +1270,7 @@ const library = [
     picture: "Knack",
     detailedDescription:
       "Вам под управление дают милое существо по имени Knack, который с помощью особых артефактов может увеличиваться в размерах. Красочная игра о противостоянии добра и зла, в которую можно поиграть в кооперативе.",
-    screenshots: [],
+    screenshots: ["Knack 2 1", "Knack 2 2", "Knack 2 3"],
   },
   {
     index: 59,
@@ -1209,7 +1305,11 @@ const library = [
     picture: "IceAgeNutty",
     detailedDescription:
       "Игра основана на одноименной серии мультфильмов «Ледниковый период» и повествует об очередных приключениях белки Скрата, который традиционно пытается добыть желанный желудь.",
-    screenshots: [],
+    screenshots: [
+      "Ice Age Scrat's Nutty Adventure 1",
+      "Ice Age Scrat's Nutty Adventure 2",
+      "Ice Age Scrat's Nutty Adventure 3",
+    ],
   },
   {
     index: 61,
@@ -1227,7 +1327,11 @@ const library = [
     picture: "KaoTheKangaroo",
     detailedDescription:
       "Яркий платформер про кенгуру Као, оснащенного парой боксерских перчаток.",
-    screenshots: [],
+    screenshots: [
+      "Kao the Kangaroo 1",
+      "Kao the Kangaroo 2",
+      "Kao the Kangaroo 3",
+    ],
   },
   {
     index: 62,
@@ -1248,7 +1352,11 @@ const library = [
     picture: "MarvelsSpiderManMilesMorales",
     detailedDescription:
       "Игра посвящена новоиспеченному Человеку-пауку: Майлзу Моралесу. Спустя год после получения паучьих суперспособностей под наставничеством Питера Паркера, Майлз остается на 2 недели охранять город в одиночку, так как Питер уезжает в командировку. В боевой системе произошли незначительные изменения, а полеты на паутине стали не только плавнее и красивее, но и обзавелись новыми трюками. События игры происходят в новогодние праздники, поэтому здешний Нью-Йорк украшен рождественскими украшениями и покрыт белоснежным снегом.",
-    screenshots: [],
+    screenshots: [
+      "Marvel’s Spider-man Miles Morales 1",
+      "Marvel’s Spider-man Miles Morales 2",
+      "Marvel’s Spider-man Miles Morales 3",
+    ],
   },
   {
     index: 63,
@@ -1266,7 +1374,7 @@ const library = [
     picture: "Portal2",
     detailedDescription:
       "Игра головоломка, которой в качестве основного инструмента для решения головоломок использует специальное устройство для создания порталов. Игра также предлагает возможность поиграть в отдельный кооперативный режим с уникальными загадками. ",
-    screenshots: [],
+    screenshots: ["Portal 2 1", "Portal 2 2", "Portal 2 3"],
   },
   {
     index: 64,
@@ -1308,7 +1416,7 @@ const library = [
     picture: "MassEffect",
     detailedDescription:
       "Mass Effect - это серия научно-фантастических ролевых игр, сюжет которых разворачивается в далеком будущем, где игроки берут на себя роль командующего Шепарда, который пытается спасти галактику от различных угроз. Диалоги осуществляются через диалоговый круг, в котором игрок может выбрать нужную реплику и влиять на дальнейших сюжет игры. Также игры позволяют выбрать стиль игры в бою под себя.",
-    screenshots: [],
+    screenshots: ["Mass Effect 1", "Mass Effect 2", "Mass Effect 3"],
   },
   {
     index: 66,
@@ -1324,7 +1432,11 @@ const library = [
     ],
     picture: "RidersRepublic",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Riders Republic 1",
+      "Riders Republic 2",
+      "Riders Republic 3",
+    ],
   },
   {
     index: 67,
@@ -1365,7 +1477,11 @@ const library = [
     picture: "ResidentEvil2Remake",
     detailedDescription:
       "Действие игры разворачивается в городе Ракун-сити, охваченном эпидемией зомби. Игроки могут взять на себя роли двух героев: Леона Кеннеди, новобранца полиции, и Клэр Редфилд, ищущей брата. На вашем пути встретятся различные вариации зомби, неубиваемый Мистер Х, различные головоломки и жуткие боссы. Большую часть времени вы проведете исследуя локации (основной локацией в игре выступает полицейский участок), открывая новые пути и приближаясь к спасению Ракун-сити. ",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 2 Remake 1",
+      "Resident Evil 2 Remake 2",
+      "Resident Evil 2 Remake 3",
+    ],
   },
   {
     index: 69,
@@ -1386,7 +1502,11 @@ const library = [
     detailedDescription:
       "Игра повествует о событиях, происходящих через несколько часов после событий Resident Evil 2. Член спецподразделения S.T.A.R.S. Джилл Валентайн\n" +
       "пытается сбежать из разрушенного Ракун-Сити во время пандемии вируса Т-вирус. Помимо зомби главную героиню будет преследовать неубиваемый мутант-монстр Нэмезис.\n",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 3 Remake 1",
+      "Resident Evil 3 Remake 2",
+      "Resident Evil 3 Remake 3",
+    ],
   },
   {
     index: 70,
@@ -1409,7 +1529,11 @@ const library = [
     picture: "MirrorsEdgeCatalyst",
     detailedDescription:
       "Игра в жанре паркурного экшена, действие которой разворачивается в футуристическом городе. Игроки управляют Фэйт Коннорс, курьером, которая использует скорость и ловкость для выполнения заданий. Основная цель игры — разоблачение коррупции и борьба с тоталитарным режимом, контролирующим город. Игра выделяется стильным визуальным оформлением и акцентом на быстром передвижении с помощью паркура. Она сочетает в себе элементы платформера, головоломок и боевых сражений.",
-    screenshots: [],
+    screenshots: [
+      "Mirror's Edge Catalyst 1",
+      "Mirror's Edge Catalyst 2",
+      "Mirror's Edge Catalyst 3",
+    ],
   },
   {
     index: 71,
@@ -1428,7 +1552,11 @@ const library = [
     ],
     picture: "ResidentEvil7",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Resident evil 7 1",
+      "Resident evil 7 2",
+      "Resident evil 7 3",
+    ],
   },
   {
     index: 72,
@@ -1447,7 +1575,11 @@ const library = [
     ],
     picture: "ResidentEvil8Village",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 8 1",
+      "Resident Evil 8 2",
+      "Resident Evil 8 3",
+    ],
   },
   {
     index: 73,
@@ -1464,7 +1596,7 @@ const library = [
     picture: "MarioKart8",
     detailedDescription:
       "Знаменитая серия аркадных гонок, где главными героям выступают персонажи вселенной Марио. Игроки также могут использовать различные гаджеты и устройства для устранения противников.",
-    screenshots: [],
+    screenshots: ["Mario Kart 8 1", "Mario Kart 8 2", "Mario Kart 8 3"],
   },
   {
     index: 74,
@@ -1481,7 +1613,11 @@ const library = [
     ],
     picture: "Sackboy",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Sackboy A Big Adventure 1",
+      "Sackboy A Big Adventure 2",
+      "Sackboy A Big Adventure 3",
+    ],
   },
   {
     index: 75,
@@ -1508,7 +1644,11 @@ const library = [
     picture: "NarutoXBoruto",
     detailedDescription:
       "Серия игр файтингов, основанная на известных манга и аниме «Наруто».",
-    screenshots: [],
+    screenshots: [
+      "Naruto X Boruto Ultimate Ninja Storm 1",
+      "Naruto X Boruto Ultimate Ninja Storm 2",
+      "Naruto X Boruto Ultimate Ninja Storm 3",
+    ],
   },
   {
     index: 76,
@@ -1527,7 +1667,11 @@ const library = [
     picture: "MarvelvsCapcom",
     detailedDescription:
       "Серия игр файтингов, где в качестве бойцов доступны персонажи вселенных Marvel и Capcom.",
-    screenshots: [],
+    screenshots: [
+      "Marvel vs. Capcom 1",
+      "Marvel vs. Capcom 2",
+      "Marvel vs. Capcom 3",
+    ],
   },
   {
     index: 77,
@@ -1546,7 +1690,11 @@ const library = [
     ],
     picture: "ResidentEvil5",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 5 1",
+      "Resident Evil 5 2",
+      "Resident Evil 5 3",
+    ],
   },
   {
     index: 78,
@@ -1565,7 +1713,11 @@ const library = [
     ],
     picture: "ResidentEvil6",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Resident Evil 6 1",
+      "Resident Evil 6 2",
+      "Resident Evil 6 3",
+    ],
   },
   {
     index: 79,
@@ -1585,7 +1737,7 @@ const library = [
     picture: "Left4Dead",
     detailedDescription:
       "Хоть Left 4 Dead и можно пройти в одиночку (в этом случае за напарников будет играть искусственный интеллект), но в первую очередь игра разрабатывалась под кооперативное прохождение, где вы вместе с друзьями или незнакомыми людьми будете противостоять толпам зомби, среди которых есть как обычные, так и особо зараженные, имеющие уникальные способности. Вы с напарниками можете поднимать друг друга, когда противники выводят из строя и лечить с помощью аптечек и таблеток. В арсенале выживших имеется множество огнестрельного оружия, оружие ближнего боя, а также специальные устройства для борьбы с зомби. Также в одном из режимов игроки разбиваются на команды выживших и зараженных (4 на 4). ",
-    screenshots: [],
+    screenshots: ["Left 4 Dead 2 1", "Left 4 Dead 2 2", "Left 4 Dead 2 3"],
   },
   {
     index: 80,
@@ -1607,7 +1759,7 @@ const library = [
     picture: "Halflife2",
     detailedDescription:
       "Однажды физик-теоретик Гордон Фримен, работающий в научно-исследовательском центре «Чёрная Меза», участвовал в проведении эксперимента над аномальными материалами в ходе которого произошёл сбой. В результате сбоя открылся портал в другой мир, из которого в наш просочились разные существа. Вторая часть серии рассказывает о событиях, которые произошли спустя 20 лет после этого инцидента.",
-    screenshots: [],
+    screenshots: ["Half-life 2 1", "Half-life 2 2", "Half-life 2 3"],
   },
   {
     index: 81,
@@ -1647,7 +1799,11 @@ const library = [
     picture: "NinjaGaiden",
     detailedDescription:
       "Данный сборник включает 3 видеоигры, в которой вы берете под управление Рю Хаябури, мастера-ниндзя, который сражается с ордами врагов, используя различные боевые техники и приёмы. Игра известна своей динамичной и сложной боевой системой.",
-    screenshots: [],
+    screenshots: [
+      "Ninja Gaiden Master Collection 1",
+      "Ninja Gaiden Master Collection 2",
+      "Ninja Gaiden Master Collection 3",
+    ],
   },
   {
     index: 83,
@@ -1666,7 +1822,7 @@ const library = [
     picture: "MultiVersus",
     detailedDescription:
       "MultiVersus - это бесплатная командная игра в жанре файтинг, где игрокам предлагают выбрать персонажа из различных вселенных, включая франшизы Warner Bros., такие как «Супермен», «Бэтмен», «Грэмлины», «Скуби-Ду» и многие другие. Главная задача: вытолкнуть противника за пределы арены.",
-    screenshots: [],
+    screenshots: ["MultiVersus 1", "MultiVersus 2", "MultiVersus 3"],
   },
   {
     index: 84,
@@ -1685,7 +1841,11 @@ const library = [
     picture: "PrinceOoPersiaTheLostCrown",
     detailedDescription:
       "Главный герой - Саргон, молодой член клана воинов под названием «Бессмертные», который вместе с другими членами клана должны защитить принца Персии и противостоять злу. Игра выполнена в 3 с видом сбоку (так называемое 2.5D), а ее игровые механики делают акцент на паркуре, эффектных боях и решении головоломок.",
-    screenshots: [],
+    screenshots: [
+      "Prince of Persia The Lost Crown 1",
+      "Prince of Persia The Lost Crown 2",
+      "Prince of Persia The Lost Crown 3",
+    ],
   },
   {
     index: 85,
@@ -1707,7 +1867,7 @@ const library = [
     picture: "Metro",
     detailedDescription:
       "Серия игр основана на постапокалиптическом мире, где человечество выживает в метро Москвы после ядерной катастрофы. Игроки берут на себя роль Артёма, молодого выжившего, который исследует подземные туннели и поверхность, сражаясь с мутантами и враждующими группировками.",
-    screenshots: [],
+    screenshots: ["Metro 1", "Metro 2", "Metro 3"],
   },
   {
     index: 86,
@@ -1745,7 +1905,7 @@ const library = [
     picture: "GranTurismo",
     detailedDescription:
       "Гоночный симулятор, который очень точно и реалистично передает ощущения передвижения на настоящем автомобиле. В играх серии позволяют не только прокатиться на настоящих машинах, но и в мельчайших подробностях настраивать их характеристики.",
-    screenshots: [],
+    screenshots: ["Gran Turismo 1", "Gran Turismo 2", "Gran Turismo 3"],
   },
   {
     index: 88,
@@ -1807,7 +1967,11 @@ const library = [
     ],
     picture: "Sekiro",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Sekiro Shadows Die Twice 1",
+      "Sekiro Shadows Die Twice 2",
+      "Sekiro Shadows Die Twice 3",
+    ],
   },
   {
     index: 91,
@@ -1850,7 +2014,7 @@ const library = [
     picture: "GothamKnights",
     detailedDescription:
       "Игра рассказывает о том, как команда из Бэт-семьи: Красный Колпан, Робин, Найтвинг и Бетгерл справляются с городской преступностью самостоятельно после смерти Бэтмена. Вам доступны для прохождения любой из членов Рыцарей Готэма, а сам Готэм доступен для изучения в открытом мире, по которому можно передвигаться не только на своих «двоих», но и на мотоцикле.",
-    screenshots: [],
+    screenshots: ["Gotham Knights 1", "Gotham Knights 2", "Gotham Knights 3"],
   },
   {
     index: 93,
@@ -1872,7 +2036,11 @@ const library = [
     picture: "NoMansSkyBeyond",
     detailedDescription:
       "В No Man's Sky: Beyond вы отправитесь исследовать бескрайние космические просторы, полные уникальных планет, звезд и космических существ. Игра предлагает открытый мир, где можно путешествовать по разным планетам, собирать ресурсы, строить базы и взаимодействовать с другими игроками. Каждая планета создаётся случайным образом и имеет своё собственное окружение, климат и флору и фауну. Цель игры — исследовать галактику, находить новые формы жизни и раскрывать тайны вселенной. ",
-    screenshots: [],
+    screenshots: [
+      "No Man's Sky Beyond 1",
+      "No Man's Sky Beyond 2",
+      "No Man's Sky Beyond 3",
+    ],
   },
   {
     index: 94,
@@ -1913,7 +2081,7 @@ const library = [
     detailedDescription:
       "Игры от разработчиков FromSoftware, так называемые «Soulslike» игры, известны своей сложностью, отсутствием подсказок, карт, необходимостью самостоятельно изучать игровые локации, а также геймплейные механики. Точно такой же подход к сюжету. Игрок самостоятельно должен изучать записки и описание предметов, анализировать и связывать события между собой, чтобы образовалась более целостная картинка.\n" +
       "Данная игра отличается от других тайтлов разработчиков наличием открытого мира. \n",
-    screenshots: [],
+    screenshots: ["Elden Ring 1", "Elden Ring 2", "Elden Ring 3"],
   },
   {
     index: 96,
@@ -1956,7 +2124,7 @@ const library = [
     picture: "LiesOfP",
     detailedDescription:
       "Необычный взгляд на классическую историю о Пиноккио. В этой игре Вы берете на себя роль механического человека, который ищет своего создателя в мрачном и загадочном мире. Lies of P напоминает игры от разработчиков FromSoftware, так называемые «Soulslike» игры, которые отличаются высокой сложностью и проработанной боевой системой.",
-    screenshots: [],
+    screenshots: ["Lies of P 1", "Lies of P 2", "Lies of P 3"],
   },
   {
     index: 98,
@@ -2010,7 +2178,11 @@ const library = [
     picture: "LuigisMansion",
     detailedDescription:
       "Игры, в которых брат всем известного водопроводчика Марио – Луиджи, берет на себя роль охотника за приведениями, которых при этом сам очень сильно боится. Игра представляет себя поимку приведений и решение головоломок.",
-    screenshots: [],
+    screenshots: [
+      "Luigi's mansion 3 1",
+      "Luigi's mansion 3 2",
+      "Luigi's mansion 3 3",
+    ],
   },
   {
     index: 101,
@@ -2076,7 +2248,7 @@ const library = [
     picture: "Dota2",
     detailedDescription:
       "Игра представляет собой многопользовательскую игру в жанре многопользовательской онлайновой боевой арены. Две команды по пять игроков, каждый из которых выбирает себе уникального героя (доступно более 100 персонажей), сталкиваются между собой на арене и пытаются уничтожить вражескую крепость, при этом обороняя свою.",
-    screenshots: [],
+    screenshots: ["Dota 2 1", "Dota 2 2", "Dota 2 3"],
   },
   {
     index: 104,
@@ -2141,7 +2313,7 @@ const library = [
     ],
     picture: "ForzaHorizon",
     detailedDescription: "Популярная серия аркадных гонок с открытым миром.",
-    screenshots: [],
+    screenshots: ["Forza Horizon 1", "Forza Horizon 2", "Forza Horizon 3"],
   },
   {
     index: 108,
@@ -2160,7 +2332,7 @@ const library = [
     picture: "HiFiRush",
     detailedDescription:
       "Игра, которая отличается от классических представителей жанра уникальным использованием музыки. Сражаясь с противниками и попадая в ритм, вы усиливаете свои удары. Каждое ваше действие, будь то удар или прыжок, синхронизированы с музыкальными ритмами. В Hi-Fi Rush очень яркая и красочная картинка, которая напоминает оживший комикс или мультфильм.",
-    screenshots: [],
+    screenshots: ["Hi-Fi Rush 1", "Hi-Fi Rush 2", "Hi-Fi Rush 3"],
   },
   {
     index: 109,
@@ -2178,7 +2350,7 @@ const library = [
     ],
     picture: "Starfield",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Starfield 1", "Starfield 2", "Starfield 3"],
   },
   {
     index: 110,
@@ -2218,7 +2390,7 @@ const library = [
     picture: "NeedForSpeed",
     detailedDescription:
       "Гоночные симуляторы с аркадным уклоном и акцентом на уличные гонки.",
-    screenshots: [],
+    screenshots: ["Need for Speed 1", "Need for Speed 2", "Need for Speed 3"],
   },
   {
     index: 112,
@@ -2237,7 +2409,7 @@ const library = [
     ],
     picture: "Sifu",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Sifu 1", "Sifu 2", "Sifu 3"],
   },
   {
     index: 113,
@@ -2299,7 +2471,7 @@ const library = [
     picture: "Mafia",
     detailedDescription:
       "Серия игр Mafia посвящена криминальному миру и жизни мафиозных группировок. В играх серии вы погрузитесь в атмосферу преступного мира в периоды с 1930го по 1968го годов. За пределами основных заданий в вашем распоряжении находится открытый мир, по которому вы можете передвигаться на различных автомобилях. ",
-    screenshots: [],
+    screenshots: ["Mafia 1", "Mafia 2", "Mafia 3"],
   },
   {
     index: 116,
@@ -2319,7 +2491,11 @@ const library = [
     picture: "MarvelsAvengers",
     detailedDescription:
       "Игра про команду Мстителей, в число которых входят такие известные супергерои как: Железный человек, Капитан Америка, Человек-паук (только на Playstation), Халк, Тор и другие. В игре вас встретит фотореалистичная картинка, ограниченные небольшие локации и скудная боевая система. Также игру можно проходить в кооперативе.",
-    screenshots: [],
+    screenshots: [
+      "Marvel’s Avengers 1",
+      "Marvel’s Avengers 2",
+      "Marvel’s Avengers 3",
+    ],
   },
   {
     index: 117,
@@ -2340,7 +2516,7 @@ const library = [
     picture: "Nioh",
     detailedDescription:
       "Nioh сочетает в себе элементы исторической японской мифологии и фэнтези. Главный протагонист - самурай Уилиам, который стремится найти свою пропавшую душу и сразиться с демонами и духами в зловещем Японии XVI века. Nioh напоминает игры от разработчиков FromSoftware, так называемые «Soulslike» игры, которые отличаются высокой сложностью и проработанной боевой системой.",
-    screenshots: [],
+    screenshots: ["Nioh 2 1", "Nioh 2 2", "Nioh 2 3"],
   },
   {
     index: 118,
@@ -2357,7 +2533,11 @@ const library = [
     ],
     picture: "StarWarsSquadrons",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Star Wars Squadrons 1",
+      "Star Wars Squadrons 2",
+      "Star Wars Squadrons 3",
+    ],
   },
   {
     index: 119,
@@ -2375,7 +2555,11 @@ const library = [
     ],
     picture: "StreetsOfRage4",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Streets of Rage 4 1",
+      "Streets of Rage 4 2",
+      "Streets of Rage 4 3",
+    ],
   },
   {
     index: 120,
@@ -2439,7 +2623,11 @@ const library = [
     ],
     picture: "ShadowOfTheColossus",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Shadow of the Colossus 1",
+      "Shadow of the Colossus 2",
+      "Shadow of the Colossus 3",
+    ],
   },
   {
     index: 123,
@@ -2457,7 +2645,11 @@ const library = [
     ],
     picture: "SuperSmashBrosUltimate",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Super Smash Bros. Ultimate 1",
+      "Super Smash Bros. Ultimate 2",
+      "Super Smash Bros. Ultimate 3",
+    ],
   },
   {
     index: 124,
@@ -2500,7 +2692,7 @@ const library = [
       "Многопользовательская игра с большим количеством режимов игры, но основными являются:\n" +
       "Нулевая высота. На остров выбрасываются 100 игроков, у которых изначально нет никакого оружия и снаряжения. Его необходимо искать в сундуках или подбирать с убитых противников. Постепенно радиус доступной для передвижения карты сужается, сталкивая игроков лицом к лицу. Победителем окажется тот игрок, который останется последним на острове.\n" +
       "Королевская битва. Тот же режим, что и «Нулевая высота», но с возможностью строительства различных конструкций, используя собираемое сырье.\n",
-    screenshots: [],
+    screenshots: ["Fortnite 1", "Fortnite 2", "Fortnite 3"],
   },
   {
     index: 126,
@@ -2519,7 +2711,11 @@ const library = [
     ],
     picture: "StarWarsBattlefront",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Star Wars Battlefront  1",
+      "Star Wars Battlefront  2",
+      "Star Wars Battlefront  3",
+    ],
   },
   {
     index: 127,
@@ -2538,7 +2734,11 @@ const library = [
     ],
     picture: "TheAdventuresOfSherlockHolmes",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "The Adventures of Sherlock Holmes 1",
+      "The Adventures of Sherlock Holmes 2",
+      "The Adventures of Sherlock Holmes 3",
+    ],
   },
   {
     index: 128,
@@ -2556,7 +2756,7 @@ const library = [
     picture: "DragonsDogma",
     detailedDescription:
       "Фэнтезийная RPG, которая отличается уникальной системой «пешек». Пешки представляют из себя ваших спутников, которых вы не только можете выбирать и настраивать на свой вкус и под свой стиль игры, но и которые будут помогать в сражениях. ",
-    screenshots: [],
+    screenshots: ["Dragon's Dogma 1", "Dragon's Dogma 2", "Dragon's Dogma 3"],
   },
   {
     index: 129,
@@ -2574,7 +2774,7 @@ const library = [
     picture: "PumpkinJack",
     detailedDescription:
       "Тыквенный Джек, дух, который в канун Хэллоуина вместе с двумя спутниками: совой и вороном, выполняют поручение властелина преисподней. Pumpkin Jack выполнена в ярком мультяшном стиле и имеет юмористический уклон, что особенно заметно проявляется в диалогах между персонажами. Игра представляет из себя сочетание платформинга, боевых сражений и решений головоломок.",
-    screenshots: [],
+    screenshots: ["Pumpkin Jack 1", "Pumpkin Jack 2", "Pumpkin Jack 3"],
   },
   {
     index: 130,
@@ -2594,7 +2794,7 @@ const library = [
     ],
     picture: "SplinterCell",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["Splinter Cell 1", "Splinter Cell 2", "Splinter Cell 3"],
   },
   {
     index: 131,
@@ -2616,7 +2816,11 @@ const library = [
     picture: "RedDeadRedemption",
     detailedDescription:
       "Действие игры происходит в Америке в 1911 году и рассказывает о Джоне Марстоне, бывшем участнике банды, который теперь пытается наладить спокойную семейную жизнь и стать фермером. Однако Джона находят федеральные агенты и ставят условие: либо он находит других членов банды и расправляется с ними, либо пострадает его семья. И теперь Джон вынужден идти против бывших братьев, чтобы спасти себя и свою семью. В вашем распоряжении доступен открытый мир, по которому можно передвигаться на лошади. Также доступен неплохой арсенал оружия, в том числе коктейль Молотова, динамит и даже лассо.",
-    screenshots: [],
+    screenshots: [
+      "Red Dead Redemption 1",
+      "Red Dead Redemption 2",
+      "Red Dead Redemption 3",
+    ],
   },
   {
     index: 132,
@@ -2663,7 +2867,7 @@ const library = [
     picture: "Prototype",
     detailedDescription:
       "Главные герои серии Алекс Мерсер и Джеймс Хеллер стали обладателями удивительных и ужасающих суперспособностей. В арсенале у персонажей имеется множество уникальных возможностей для сражений, передвижения по миру и скрытому прохождению. Для исследования вам доступен Нью-Йорк, в эпицентре которого происходит кровавая война между страшными монстрами-мутантами и военными.",
-    screenshots: [],
+    screenshots: ["Prototype 1", "Prototype 2", "Prototype 3"],
   },
   {
     index: 134,
@@ -2681,7 +2885,7 @@ const library = [
     picture: "Fable",
     detailedDescription:
       "Игра в стиле фэнтези, в которой ваше поведение и стиль игры отражаются на главном герое и окружающем мире. Помимо ближнего и дальнего боев вам доступно использование магии. ",
-    screenshots: [],
+    screenshots: ["Fable 1", "Fable 2", "Fable 3"],
   },
   {
     index: 135,
@@ -2764,7 +2968,7 @@ const library = [
     picture: "GearsOfWar",
     detailedDescription:
       "Шутер от третьего лица, который акцентирует геймплей на использовании укрытий. События серии разворачиваются в далеком будущем на планете Сера. Из-за последствий войн люди были вынуждены покинуть Землю и нашли свой новый «дом» в виде планеты Сера. Однако смена одной планеты на другую не уберегло людей от новых воин и опасностей.",
-    screenshots: [],
+    screenshots: ["Gears of War 1", "Gears of War 2", "Gears of War 3"],
   },
   {
     index: 139,
@@ -2784,7 +2988,7 @@ const library = [
     picture: "Halo",
     detailedDescription:
       "Серия шутеров от первого лица, повествующая о противостоянии суперсолдат и пришельцев в далеком будущем. Помимо разного футуристического арсенала есть возможность использовать транспорт с огнестрельным оружием.",
-    screenshots: [],
+    screenshots: ["Halo 1", "Halo 2", "Halo 3"],
   },
   {
     index: 140,
@@ -2819,7 +3023,11 @@ const library = [
     ],
     picture: "Ryse",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: [
+      "Ryse Son of Rome 1",
+      "Ryse Son of Rome 2",
+      "Ryse Son of Rome 3",
+    ],
   },
   {
     index: 142,
@@ -2840,7 +3048,7 @@ const library = [
     ],
     picture: "STALKER",
     detailedDescription: "",
-    screenshots: [],
+    screenshots: ["S.T.A.L.K.E.R. 1", "S.T.A.L.K.E.R. 2", "S.T.A.L.K.E.R. 3"],
   },
   {
     index: 143,
