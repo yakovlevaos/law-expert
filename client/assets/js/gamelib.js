@@ -3786,7 +3786,17 @@ const filterGames = (games) => {
 
 const updateFilteredGames = (games) => {
   const filteredGames = filterGames(games);
-  table(filteredGames);
+  const tbody = document.querySelector("tbody");
+  if (filteredGames.length === 0) {
+    const html = `
+      <tr>
+        <td colspan="100%" class="text-center w-full">Мы не нашли ни одной игры, соответствующей этому запросу.</td>
+      </tr>
+    `;
+    tbody.innerHTML = html;
+  } else {
+    table(filteredGames);
+  }
 };
 
 window.addEventListener("load", () => {
