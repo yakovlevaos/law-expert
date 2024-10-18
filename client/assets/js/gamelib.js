@@ -1695,7 +1695,7 @@ const library = [
     picture: "ResidentEvil5",
     detailedDescription: "",
     screenshots: [
-      "Resident Evil 5 1",
+      "Resident evil 5 1",
       "Resident Evil 5 2",
       "Resident Evil 5 3",
     ],
