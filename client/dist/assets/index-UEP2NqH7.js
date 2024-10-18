@@ -1,4 +1,4 @@
-/* empty css              */import{l as p,i as c,a as l,S as n}from"./experts-MO9mihfE.js";const d=[{name:"Дмитрий Владимирович Юрков",photo:"yurkov-photo",docs:["yurkov-1","yurkov-2","yurkov-3","yurkov-4","yurkov-5"],title:"педагог-психолог МАОУ СШ № 158 «Грани»",description:`председатель научного
+/* empty css              */import{l as p,i as c,a as l,S as n}from"./experts-AF8xnTQk.js";const d=[{name:"Дмитрий Владимирович Юрков",photo:"yurkov-photo",docs:["yurkov-1","yurkov-2","yurkov-3","yurkov-4","yurkov-5"],title:"педагог-психолог МАОУ СШ № 158 «Грани»",description:`председатель научного
               сектора студенческого совета института психолого-педагогического
               образования КГПУ им В.П. Астафьева, первый в России
               практик-психолог, использующий в работе видеоигры.`},{name:"Евгений Сергеевич Эгле",photo:"egle-photo",docs:["egle-1","egle-2","egle-3"],title:"Руководитель социально-психологической службы МАОУ СШ № 150",description:`Педагог-психолог высшей категории, медиатор.
