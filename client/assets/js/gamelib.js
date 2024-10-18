@@ -35,7 +35,7 @@ const library = [
     type: "Одиночная",
     genre: "Hack and slash",
     competencies: [
-      "Мотивированность",
+      "мотивированность",
       "настрой на победу",
       "принятие поражений",
       "логическое мышление",
@@ -70,9 +70,9 @@ const library = [
     detailedDescription:
       "Сиквел истории о Человеке-пауке, которая посвящена теперь сразу двум паучкам: Питеру Паркеру и Майлзу Моралесу. Игра рассказывает о противостоянии паучков с охотником Крейвеном, который ищет достойного соперника для своей смерти война, а также с симбиотом, который сначала начнет негативно влиять на Питера, а затем создаст нового суперзлодея – Венома. Игра имеет ряд улучшений, как в боевой системе, так и в передвижении по городу: появились новые приемы, парирование, а во по городу теперь можно передвигаться с помощью полетов на паучьих крыльях. ",
     screenshots: [
-      "Marvel's Spider-man 2 1",
-      "Marvel's Spider-man 2 2",
-      "Marvel's Spider-man 2 3",
+      "Marvel’s Spider-man 2 1",
+      "Marvel’s Spider-man 2 1",
+      "Marvel’s Spider-man 2 1",
     ],
   },
   {
@@ -1767,7 +1767,7 @@ const library = [
   },
   {
     index: 81,
-    videoGame: "Tomb Raider",
+    videoGame: "Серия игр Tomb Raider",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["8 часов", "средняя"],
     type: "Одиночная",
@@ -3243,7 +3243,7 @@ const createDropdownMenu = (containerId, title, data, type) => {
 
   const dropdownMenu = document.createElement("div");
   dropdownMenu.className =
-    "hidden flex flex-col absolute origin-top-left mt-2 whitespace-nowrap rounded-md max-h-[50vh] py-2 overflow-y-auto shadow-lg bg-slate-500 ring-1 ring-black ring-opacity-5 focus:outline-none";
+    "hidden flex flex-col absolute origin-top-left mt-2 whitespace-wrap rounded-md max-h-[50vh] py-2 overflow-y-auto shadow-lg bg-slate-500 ring-1 ring-black ring-opacity-5 focus:outline-none";
   dropdownMenu.setAttribute("id", `${containerId}Menu`);
 
   const dropdownContent = document.createElement("div");
@@ -3355,88 +3355,6 @@ const displayComma = (property) => {
     : `<div>${property}</div>`;
 };
 
-document.querySelector("tbody").addEventListener("click", function (e) {
-  if (e.target && e.target.matches("button[id^='accordionButton-']")) {
-    const index = e.target.getAttribute("data-index");
-    toggleGameAccordion(index);
-  }
-});
-
-const addGameAccordionContent = (index, gameDescription, screenshots) => {
-  let description = gameDescription || "Описание в разработке";
-  const accordionContent = document.getElementById(`accordionContent-${index}`);
-
-  accordionContent.innerHTML = `
-    <td colspan="6" class="p-6 bg-gray-300 dark:bg-gray-700">
-      <p>${description}</p>
-      <div class="flex justify-between pt-2">
-        ${screenshots
-          .map(
-            (item) => `
-            <img
-               class="flex-1 mx-2 cursor-pointer game-screenshot"
-               src="/images/${item}.jpg"
-               alt="Screenshot"
-               style="max-width: calc(33.33% - 0.5rem);"
-            />
-          `,
-          )
-          .join("")}
-      </div>
-    </td>
-  `;
-
-  const openModal = initModal();
-  if (openModal) {
-    document.querySelectorAll(".game-screenshot").forEach((img) => {
-      img.addEventListener("click", function () {
-        openModal(this.src);
-      });
-    });
-  }
-};
-
-const toggleGameAccordion = (index) => {
-  const game = library.find((game) => game.index == index);
-
-  const content = document.getElementById(`accordionContent-${index}`);
-  const buttonRow = document.getElementById(`accordionButtonRow-${index}`);
-  const button = document.getElementById(`accordionButton-${index}`);
-
-  if (content.classList.contains("hidden")) {
-    const gameDescription = game.detailedDescription;
-    const screenshots = game.screenshots;
-
-    addGameAccordionContent(index, gameDescription, screenshots);
-
-    content.classList.remove("hidden");
-    buttonRow.classList.remove(
-      "border-b",
-      "border-slate-700",
-      "dark:border-slate-300",
-    );
-    content.classList.add(
-      "border-b",
-      "border-slate-700",
-      "dark:border-slate-300",
-    );
-    button.innerHTML = "Свернуть &#x25B2;";
-  } else {
-    content.classList.add("hidden");
-    buttonRow.classList.add(
-      "border-b",
-      "border-slate-700",
-      "dark:border-slate-300",
-    );
-    content.classList.remove(
-      "border-b",
-      "border-slate-700",
-      "dark:border-slate-300",
-    );
-    button.innerHTML = "Узнать больше &#x25BC;";
-  }
-};
-
 document.getElementById("faq").addEventListener("click", function (e) {
   if (e.target && e.target.matches("button[id^='accordionFaqButton-']")) {
     const index = e.target.getAttribute("data-index");
@@ -3489,6 +3407,85 @@ const toggleFaqAccordion = (index) => {
     faqButtonRow.classList.add("border-b", "border-slate-500");
     faqContent.classList.remove("border-b", "border-slate-500");
     faqButton.innerHTML = `${item.question} &#x25BC;`;
+  }
+};
+
+document.querySelector("tbody").addEventListener("click", function (e) {
+  if (e.target && e.target.matches("button[id^='accordionButton-']")) {
+    const index = e.target.getAttribute("data-index");
+    toggleGameAccordion(index);
+  }
+
+  if (e.target && e.target.matches(".game-screenshot")) {
+    const openModal = initModal();
+    if (openModal) {
+      openModal(e.target.src);
+    }
+  }
+});
+
+const addGameAccordionContent = (index, gameDescription, screenshots) => {
+  let description = gameDescription || "Описание в разработке";
+  const accordionContent = document.getElementById(`accordionContent-${index}`);
+
+  accordionContent.innerHTML = `
+    <td colspan="6" class="p-6 bg-gray-300 dark:bg-gray-700">
+      <p>${description}</p>
+      <div class="flex justify-between pt-2">
+        ${screenshots
+          .map(
+            (item) => `
+            <img
+               class="flex-1 mx-2 cursor-pointer game-screenshot"
+               src="/images/${item}.jpg"
+               alt="Screenshot"
+               style="max-width: calc(33.33% - 0.5rem);"
+            />
+          `,
+          )
+          .join("")}
+      </div>
+    </td>
+  `;
+};
+
+const toggleGameAccordion = (index) => {
+  const game = library.find((game) => game.index == index); // Find game based on index
+  const content = document.getElementById(`accordionContent-${index}`);
+  const buttonRow = document.getElementById(`accordionButtonRow-${index}`);
+  const button = document.getElementById(`accordionButton-${index}`);
+
+  if (content.classList.contains("hidden")) {
+    const gameDescription = game.detailedDescription;
+    const screenshots = game.screenshots;
+
+    addGameAccordionContent(index, gameDescription, screenshots);
+
+    content.classList.remove("hidden");
+    buttonRow.classList.remove(
+      "border-b",
+      "border-slate-700",
+      "dark:border-slate-300",
+    );
+    content.classList.add(
+      "border-b",
+      "border-slate-700",
+      "dark:border-slate-300",
+    );
+    button.innerHTML = "Свернуть &#x25B2;";
+  } else {
+    content.classList.add("hidden");
+    buttonRow.classList.add(
+      "border-b",
+      "border-slate-700",
+      "dark:border-slate-300",
+    );
+    content.classList.remove(
+      "border-b",
+      "border-slate-700",
+      "dark:border-slate-300",
+    );
+    button.innerHTML = "Узнать больше &#x25BC;";
   }
 };
 
@@ -3551,7 +3548,25 @@ const table = (arr) => {
             </div>
           </td>
         </tr>
-        <tr id="accordionContent-${item.index}"></tr>
+        <tr id="accordionContent-${item.index}" class="hidden">
+          <td colspan="6" class="p-6 bg-gray-300 dark:bg-gray-700">
+            <p>${item.detailedDescription || "Описание в разработке"}</p>
+            <div class="flex justify-between pt-2">
+              ${item.screenshots
+                .map(
+                  (screenshot) => `
+                  <img
+                    class="flex-1 mx-2 cursor-pointer game-screenshot"
+                    src="/images/${screenshot}.jpg"
+                    alt="Screenshot"
+                    style="max-width: calc(33.33% - 0.5rem);"
+                  />
+                `,
+                )
+                .join("")}
+            </div>
+          </td>
+        </tr>
 `,
     )
     .join("");
@@ -3596,14 +3611,12 @@ const filterGames = (games) => {
       type.length === 0 || type.every((t) => game.type.includes(t));
     const durationMatch =
       duration.length === 0 || duration.some((d) => game.duration.includes(d));
+    const competenciesToLowerCase = Array.isArray(game.competencies)
+      ? game.competencies.map((item) => item.toLowerCase())
+      : [];
     const competenciesMatch =
       competencies.length === 0 ||
-      competencies.every((c) =>
-        game.competencies.some((comp) =>
-          comp.toLowerCase().startsWith(c.toLowerCase()),
-        ),
-      );
-
+      competencies.every((c) => competenciesToLowerCase.includes(c));
     return (
       genreMatch &&
       platformMatch &&
