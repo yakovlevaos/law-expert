@@ -106,7 +106,7 @@ const library = [
     videoGame: "Серия игр FIFA",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Спортивный симулятор",
     competencies: [
       "Мотивированность",
@@ -125,7 +125,7 @@ const library = [
     videoGame: "Серия игр NHL",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Спортивный симулятор",
     competencies: [
       "Мотивированность",
@@ -144,7 +144,7 @@ const library = [
     videoGame: "Серия игр NBA",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Спортивный симулятор",
     competencies: [
       "Мотивированность",
@@ -313,7 +313,7 @@ const library = [
       "Серия игр Lego Games (более десятка игр по разным франшизам: Marvel, DC, Star Wars, Harry Potter)",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["5-10 часов", "средняя"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Аркада",
     competencies: [
       "Мотивированность",
@@ -383,7 +383,7 @@ const library = [
     videoGame: "Серия игр Uncharted",
     platform: ["PS3", "PS4", "PS5", "ПК"],
     duration: ["4-11 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Приключенческий боевик",
     competencies: [
       "Личностные компетенции",
@@ -661,7 +661,7 @@ const library = [
     videoGame: ["Injustice", "Injustice 2"],
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Файтинг",
     competencies: [
       "Мотивированность",
@@ -680,7 +680,7 @@ const library = [
     videoGame: "It takes two",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
     duration: ["10 часов", "средняя"],
-    type: ["Мультиплеерная", "Split screen"],
+    type: ["Мультиплеерная", "Локальный кооператив"],
     genre: "Приключенческий боевик",
     competencies: [
       "Институт семьи",
@@ -883,7 +883,7 @@ const library = [
     videoGame: "Teenage Mutant Ninja Turtles: Shredder's Revenge",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["2 часа", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Beat ’em up",
     competencies: [
       "Мотивированность",
@@ -984,7 +984,7 @@ const library = [
     videoGame: "Серия игр Marvel Ultimate Alliance",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["7-15 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Приключенческий боевик", "RPG"],
     competencies: [
       "Мотивированность",
@@ -1073,7 +1073,7 @@ const library = [
     videoGame: "Серия игр Mortal Kombat",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Файтинг",
     competencies: [
       "Мотивированность",
@@ -1138,7 +1138,7 @@ const library = [
     videoGame: "Серия игр Little Big Planet",
     platform: ["PS3", "PS4", "PS5"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Платформер", "Головоломка", "Конструктор уровней"],
     competencies: [
       "Креативность",
@@ -1184,7 +1184,7 @@ const library = [
     videoGame: "Tony Hawk's Pro Skater 1 + 2",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["3 часа", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор"],
     competencies: [
       "Мотивированность",
@@ -1259,7 +1259,7 @@ const library = [
     videoGame: "Серия игр Street Fighter",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Файтинг",
     competencies: [
       "Мотивированность",
@@ -1277,7 +1277,7 @@ const library = [
     videoGame: "Серия игр Tekken",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Файтинг",
     competencies: [
       "Мотивированность",
@@ -1296,7 +1296,7 @@ const library = [
     videoGame: "Серия игр SoulCalibur",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: "Файтинг",
     competencies: [
       "Мотивированность",
@@ -1315,7 +1315,7 @@ const library = [
     videoGame: "Серия игр Dead or Alive",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Файтинг"],
     competencies: [
       "Мотивированность",
@@ -1333,7 +1333,7 @@ const library = [
     videoGame: "Knack, Knack 2",
     platform: ["PS4", "PS5"],
     duration: ["10 часов", "средняя"],
-    type: ["Одиночная", "Split screen"],
+    type: ["Одиночная", "Локальный кооператив"],
     genre: ["Платформер"],
     competencies: [
       "Мотивированность",
@@ -1351,7 +1351,7 @@ const library = [
     videoGame: "Unravel 2",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["5 часов", "малая"],
-    type: ["Одиночная", "Split screen"],
+    type: ["Одиночная", "Локальный кооператив"],
     genre: ["Платформер"],
     competencies: [
       "Мотивированность",
@@ -1456,7 +1456,7 @@ const library = [
     videoGame: "A Way Out",
     platform: ["PS4", "PS5", "ПК", "Xbox"],
     duration: ["5 часов", "малая"],
-    type: ["Мультиплеерная", "Split screen"],
+    type: ["Мультиплеерная", "Локальный кооператив"],
     genre: ["Приключенческий боевик"],
     competencies: [
       "Личностные компетенции",
@@ -1521,7 +1521,7 @@ const library = [
     videoGame: "Crash Team Racing Nitro-Fueled",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор"],
     competencies: [
       "Мотивированность",
@@ -1670,7 +1670,7 @@ const library = [
     videoGame: "Mario Kart 8",
     platform: ["Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор"],
     competencies: [
       "Мотивированность",
@@ -1687,7 +1687,7 @@ const library = [
     videoGame: "Sackboy: A Big Adventure",
     platform: ["PS4", "PS5"],
     duration: ["8 часов", "средняя"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Платформер", "Головоломка"],
     competencies: [
       "Абстрактное мышление",
@@ -1711,7 +1711,7 @@ const library = [
     videoGame: "Naruto X Boruto: Ultimate Ninja Storm Connections",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["13 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Файтинг"],
     competencies: [
       "Мотивированность",
@@ -1742,7 +1742,7 @@ const library = [
     videoGame: "Серия игр Marvel vs. Capcom",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Файтинг"],
     competencies: [
       "Мотивированность",
@@ -1991,7 +1991,7 @@ const library = [
     videoGame: "Серия игр Gran Turismo",
     platform: ["PS3", "PS4", "PS5"],
     duration: ["15 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор", "Гоночный симулятор"],
     competencies: [
       "Мотивированность",
@@ -2234,7 +2234,7 @@ const library = [
     videoGame: "Серия игр WWE",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["7 часов", "средняя"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор"],
     competencies: [
       "Мотивированность",
@@ -2252,7 +2252,7 @@ const library = [
     videoGame: "Серия игр UFC",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Спортивный симулятор"],
     competencies: [
       "Мотивированность",
@@ -2271,7 +2271,7 @@ const library = [
     videoGame: ["Luigi's mansion 2 HD, Luigi's mansion 3"],
     platform: ["Nintendo Switch"],
     duration: ["15 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Головоломка"],
     competencies: [
       "Логическое мышление",
@@ -2490,7 +2490,7 @@ const library = [
     videoGame: "Серия игр Need for Speed",
     platform: ["PS3", "PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["12 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Гоночный симулятор"],
     competencies: [
       "Мотивированность",
@@ -2658,7 +2658,7 @@ const library = [
     videoGame: "Streets of Rage 4",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["3 часа", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Beat ’em up"],
     competencies: [
       "Мотивированность",
@@ -2704,7 +2704,7 @@ const library = [
     videoGame: "Darksiders Genesis",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["11 часов", "длинная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Приключенческий боевик", "Hack and slash"],
     competencies: [
       "Мотивированность",
@@ -2754,7 +2754,7 @@ const library = [
     videoGame: "Super Smash Bros. Ultimate",
     platform: ["Nintendo Switch"],
     duration: ["∞", "бесконечная"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Файтинг"],
     competencies: [
       "Мотивированность",
@@ -2779,7 +2779,7 @@ const library = [
     videoGame: "Cuphead",
     platform: ["PS4", "PS5", "ПК", "Xbox", "Nintendo Switch"],
     duration: ["5 часов", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Run and gun", "Хардкор", "Платформер"],
     competencies: [
       "Мотивированность",
@@ -3048,7 +3048,7 @@ const library = [
     videoGame: ["Battletoads"],
     platform: ["ПК", "Xbox"],
     duration: ["3 часа", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Beat ’em up"],
     competencies: [
       "Мотивированность",
@@ -3087,7 +3087,7 @@ const library = [
     videoGame: ["Серия игр Gears of War"],
     platform: ["ПК", "Xbox"],
     duration: ["9 часов", "средняя"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Приключенческий боевик", "Шутер"],
     competencies: [
       "Мотивированность",
@@ -3107,7 +3107,7 @@ const library = [
     videoGame: ["Серия игр Halo"],
     platform: ["ПК", "Xbox"],
     duration: ["5 часов", "малая"],
-    type: ["Одиночная", "Мультиплеерная", "Split screen"],
+    type: ["Одиночная", "Мультиплеерная", "Локальный кооператив"],
     genre: ["Шутер"],
     competencies: [
       "Мотивированность",
@@ -3285,7 +3285,7 @@ const dropdownData = {
   type: {
     1: "Одиночная",
     2: "Мультиплеерная",
-    3: "Split screen",
+    3: "Локальный кооператив",
   },
   competencies: {
     1: "абстрактное мышление",
@@ -3347,7 +3347,7 @@ const faq = [
     index: 1,
     question: "Основные термины",
     answer: [
-      "Split screen – игры с возможностью играть на одной консоли 2-м и более игрокам",
+      "Локальный кооператив – игры с возможностью играть на одной консоли 2-м и более игрокам",
       "Песочница – игры с большой свободой действий.",
       "RPG – ролевая игра, для которой характерны: возможность создавать главного героя, развивать характеристики подконтрольных игроку персонажей, выбирать варианты ответных реплик в диалогах с неигровыми персонажами, своими действиями влиять на ход внутриигровых нарративов.",
       "Платформер – игры с упором на прыжках по платформам.",
