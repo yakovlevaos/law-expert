@@ -5,8 +5,10 @@
       `;if(u.slideShadows){let x=g.querySelector(".swiper-slide-shadow");x||(x=le("cards",g)),x&&(x.style.opacity=Math.min(Math.max((Math.abs(w)-.5)/.5,0),1))}g.style.zIndex=-Math.abs(Math.round(h))+c.length;const S=he(u,g);S.style.transform=C}},setTransition:c=>{const f=e.slides.map(n=>ae(n));f.forEach(n=>{n.style.transitionDuration=`${c}ms`,n.querySelectorAll(".swiper-slide-shadow").forEach(u=>{u.style.transitionDuration=`${c}ms`})}),xe({swiper:e,duration:c,transformElements:f})},perspective:()=>!0,overwriteParams:()=>({watchSlidesProgress:!0,virtualTranslate:!e.params.cssMode})})}const js=[Es,xs,Ts,it,rt,Ms,Cs,Ps,Ls,Is,zs,As,$s,Ds,Os,ks,Xs,Ys,Ns,Fs,Ws,qs,_s];j.use(js);const Us=s=>{const e=s.docs.map(t=>`<a href="/docs/${t}.pdf" target="_blank"><img src="/images/${t}.jpg" class="w-10" /></a>`).join("");return`
     <div class="swiper-slide rounded-md flex flex-col justify-center items-center">
       <img src="/images/${s.photo}.jpg" alt="expert photo" class="h-96 overflow-hidden rounded-md mx-auto mb-2"/>
-        <h3 class="font-bold text-center pt-2 pb-4">${s.name}</h3>
+        <h3 class="font-bold text-center py-2">${s.name}</h3>
+        <h3 class="text-center py-2">${s.title}</h3>
         <div class="flex justify-center items-center gap-x-3">${e}</div>
+        
         <div class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5">
           <p class="pt-2 pb-2 font-bold">${s.description}</p>
         </div>  

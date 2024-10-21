@@ -14,8 +14,10 @@ const createExpertCard = (expert) => {
   return `
     <div class="swiper-slide rounded-md flex flex-col justify-center items-center">
       <img src="/images/${expert.photo}.jpg" alt="expert photo" class="h-96 overflow-hidden rounded-md mx-auto mb-2"/>
-        <h3 class="font-bold text-center pt-2 pb-4">${expert.name}</h3>
+        <h3 class="font-bold text-center py-2">${expert.name}</h3>
+        <h3 class="text-center py-2">${expert.title}</h3>
         <div class="flex justify-center items-center gap-x-3">${docsHTML}</div>
+        
         <div class="text-more flex flex-col justify-center items-center text-center text-sm mx-10 mb-5">
           <p class="pt-2 pb-2 font-bold">${expert.description}</p>
         </div>  
