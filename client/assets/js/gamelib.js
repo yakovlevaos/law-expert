@@ -6,7 +6,7 @@ let library = [];
 let dropdownData = {};
 let totalGames = 0;
 let isLoading = false;
-let nextPageUrl = "http://192.168.1.176:8099/api/v1/games/?page=1";
+let nextPageUrl = "https://genesis-expert.ru/api/v1/games/?page=1";
 
 const fetchGamesData = async (url) => {
   try {
@@ -26,14 +26,14 @@ const fetchGamesData = async (url) => {
 async function fetchDropdownData() {
   try {
     const endpoints = [
-      { url: "https://genesis-expert.ru/api/v1/genres", key: "genres" },
-      { url: "https://genesis-expert.ru/api/v1/modes", key: "modes" },
-      { url: "https://genesis-expert.ru/api/v1/platforms", key: "platforms" },
+      { url: "https://genesis-expert.ru/api/v1/genres/", key: "genres" },
+      { url: "https://genesis-expert.ru/api/v1/modes/", key: "modes" },
+      { url: "https://genesis-expert.ru/api/v1/platforms/", key: "platforms" },
       {
-        url: "https://genesis-expert.ru/api/v1/competencies",
+        url: "https://genesis-expert.ru/api/v1/competencies/",
         key: "competencies",
       },
-      { url: "https://genesis-expert.ru/api/v1/durations", key: "durations" },
+      { url: "https://genesis-expert.ru/api/v1/durations/", key: "durations" },
     ];
 
     const fetchPromises = endpoints.map(async ({ url, key }) => {
