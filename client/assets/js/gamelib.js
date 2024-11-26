@@ -4,18 +4,25 @@ import { initModal } from "./modal.js";
 let library = [];
 
 let dropdownData = {};
-async function fetchGamesData() {
+let totalGames = 0;
+let isLoading = false;
+let nextPageUrl = "http://192.168.1.176:8099/api/v1/games/?page=1";
+
+const fetchGamesData = async (url) => {
   try {
-    const response = await fetch("https://genesis-expert.ru/api/v1/games");
+    const response = await fetch(url);
     if (!response.ok) throw new Error(`Error: ${response.status}`);
     const data = await response.json();
-    library = data;
+    totalGames = data.count;
+    library.push(...data.results);
+    nextPageUrl = data.next;
     return data;
   } catch (error) {
     console.error("Failed to fetch games data:", error);
     return null;
   }
-}
+};
+
 async function fetchDropdownData() {
   try {
     const endpoints = [
@@ -159,7 +166,7 @@ const createDropdownMenu = (containerId, title, data, type) => {
           filterArray[type].splice(index, 1);
         }
       }
-      updateFilteredGames(library);
+      updateFilteredGames(library, false);
     });
   }
 
@@ -177,20 +184,8 @@ const createDropdownMenu = (containerId, title, data, type) => {
 };
 
 const numberOfGames = (arr) => {
-  const totalNumber = arr.length;
+  const totalNumber = totalGames;
   document.getElementById("total").innerHTML = totalNumber;
-};
-
-const sortGames = (arr) => {
-  return arr.sort((a, b) => {
-    const cleanTitle = (title) => {
-      if (Array.isArray(title)) title = title[0];
-      return typeof title === "string"
-        ? title.replace("Серия игр", "").trim().toLowerCase()
-        : title;
-    };
-    return cleanTitle(a.titles_list) > cleanTitle(b.titles_list) ? 1 : -1;
-  });
 };
 
 const displayVertical = (property) => {
@@ -245,7 +240,6 @@ const toggleFaqAccordion = (index) => {
     const question = item.question;
     const answer = item.answer;
 
-    // Add content to the accordion
     addFaqAccordionContent(index, question, answer);
 
     faqContent.classList.remove("hidden");
@@ -362,8 +356,7 @@ const faqBlock = (arr) => {
   document.getElementById("faq").innerHTML = html;
 };
 const table = (arr) => {
-  const sortedArray = sortGames(arr);
-  const html = sortedArray
+  return arr
     .map(
       (game) => `
         <tr class="text-center">
@@ -423,16 +416,13 @@ const table = (arr) => {
                 .join("")}
             </div>
           </td>
-        </tr>
-`,
+        </tr>`,
     )
     .join("");
-  document.querySelector("tbody").innerHTML = html;
 };
 
 const minitable = (arr) => {
-  const sortedArray = sortGames(arr);
-  const html = sortedArray
+  document.querySelector("#minitable").innerHTML = arr
     .map(
       (game) => `<div
       class="flex flex-col justify-center items-center pb-4 border-b border-slate-700 dark:border-slate-300"
@@ -462,7 +452,6 @@ const minitable = (arr) => {
     </div>`,
     )
     .join("");
-  document.querySelector("#minitable").innerHTML = html;
 };
 const filterGames = (games) => {
   const { genres, platforms, modes, durations, competencies } = filterArray;
@@ -493,60 +482,100 @@ const filterGames = (games) => {
   });
 };
 
-const updateFilteredGames = (games) => {
+const updateFilteredGames = (games, more = false) => {
   const filteredGames = filterGames(games);
-  const tbody = document.querySelector("tbody");
-  if (filteredGames.length === 0) {
-    const html = `
-      <tr>
-        <td colspan="100%" class="text-center w-full">Мы не нашли ни одной игры, соответствующей этому запросу.</td>
-      </tr>
-    `;
-    tbody.innerHTML = html;
+  const endOfTable = document.getElementById("endOfTable");
+
+  if (filteredGames.length === 0 && nextPageUrl === null) {
+    endOfTable.insertAdjacentHTML(
+      "beforebegin",
+      `
+        <tr>
+          <td colspan="100%" class="text-center w-full">Мы не нашли ни одной игры, соответствующей этому запросу.</td>
+        </tr>
+      `,
+    );
+    return;
+  }
+
+  if (more) {
+    const endOfTable = document.getElementById("endOfTable");
+    if (endOfTable && filteredGames) {
+      endOfTable.insertAdjacentHTML("beforebegin", table(filteredGames));
+    } else {
+      console.log("Either the table element or the HTML content is undefined");
+    }
   } else {
-    table(filteredGames);
+    const rowsToRemove = Array.from(endOfTable.parentElement.children).filter(
+      (row) => row.id !== "endOfTable",
+    );
+    rowsToRemove.forEach((row) => row.remove());
+
+    endOfTable.insertAdjacentHTML("beforebegin", table(filteredGames));
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {});
 document.addEventListener("DOMContentLoaded", async () => {
-  const data = await fetchGamesData();
-  const dropdownData = await fetchDropdownData();
-  if (data && dropdownData) {
-    createDropdownMenu(
-      "platformDropdownContainer",
-      "Платформа",
-      dropdownData.platforms,
-      "platforms",
-    );
-    createDropdownMenu(
-      "durationDropdownContainer",
-      "Продолжительность основной сюжетной линии (приблизительная)",
-      dropdownData.durations,
-      "durations",
-    );
+  try {
+    const initialData = await fetchGamesData(nextPageUrl);
+    const dropdownData = await fetchDropdownData();
 
-    createDropdownMenu(
-      "typeDropdownContainer",
-      "Режим игры",
-      dropdownData.modes,
-      "modes",
-    );
-    createDropdownMenu(
-      "genreDropdownContainer",
-      "Жанр",
-      dropdownData.genres,
-      "genres",
-    );
-    createDropdownMenu(
-      "competenciesDropdownContainer",
-      "Компетенции",
-      dropdownData.competencies,
-      "competencies",
-    );
-    faqBlock(faq);
-    numberOfGames(data);
-    updateFilteredGames(data);
-    minitable(data);
+    if (initialData && dropdownData) {
+      createDropdownMenu(
+        "platformDropdownContainer",
+        "Платформа",
+        dropdownData.platforms,
+        "platforms",
+      );
+      createDropdownMenu(
+        "durationDropdownContainer",
+        "Продолжительность основной сюжетной линии (приблизительная)",
+        dropdownData.durations,
+        "durations",
+      );
+      createDropdownMenu(
+        "typeDropdownContainer",
+        "Режим игры",
+        dropdownData.modes,
+        "modes",
+      );
+      createDropdownMenu(
+        "genreDropdownContainer",
+        "Жанр",
+        dropdownData.genres,
+        "genres",
+      );
+      createDropdownMenu(
+        "competenciesDropdownContainer",
+        "Компетенции",
+        dropdownData.competencies,
+        "competencies",
+      );
+
+      faqBlock(faq);
+      numberOfGames(initialData);
+      updateFilteredGames(initialData.results, true);
+      minitable(initialData.results);
+    }
+  } catch (error) {
+    console.error("Error during DOMContentLoaded:", error);
+  }
+});
+window.addEventListener("scroll", async () => {
+  if (
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
+    !isLoading &&
+    nextPageUrl &&
+    nextPageUrl !== "http://192.168.1.176:8099/api/v1/games/?page=1"
+  ) {
+    isLoading = true;
+    try {
+      const moreGames = await fetchGamesData(nextPageUrl);
+      updateFilteredGames(moreGames.results, true);
+    } catch (error) {
+      console.error("Failed to fetch games on scroll:", error);
+    } finally {
+      isLoading = false;
+    }
   }
 });
