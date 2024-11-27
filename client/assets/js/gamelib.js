@@ -555,7 +555,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       faqBlock(faq);
       numberOfGames(initialData);
       updateFilteredGames(initialData.results, true);
-      minitable(initialData.results);
+      minitable(library);
     }
   } catch (error) {
     console.error("Error during DOMContentLoaded:", error);
@@ -572,6 +572,7 @@ window.addEventListener("scroll", async () => {
     try {
       const moreGames = await fetchGamesData(nextPageUrl);
       updateFilteredGames(moreGames.results, true);
+      minitable(library);
     } catch (error) {
       console.error("Failed to fetch games on scroll:", error);
     } finally {
