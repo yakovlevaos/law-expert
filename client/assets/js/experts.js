@@ -1,6 +1,6 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules"; // Importing modules separately
-import "swiper/swiper-bundle.css"; // Import Swiper styles
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 import "../css/style.css";
 
 const createExpertCard = (expert) => {
