@@ -7,7 +7,7 @@ const createExpertCard = (expert) => {
   const docsHTML = expert.docs
     .map(
       (doc) =>
-        `<a href="/docs/${doc}.pdf" target="_blank"><img src="/images/${doc}.jpg" class="w-10" /></a>`,
+        `<a href="/docs/${doc}.pdf" target="_blank"><img src="/images/${doc}.jpg" class="w-10" /></a>`
     )
     .join("");
 
@@ -42,18 +42,18 @@ export const initializeSwiper = () => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-      dynamicBullets: true,
+      dynamicBullets: true
     },
     navigation: {
       nextEl: "#button-next-experts",
-      prevEl: "#button-prev-experts",
+      prevEl: "#button-prev-experts"
     },
     breakpoints: {
       320: { slidesPerView: 1, spaceBetween: 10 },
       480: { slidesPerView: 1, spaceBetween: 10 },
       640: { slidesPerView: 1, spaceBetween: 20 },
-      800: { slidesPerView: 2, spaceBetween: 40 },
-    },
+      800: { slidesPerView: 2, spaceBetween: 40 }
+    }
   });
 };
 
@@ -104,7 +104,7 @@ export const initialRendering = () => {
             .addEventListener("click", () => {
               // Call the same function to toggle between states
               reviewedElement.innerHTML = reviewedElement.textContent.includes(
-                "свернуть",
+                "свернуть"
               )
                 ? `<p>${subString}...</p>
                    <div id="button-more" class="pt-3 font-bold">Узнать больше</div>`

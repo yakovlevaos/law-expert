@@ -19,7 +19,7 @@ const projects = [
       "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»",
       "Загородный стационарный детский оздоровительный лагерь «Ласточка»",
       "Муниципальное молодежное автономное учреждение «ИТ-Центр»",
-      "Муниципальное молодежное автономное учреждение «Молодежный военно-спортивный центр «Патриот»",
+      "Муниципальное молодежное автономное учреждение «Молодежный военно-спортивный центр «Патриот»"
     ],
     description:
       "Проект направлен на внедрение цифровых-игровых технологий в современное патриотическое воспитание с применением инновационных психологических методик. Игровой формат позволяет не только привлекать внимание молодежной аудитории, но и эффективно передавать знания об истории, культуре и ценностях своей страны. Видеоигры с элементами исторической реконструкции, тактического планирования и командной работы могут стать отличной основой для патриотического воспитания, создавая у игроков чувство принадлежности и ответственности.",
@@ -30,8 +30,8 @@ const projects = [
       "cyberpatriot4",
       "cyberpatriot5",
       "cyberpatriot6",
-      "cyberpatriot7",
-    ],
+      "cyberpatriot7"
+    ]
   },
   {
     index: 2,
@@ -44,7 +44,7 @@ const projects = [
     partners: [
       "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»",
       "Загородный стационарный детский оздоровительный лагерь «Ласточка»",
-      "Муниципальное молодежное автономное учреждение «ИТ-Центр»",
+      "Муниципальное молодежное автономное учреждение «ИТ-Центр»"
     ],
     description:
       "Дети-подростки в возрасте с 10 до 17 лет, отдыхающие в\n      муниципальном загородном оздоровительном лагере «Ласточка», на\n      протяжении 4-ех сезонов проходили индивидуальные\n      психологические консультации с психологами «Генезис» с помощью\n      новейшей авторской методики, которая в своей работы использует\n      видеоигры в качестве инструмента. Кроме того, проведены\n      семинары о видеоиграх и их месте в жизни, культуре и их\n      влиянии на психологическое и эмоциональное здоровье.",
@@ -52,8 +52,8 @@ const projects = [
       "gameplayproject1",
       "gameplayproject2",
       "gameplayproject3",
-      "gameplayproject4",
-    ],
+      "gameplayproject4"
+    ]
   },
   {
     index: 3,
@@ -68,7 +68,7 @@ const projects = [
       "Главное управление образования администрации города Красноярска",
       "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго»",
       "Муниципальное молодежное автономное учреждение «ИТ-Центр»",
-      "Телеканал «Енисей»",
+      "Телеканал «Енисей»"
     ],
     description:
       "В рамках проекта на протяжении летнего периода 2024 года проводились на еженедельной основе киберспортивные тренировки по дисциплинам: Dota 2, Counter-strike 2, MK1 и EA FC 24 с участием киберспортивного тренера и психолога. Прорабатывались: умение работать с собственными эмоциями, повышение стрессоустойчивости, развитие коммуникативных навыков, повышение уверенности в себе. Кроме того, еженедельно проводились ценностно-смысловые дни, в рамках которых подростки совместно с психологами проходили сюжетноориентированные игры (The last of us, Ghost of Tsushima, God of war: Ragnarek), где прорабатывались: самоосознание, семейные ценности, инициатива и т.д. По итогам проекта был проведен киберспортивный турнир, а также проведена работа с родителями, в результате которой был снят видеоподкаст с психологами, где были разобраны все вопросы родительского сообщества о видеоиграх и их влиянии на детей. Публикации в СМИ: https://www.enisey.tv/news/post-69581/",
@@ -79,9 +79,36 @@ const projects = [
       "cypepsycho4",
       "cypepsycho5",
       "cypepsycho6",
-      "cypepsycho7",
-    ],
+      "cypepsycho7"
+    ]
   },
+  {
+    index: 4,
+    title: "Мои отражения",
+    period: "Июль – ноябрь 2025 года",
+    coverage: "100 подростков",
+    place: "г. Красноярск",
+    funding: "Субсидия в рамках конкурса «Ты-город», собственные средства.",
+    partners: [
+      "Главное управление образования администрации г. Красноярск.",
+      "Муниципальное автономное учреждение «Центр психолого-педагогической, медицинской и социальной помощи «Эго».",
+      "Муниципальное молодежное автономное учреждение «Молодежный центр «База».",
+      "Благотворительный фонд «Счастливые дети».",
+      "Региональная общественная организация «Совет отцов».",
+      "Муниципальное автономное учреждение «Дом Кино»"
+    ],
+    description:
+      "Проект посвящен творческому самовыражению подростков через фотографию. С начала августа до конца октября подростки посещали Молодёжный центр «БАЗА», где с ними работали профессиональный фотограф и психолог. Фотограф провел обучение базовым навыкам фотографирования и постобработки в виде лекционных и практических занятий. Психолог провел лекционные занятия по темам эмоций, восприятия, мотивации и практические занятия совместно с фотографом, направленные на работу с эмоциями, раскрепощением, повышением уверенности в себе и мотивации. Большим, завершающим мероприятием стала фотовыставка лучших работ и торжественное награждение участников. Мероприятие состоялось 2 ноября 2025 с 12:00 до 18:00 в пространстве кинотеатра «Дом Кино».",
+    images: [
+      "mirror1",
+      "mirror2",
+      "mirror3",
+      "mirror4",
+      "mirror5.mp4",
+      "mirror6.mp4",
+      "mirror7.mp4"
+    ]
+  }
 ];
 
 const tabSystem = {
@@ -131,15 +158,15 @@ const tabSystem = {
         loop: true,
         pagination: {
           el: ".swiper-pagination",
-          clickable: true,
+          clickable: true
         },
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+          prevEl: ".swiper-button-prev"
+        }
       });
     }
-  },
+  }
 };
 
 const createCard = (project, index) => {
@@ -147,6 +174,17 @@ const createCard = (project, index) => {
     index % 2 === 0
       ? "dark:bg-slate-900 bg-slate-100 md:rounded-2xl md:w-4/6 md:m-4 p-4"
       : "dark:bg-slate-900 bg-slate-100 md:rounded-2xl md:w-4/6 md:m-4 p-4 md:ml-auto";
+
+  // Determine first media element (image or video)
+  const firstMedia = project.images[0];
+  const [firstFilename, firstExtension] = firstMedia.split(".");
+  const firstMediaSrc =
+    firstExtension && firstExtension.toLowerCase() === "mp4"
+      ? `/images/${firstMedia}`
+      : firstExtension
+        ? `/images/${firstMedia}`
+        : `/images/${firstFilename}.jpeg`;
+
   const html = `
     <div class="card ${cardClass}">
       <div class="tabs">
@@ -168,7 +206,11 @@ const createCard = (project, index) => {
           <tbody>
             <tr>
               <td class="max-sm:hidden w-1/3 pr-2 mb-0" rowspan="4">
-                <img src="/images/${project.images[0]}.jpeg" alt="Image ${index}" class="w-full cursor-pointer card-screenshot" />
+                ${
+                  firstExtension && firstExtension.toLowerCase() === "mp4"
+                    ? `<video src="${firstMediaSrc}" alt="Media ${index}" class="w-full cursor-pointer card-screenshot" controls />`
+                    : `<img src="${firstMediaSrc}" alt="Image ${index}" class="w-full cursor-pointer card-screenshot" />`
+                }
               </td>
               <td class="font-bold">Срок реализации:</td>
               <td>${project.period}</td>
@@ -194,11 +236,20 @@ const createCard = (project, index) => {
       </div>
       <div class="tab-content px-2" id="tab-${index}-2" style="display:none;">
         <div class="flex">
-          <img
-            src="/images/${project.images[0]}.jpeg"
-            alt="Видеоигры1"
-            class="max-sm:hidden w-1/3 h-full cursor-pointer pr-4 card-screenshot"
-          />
+          ${
+            firstExtension && firstExtension.toLowerCase() === "mp4"
+              ? `<video
+                src="${firstMediaSrc}"
+                alt="Видеоигры1"
+                class="max-sm:hidden w-1/3 h-full cursor-pointer pr-4 card-screenshot"
+                controls
+              />`
+              : `<img
+                src="${firstMediaSrc}"
+                alt="Видеоигры1"
+                class="max-sm:hidden w-1/3 h-full cursor-pointer pr-4 card-screenshot"
+              />`
+          }
           <p>${project.description}</p>
         </div>
       </div>
@@ -206,12 +257,22 @@ const createCard = (project, index) => {
         <div class="swiper-container">
           <div class="swiper-wrapper">
             ${project.images
-              .map(
-                (img) =>
-                  `<div class="swiper-slide flex justify-center items-center">
-                    <img src="/images/${img}.jpeg" alt="Image Slide" class="object-contain w-full cursor-pointer card-screenshot" />
-                  </div>`,
-              )
+              .map((file) => {
+                const [filename, extension] = file.split(".");
+                if (extension && extension.toLowerCase() === "mp4") {
+                  return `<div class="swiper-slide flex justify-center items-center">
+                      <video src="/images/${file}" alt="Video Slide" class="object-contain w-full cursor-pointer card-screenshot" controls />
+                    </div>`;
+                } else {
+                  // Default to image if no extension or not mp4
+                  const imgSrc = extension
+                    ? `/images/${file}`
+                    : `/images/${filename}.jpeg`;
+                  return `<div class="swiper-slide flex justify-center items-center">
+                      <img src="${imgSrc}" alt="Image Slide" class="object-contain w-full cursor-pointer card-screenshot" />
+                    </div>`;
+                }
+              })
               .join("")}
           </div>
           <!-- Pagination -->
