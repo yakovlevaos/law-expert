@@ -1,18 +1,39 @@
-version: "3"
-
 services:
+  app:
+    build:
+      # Root context: the Dockerfile needs both web/ and the repository layout.
+      context: .
+      dockerfile: web/Dockerfile
+      args:
+        API_BASE_URL: ${API_BASE_URL:-https://genesis-expert.ru/api/v1}
+        NEXT_PUBLIC_YANDEX_METRIKA_ID: ${NEXT_PUBLIC_YANDEX_METRIKA_ID:-96536967}
+    container_name: "genesis-app"
+    restart: unless-stopped
+    environment:
+      # Must match the build arg: `images.remotePatterns` is baked in at build.
+      API_BASE_URL: ${API_BASE_URL:-https://genesis-expert.ru/api/v1}
+    volumes:
+      # next/image optimises local sources off disk, so the app needs the media
+      # even though nginx is what serves it to visitors.
+      - ./client/public/images:/app/public/images:ro
+      - ./client/public/docs:/app/public/docs:ro
+    networks:
+      - genesis-web
+
   nginx:
     build:
       context: ./deploy/nginx
       dockerfile: Dockerfile
     container_name: "genesis-nginx"
     restart: unless-stopped
+    depends_on:
+      - app
     networks:
       genesis-web:
         # The external reverse proxy reaches the site at this address.
         ipv4_address: 177.169.0.57
     volumes:
-      - ./client/dist/:/var/www/html/
+      - ./client/public:/var/www/media:ro
 
 networks:
   genesis-web:

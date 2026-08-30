@@ -1,0 +1,50 @@
+# syntax=docker/dockerfile:1
+#
+# Built from the repository root, not from `web/`: the app's public directory
+# symlinks into `client/public`, and those symlinks are excluded here in favour
+# of read-only bind mounts at runtime (see docker-compose.yml). Keeping the
+# ~400 MB of photos and video out of the image keeps builds and pulls fast.
+
+FROM node:22-alpine AS deps
+WORKDIR /app
+COPY web/package.json web/package-lock.json ./
+RUN npm ci
+
+FROM node:22-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY web/ ./
+
+# Both values are needed at build time, for different reasons: the pages are
+# prerendered here and fetch the catalog, and NEXT_PUBLIC_* is inlined into the
+# client bundle. API_BASE_URL also fixes `images.remotePatterns`, so the same
+# value has to be passed to the runtime stage or image optimisation will reject
+# the backend's URLs.
+ARG API_BASE_URL=https://genesis-expert.ru/api/v1
+ARG NEXT_PUBLIC_YANDEX_METRIKA_ID=
+ENV API_BASE_URL=$API_BASE_URL \
+    NEXT_PUBLIC_YANDEX_METRIKA_ID=$NEXT_PUBLIC_YANDEX_METRIKA_ID \
+    NEXT_TELEMETRY_DISABLED=1
+
+RUN npm run build
+
+FROM node:22-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    PORT=3000 \
+    HOSTNAME=0.0.0.0
+
+RUN addgroup -S -g 1001 nodejs && adduser -S -u 1001 -G nodejs nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Mount points for the media bind mounts; next/image reads these from disk when
+# optimising, so the files have to be present in this container too.
+RUN mkdir -p ./public/images ./public/docs && chown -R nextjs:nodejs ./public
+
+USER nextjs
+EXPOSE 3000
+CMD ["node", "server.js"]
