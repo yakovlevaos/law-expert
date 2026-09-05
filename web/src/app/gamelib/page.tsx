@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GameCatalog } from "@/components/gamelib/GameCatalog";
 import { GameLibFaq } from "@/components/gamelib/GameLibFaq";
-import { TelegramIcon, VkIcon } from "@/components/icons";
+import { GamepadIcon, TelegramIcon, VkIcon } from "@/components/icons";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ThemeToggle } from "@/components/theme";
 import { Section } from "@/components/ui/Section";
@@ -72,6 +72,17 @@ export default async function GameLibraryPage({ searchParams }: Props) {
               priority
               className="h-9 w-auto sm:h-11"
             />
+          </Link>
+
+          {/* Same stand-in as SiteHeader: below `sm` the wordmark cannot fit,
+              so the way through to the method travels as an icon beside the
+              site logo rather than disappearing off the bar. */}
+          <Link
+            href="/game"
+            className="grid size-10 shrink-0 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white sm:hidden"
+            aria-label="Методика: центр игровой психологической поддержки"
+          >
+            <GamepadIcon className="size-6" />
           </Link>
 
           <p className="hidden min-w-0 flex-1 text-center text-base font-semibold md:block">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { TelegramIcon, VkIcon } from "@/components/icons";
+import { GamepadIcon, TelegramIcon, VkIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme";
 import { PHONES, SOCIAL } from "@/data/site";
 
@@ -30,7 +30,7 @@ export const SiteHeader = ({
   gameCentreHref = "/game",
 }: Props) => (
   <header className="sticky top-0 z-30 bg-[var(--chrome)] text-[var(--chrome-foreground)] shadow-sm">
-    <div className="mx-auto flex max-w-[1600px] items-center gap-3 px-3 py-2 sm:gap-4 sm:px-5">
+    <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-3 py-2 sm:gap-4 sm:px-5">
       <Link
         href={homeHref}
         className="shrink-0 transition-opacity hover:opacity-80"
@@ -45,6 +45,20 @@ export const SiteHeader = ({
           className="h-9 w-auto sm:h-11 lg:h-14"
         />
       </Link>
+
+      {/* The game centre's wordmark is 136px wide and cannot ride in a phone's
+          bar, but it is the customer's second entrance and has to stay
+          reachable. Below `sm` it becomes this icon, next to the site logo
+          where the eye already is. */}
+      {showGameCentreLink && (
+        <Link
+          href={gameCentreHref}
+          className="grid size-10 shrink-0 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white sm:hidden"
+          aria-label="Центр игровой психологической поддержки"
+        >
+          <GamepadIcon className="size-6" />
+        </Link>
+      )}
 
       <nav aria-label="Основная навигация" className="hidden min-w-0 flex-1 lg:block">
         <ul className="flex items-center gap-x-4 text-sm whitespace-nowrap xl:gap-x-6 xl:text-base">
@@ -65,8 +79,10 @@ export const SiteHeader = ({
         {showGameCentreLink && (
           <Link
             href={gameCentreHref}
-            /* Below `sm` the bar cannot hold the logo, a phone number and the
-               icons at once; the link moves into the navigation rail instead. */
+            /* Below `sm` the bar cannot hold this wordmark, a phone number and
+               the icons at once; the gamepad icon beside the site logo stands
+               in for it there. It used to be a text link at the tail of the
+               scrollable rail, which nobody scrolled far enough to find. */
             className="hidden shrink-0 transition-opacity hover:opacity-80 sm:block"
             aria-label="Центр игровой психологической поддержки"
           >
@@ -96,6 +112,11 @@ export const SiteHeader = ({
           ))}
         </div>
 
+        {/* Measured, not guessed: with the logo, the games icon, a phone
+            number and the theme toggle the bar has 351px of content at the
+            narrowest, so VKontakte can appear from 360px and Telegram from
+            400px. Games come first because they are the entrance the customer
+            asked to keep; both social links are also in the footer. */}
         <div className="flex items-center gap-1">
           <a
             href={SOCIAL.vk}
@@ -103,7 +124,7 @@ export const SiteHeader = ({
             rel="noopener noreferrer"
             /* 44px hit area — the bare 16px logos of the old header were below
                the minimum touch target. */
-            className="grid size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white sm:size-11"
+            className="hidden size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white min-[360px]:grid sm:size-11"
             aria-label="Сообщество во ВКонтакте (откроется в новой вкладке)"
           >
             <VkIcon className="size-6" />
@@ -112,7 +133,7 @@ export const SiteHeader = ({
             href={SOCIAL.telegram}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white min-[420px]:grid sm:size-11"
+            className="hidden size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white min-[400px]:grid sm:size-11"
             aria-label="Канал в Telegram (откроется в новой вкладке)"
           >
             <TelegramIcon className="size-6" />
@@ -143,16 +164,6 @@ export const SiteHeader = ({
             </Link>
           </li>
         ))}
-        {showGameCentreLink && (
-          <li className="shrink-0 sm:hidden">
-            <Link
-              href={gameCentreHref}
-              className="block whitespace-nowrap rounded-md px-3 py-2 text-sm text-[var(--chrome-muted)] transition-colors duration-200 hover:bg-white/10 hover:text-white"
-            >
-              Игровой центр
-            </Link>
-          </li>
-        )}
       </ul>
     </nav>
   </header>
