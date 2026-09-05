@@ -68,6 +68,27 @@ jobs:
       cancel-in-progress: false
 
     steps:
+      - name: Check the deploy secrets are set
+        # Without them ssh is handed an empty destination and answers with its
+        # usage text, which says nothing about what is actually wrong. Name the
+        # missing secret instead — this is also the failure mode when one is
+        # rotated badly.
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          missing=()
+          for name in DEPLOY_HOST DEPLOY_USER DEPLOY_PATH DEPLOY_SSH_KEY DEPLOY_KNOWN_HOSTS; do
+            [[ -n "${!name}" ]] || missing+=("$name")
+          done
+          if (( ${#missing[@]} )); then
+            echo "::error::Deploy is not configured. Missing repository secrets: ${missing[*]}"
+            exit 1
+          fi
+
       - name: Configure SSH
         run: |
           install -m 700 -d ~/.ssh

@@ -188,8 +188,9 @@ build output names images after that directory rather than after anything in
 ### The first deploy
 
 `main` carries the Next.js client, so the pipeline is safe to arm. Adding the
-secrets is what turns it on: until they exist the `deploy` job fails at the SSH
-step and the server is untouched.
+secrets is what turns it on: until they exist the `deploy` job stops at its
+preflight check, naming the secrets that are missing, and the server is
+untouched.
 
 Before adding them, make sure the checkout at `DEPLOY_PATH` is on `main` and has
 a `.env` — the first automatic run fast-forwards it and rebuilds. Rehearse once
