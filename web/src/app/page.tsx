@@ -97,8 +97,12 @@ export default function HomePage() {
 
         <Section id="projects" title="Проекты" band>
           <div className="flex flex-col gap-6">
-            {PROJECTS.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+            {PROJECTS.map((project, index) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                isMirrored={index % 2 === 1}
+              />
             ))}
           </div>
         </Section>
