@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button, Card } from "@heroui/react";
 
-import { DocumentIcon } from "@/components/icons";
 import { expertDocCover, expertDocPdf, expertPhoto } from "@/data/experts";
 import type { Expert } from "@/data/experts";
 
@@ -51,25 +50,31 @@ export const ExpertCard = ({ expert }: { expert: Expert }) => {
         </Card.Header>
 
         {expert.docs.length > 0 && (
-          <ul className="flex flex-wrap items-center gap-2">
+          /*
+            Scans in a single row, as on the original site: the thumbnail is
+            the link, with no "PDF" caption beside it. Six of them do not fit
+            a card at this width, so the row scrolls sideways rather than
+            wrapping onto three lines and pushing the biography down. The
+            accessible name lives on the link, so dropping the visible caption
+            costs a screen reader nothing.
+          */
+          <ul className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {expert.docs.map((doc, index) => (
-              <li key={doc}>
+              <li key={doc} className="shrink-0">
                 <a
                   href={expertDocPdf(doc)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-1.5 rounded-md border border-[var(--border)] px-2 py-1.5 text-xs text-[var(--muted)] transition-colors duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  aria-label={`${expert.name}: документ ${index + 1}, PDF (откроется в новой вкладке)`}
+                  className="block overflow-hidden rounded-xs border border-[var(--border)] transition-colors duration-200 hover:border-[var(--accent)]"
+                  aria-label={`${expert.name}: документ ${index + 1} из ${expert.docs.length}, PDF (откроется в новой вкладке)`}
                 >
                   <Image
                     src={expertDocCover(doc)}
                     alt=""
-                    width={24}
-                    height={34}
-                    className="h-8 w-auto rounded-xs object-cover"
+                    width={64}
+                    height={88}
+                    className="h-14 w-auto max-w-none"
                   />
-                  <DocumentIcon className="size-4" aria-hidden="true" />
-                  <span>PDF</span>
                 </a>
               </li>
             ))}

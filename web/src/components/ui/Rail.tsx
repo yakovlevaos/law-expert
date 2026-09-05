@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Button } from "@heroui/react";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
@@ -10,12 +10,20 @@ type Props = {
   /** Announced to assistive technology, e.g. "Специалисты центра". */
   label: string;
   children: ReactNode;
-  /** Tailwind classes describing one item's width at each breakpoint. */
-  itemClassName?: string;
+  /**
+   * How many cards fill the row at each breakpoint, capped at how many there
+   * actually are so a short list is not squeezed into a fraction of the row.
+   * The track sizing itself lives in the `rail` utility.
+   */
+  visibleClassName?: string;
 };
 
-/** Gap between items, matching the `gap-6` on the track. */
+/** Gap between items, matching `--rail-gap` in the `rail` utility. */
 const GAP = 24;
+
+/** One card on a phone, up to four on a wide screen. */
+const DEFAULT_VISIBLE =
+  "[--rail-visible:1] sm:[--rail-visible:min(2,var(--rail-count))] lg:[--rail-visible:min(3,var(--rail-count))] xl:[--rail-visible:min(4,var(--rail-count))]";
 
 /**
  * Copies of the item list laid end to end. The visitor sits in the middle one
@@ -60,7 +68,7 @@ const prefersReducedMotion = () =>
  * seen. Native scrolling is untouched, so swipe, trackpad and momentum all
  * keep working.
  */
-export const Rail = ({ label, children, itemClassName }: Props) => {
+export const Rail = ({ label, children, visibleClassName }: Props) => {
   const trackRef = useRef<HTMLUListElement>(null);
   const copyWidthRef = useRef(0);
   const [isLooping, setIsLooping] = useState(false);
@@ -87,13 +95,17 @@ export const Rail = ({ label, children, itemClassName }: Props) => {
     const copy = (Array.from(track.children) as HTMLElement[]).slice(0, items.length);
     if (copy.length === 0) return;
 
+    // The gap after every card, the last one included: this is the distance
+    // from the start of one copy to the start of the next, which is what the
+    // wrap-around adds and subtracts.
     const copyWidth = copy.reduce((total, item) => total + item.offsetWidth + GAP, 0);
     copyWidthRef.current = copyWidth;
 
-    // Looping is only meaningful when a copy overflows the viewport. The game
-    // page shows this same rail with two people, which fits, and cloning there
-    // would just repeat them for no reason.
-    setIsLooping(copyWidth > track.clientWidth + 1);
+    // Looping is only meaningful when a copy overflows the viewport. Measured
+    // without that trailing gap, or a row sized to fit exactly would read as
+    // one gap too wide and clone itself for nothing -- which is what the game
+    // page, with its two people filling the row, does.
+    setIsLooping(copyWidth - GAP > track.clientWidth + 1);
   }, [items.length]);
 
   useLayoutEffect(() => {
@@ -165,7 +177,8 @@ export const Rail = ({ label, children, itemClassName }: Props) => {
         ref={trackRef}
         onScroll={onScroll}
         aria-label={label}
-        className="rail gap-6 pb-4"
+        style={{ "--rail-count": items.length } as CSSProperties}
+        className={`rail pb-4 ${visibleClassName ?? DEFAULT_VISIBLE}`}
       >
         {Array.from({ length: copies }, (_, copy) =>
           items.map((item, index) => (
@@ -177,7 +190,7 @@ export const Rail = ({ label, children, itemClassName }: Props) => {
               // bios or triple the tab stops.
               aria-hidden={isLooping && copy !== 1 ? true : undefined}
               inert={isLooping && copy !== 1}
-              className={itemClassName ?? "w-[85vw] sm:w-[380px]"}
+              className="min-w-0"
             >
               {item}
             </li>

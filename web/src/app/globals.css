@@ -130,10 +130,25 @@
   background-color: var(--band);
 }
 
-/* Horizontal rails: one card per swipe on touch, arrows on the desktop. */
+/*
+ * Horizontal rails: one card per swipe on touch, arrows on the desktop.
+ *
+ * Tracks are sized so a whole number of cards fills the row exactly --
+ * `--rail-visible` of them plus the gaps between them come to 100% — rather
+ * than a fixed card width that leaves a sliver of the next one showing. The
+ * consumer sets `--rail-visible` per breakpoint and `--rail-count` to how many
+ * cards there actually are, so a rail with fewer cards than slots does not
+ * squeeze them into a fraction of the row.
+ */
 @utility rail {
+  --rail-gap: 1.5rem;
+  --rail-visible: 1;
   display: grid;
   grid-auto-flow: column;
+  gap: var(--rail-gap);
+  grid-auto-columns: calc(
+    (100% - (var(--rail-visible) - 1) * var(--rail-gap)) / var(--rail-visible)
+  );
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
@@ -144,6 +159,11 @@
   display: none;
 }
 
+/*
+ * Snapped to the start, not the centre: with the row holding an exact number
+ * of cards, centring one would push half a card off each edge and defeat the
+ * point of the sizing above.
+ */
 .rail > * {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
