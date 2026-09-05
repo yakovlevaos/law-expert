@@ -30,7 +30,7 @@ export const SiteHeader = ({
   gameCentreHref = "/game",
 }: Props) => (
   <header className="sticky top-0 z-30 bg-[var(--chrome)] text-[var(--chrome-foreground)] shadow-sm">
-    <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-3 py-2 sm:gap-4 sm:px-5">
+    <div className="mx-auto flex max-w-[1600px] items-center gap-1.5 px-2 py-2 sm:gap-4 sm:px-5">
       <Link
         href={homeHref}
         className="shrink-0 transition-opacity hover:opacity-80"
@@ -75,7 +75,7 @@ export const SiteHeader = ({
         </ul>
       </nav>
 
-      <div className="ml-auto flex items-center gap-2 sm:gap-4">
+      <div className="ml-auto flex items-center gap-1.5 sm:gap-4">
         {showGameCentreLink && (
           <Link
             href={gameCentreHref}
@@ -103,7 +103,7 @@ export const SiteHeader = ({
             <a
               key={phone.tel}
               href={`tel:${phone.tel}`}
-              className={`whitespace-nowrap py-0.5 text-[var(--chrome-foreground)] transition-colors duration-200 hover:text-white ${
+              className={`tracking-tight whitespace-nowrap py-0.5 text-[var(--chrome-foreground)] transition-colors duration-200 hover:text-white sm:tracking-normal ${
                 index === 0 ? "" : "hidden sm:block"
               }`}
             >
@@ -112,11 +112,18 @@ export const SiteHeader = ({
           ))}
         </div>
 
-        {/* Measured, not guessed: with the logo, the games icon, a phone
-            number and the theme toggle the bar has 351px of content at the
-            narrowest, so VKontakte can appear from 360px and Telegram from
-            400px. Games come first because they are the entrance the customer
-            asked to keep; both social links are also in the footer. */}
+        {/* Measured, not guessed. Everything visible — logo, games icon, phone
+            number, both social links and the theme toggle — needs 360px of the
+            375px an iPhone SE gives, so VKontakte appears from 360px and
+            Telegram from 375px, which covers every current iPhone. Games come
+            first because they are the entrance the customer asked to keep;
+            both social links are also in the footer at any width.
+
+            The room for that last icon comes from the bar itself below `sm`:
+            8px side padding instead of 12, 6px gaps instead of 8, and tighter
+            letter-spacing on the phone number. Nothing shrinks the tap targets,
+            which stay at 40px — above the 24px WCAG minimum — and everything
+            reverts at `sm`. */}
         <div className="flex items-center gap-1">
           <a
             href={SOCIAL.vk}
@@ -133,7 +140,7 @@ export const SiteHeader = ({
             href={SOCIAL.telegram}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white min-[400px]:grid sm:size-11"
+            className="hidden size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white min-[375px]:grid sm:size-11"
             aria-label="Канал в Telegram (откроется в новой вкладке)"
           >
             <TelegramIcon className="size-6" />

@@ -47,7 +47,7 @@ export const ThemeToggle = ({ className }: { className?: string }) => {
     <button
       type="button"
       onClick={() => apply(!isDark)}
-      className={`grid size-11 cursor-pointer place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white ${className ?? ""}`}
+      className={`grid size-10 cursor-pointer place-items-center rounded-md sm:size-11 text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white ${className ?? ""}`}
       aria-label={isDark ? "Включить светлую тему" : "Включить тёмную тему"}
       aria-pressed={isReady ? isDark : undefined}
     >
