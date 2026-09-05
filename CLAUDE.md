@@ -122,3 +122,17 @@ The media is bind-mounted into *both* containers: nginx serves it, and the app n
 `API_BASE_URL` and `NEXT_PUBLIC_YANDEX_METRIKA_ID` come from a root `.env` (see `.env.example`) via compose substitution, and are passed as **both** build args and runtime env. `API_BASE_URL` fixes `images.remotePatterns` during the build, so the build-time and runtime values must agree.
 
 Compose takes its project name from the directory the repository is checked out into, so build output on a server names images after that directory rather than after anything in this file.
+
+## CI and the deploy pipeline
+
+`.github/workflows/ci.yml` mirrors the backend's, so the two repositories behave the same way:
+
+- **check** — `npm ci`, `npm run lint`, `npm run typecheck`, `npm run build`, on Node 22 to match the Dockerfile's base image. `npm ci` rather than `npm install`, so a `package-lock.json` that has drifted from `package.json` fails the run instead of being quietly rewritten. `API_BASE_URL` is pinned to the production value because the build bakes `images.remotePatterns` in from it; nothing is fetched from it, since only `/gamelib` talks to the API and it is rendered on demand.
+- **docker** — `docker compose build app`, not a bare `docker build`, so the build context and build args are checked along with the Dockerfile.
+- **deploy** — runs only on a green push to `main`, in a `production` environment, in a non-cancelling concurrency group so an older commit cannot overtake a newer one. It SSHes in and runs `deploy/deploy.sh`.
+
+`deploy/deploy.sh` fast-forwards the server's checkout to `origin/$DEPLOY_BRANCH` (default `main`), rebuilds with `docker compose up -d --build`, waits for nginx to answer at `http://177.169.0.57/`, and on failure resets to the previous commit and rebuilds again. It refuses to run without a `.env`. Its body is wrapped in `main()` because a release can rewrite the script while bash is still reading it. `up -d --build` rather than a plain image swap matters here: the photographs reach the site through bind mounts, so a release that moves them needs the mounts repointed too.
+
+Repository secrets the deploy job needs: `DEPLOY_SSH_KEY`, `DEPLOY_KNOWN_HOSTS`, `DEPLOY_USER`, `DEPLOY_HOST`, `DEPLOY_PATH`, and optionally `DEPLOY_PORT`.
+
+**The deploy job is only safe once `main` carries the Next.js client.** While `main` is still the old Vite site, a push to it would check the server out onto the legacy tree and rebuild from it — the pipeline would faithfully deploy a regression.
