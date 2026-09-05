@@ -48,8 +48,12 @@
   --chrome: oklch(0.2077 0.0398 265.75); /* slate-900 */
   --chrome-foreground: oklch(0.9683 0.0069 247.9);
   --chrome-muted: oklch(0.8452 0.0198 252.89);
-  /* Alternating section band. */
-  --band: oklch(0.9288 0.0126 255.51);
+  /* Alternating section band, and the card colour used on top of it. The
+     original site pairs a slate-300 band with slate-100 cards in the light
+     theme and inverts the relationship in the dark one, so a card is raised
+     against the band in the light theme and recessed into it in the dark. */
+  --band: oklch(0.869 0.0198 252.89); /* slate-300 */
+  --project-card: oklch(0.9683 0.0069 247.9); /* slate-100 */
 }
 
 [data-theme="dark"] {
@@ -73,7 +77,8 @@
   --chrome: oklch(0.1591 0.0329 266.44);
   --chrome-foreground: oklch(0.9683 0.0069 247.9);
   --chrome-muted: oklch(0.7137 0.0192 261.32);
-  --band: oklch(0.2795 0.0368 260.03);
+  --band: oklch(0.2795 0.0368 260.03); /* slate-800 */
+  --project-card: oklch(0.2077 0.0398 265.75); /* slate-900 */
 }
 
 @layer base {
