@@ -112,6 +112,22 @@
   }
 }
 
+/*
+ * HeroUI places a tab's underline with an inline `translate` worked out when
+ * the tabs mount. On the project cards that measurement is taken before the
+ * page above has settled — photographs load, balanced headings re-wrap — and
+ * it is never retaken, so the further down the page a card sits the further
+ * its underline drifts up, until it strikes through the label instead of
+ * sitting beneath it: 2px out on the first card, 21px on the fourth.
+ *
+ * The indicator's own static position, pinned to the bottom of the tab, is
+ * already correct, so the stale correction is simply dropped. `!important`
+ * because the value it overrides is an inline style.
+ */
+.tabs__indicator {
+  translate: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

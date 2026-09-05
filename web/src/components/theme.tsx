@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Switch } from "@heroui/react";
 
 import { MoonIcon, SunIcon } from "@/components/icons";
 
@@ -40,25 +39,23 @@ export const ThemeToggle = ({ className }: { className?: string }) => {
   };
 
   return (
-    <Switch
-      className={className}
-      isSelected={isDark}
-      onChange={apply}
-      size="sm"
+    /*
+      A plain icon control rather than a switch: the icon already says which
+      theme is on offer, and a track and thumb beside it said the same thing
+      twice. 44px hit area around a 20px mark.
+    */
+    <button
+      type="button"
+      onClick={() => apply(!isDark)}
+      className={`grid size-11 cursor-pointer place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white ${className ?? ""}`}
       aria-label={isDark ? "Включить светлую тему" : "Включить тёмную тему"}
+      aria-pressed={isReady ? isDark : undefined}
     >
-      <Switch.Control>
-        <Switch.Thumb />
-      </Switch.Control>
-      <Switch.Content>
-        <span className="text-[var(--chrome-muted)]" aria-hidden="true">
-          {isReady && isDark ? (
-            <MoonIcon className="size-4" />
-          ) : (
-            <SunIcon className="size-4" />
-          )}
-        </span>
-      </Switch.Content>
-    </Switch>
+      {isReady && isDark ? (
+        <MoonIcon className="size-5" />
+      ) : (
+        <SunIcon className="size-5" />
+      )}
+    </button>
   );
 };
