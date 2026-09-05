@@ -118,6 +118,13 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             </Tabs.Panel>
 
             <Tabs.Panel id="gallery" className="pt-5">
+              {/*
+                Thumbnails are navigation, not content: they fill their tile so
+                the contact sheet reads as one grid, and the whole frame is one
+                click away in the lightbox. Portrait-orientation shots would
+                otherwise sit as narrow strips between wide empty margins and
+                look like something failed to load.
+              */}
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {project.media.map((entry) => {
                   const media = resolveMedia(entry);
@@ -141,7 +148,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             muted
                             playsInline
                             preload="metadata"
-                            className="size-full object-contain"
+                            className="size-full object-cover"
                           />
                         ) : (
                           <Image
@@ -149,7 +156,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             alt=""
                             fill
                             sizes="(max-width: 640px) 45vw, 220px"
-                            className="object-contain transition-transform duration-200 hover:scale-[1.03]"
+                            className="object-cover transition-transform duration-200 hover:scale-[1.03]"
                           />
                         )}
                       </button>

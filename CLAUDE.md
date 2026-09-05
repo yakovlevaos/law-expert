@@ -87,6 +87,16 @@ Two skills are vendored into `.agents/skills/` (pinned in `skills-lock.json`). U
 
 Apply the guidance first, then verify the result in the browser as described below.
 
+## Images: fit the box to the source, never the source to the box
+
+The rewrite once put every image into a fixed-ratio box with `object-cover`, which cost the square service illustrations 37.5% of their height and cut the shoulders off the widest staff portrait. The rule that replaced it:
+
+- **Content** — anything a visitor came to look at, with no other way to see it whole — keeps its own aspect ratio. Staff portraits use a fixed height and natural width, centred, the way the original site did it; the square illustrations get a square box.
+- **Backgrounds** are cropped freely. The two hero banners are the only ones.
+- **Thumbnails that open a lightbox** fill their tile, because the grid has to read as one contact sheet and the whole frame is one click away.
+
+`object-contain` is the default for anything new. Before choosing a ratio, check the sources — `identify` or `naturalWidth/naturalHeight` in the browser — rather than assuming; the catalog mixes 3:2 photographs with 4:3 and the occasional portrait-orientation shot.
+
 ## Verify in the browser with Playwright MCP
 
 Use the Playwright MCP tools (`mcp__playwright__*`) for development and verification — not manual guesswork and not a different browser surface. There is no test suite here, so a change is only confirmed once it has been seen rendering.
