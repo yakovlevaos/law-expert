@@ -78,13 +78,22 @@ export default function GamePage() {
             Three to a row, with the second row nudged across. The grid is kept
             a shift narrower than the section so the offset row lands exactly
             on the right edge rather than pushing past it.
+
+            A card must also be free to be narrower than its own longest word:
+            «стрессоустойчивости» sets 204px at text-lg, wider than the text
+            column of a card on a 320px phone, and a grid item sizes itself to
+            its min-content unless told otherwise. Hence min-w-0 on the card and
+            on the text, with break-words and hyphenation to place the break —
+            without them the whole page scrolled sideways. Hyphenation is turned
+            off again at xl, where a column is wide enough not to need it and it
+            only chops words the balancer had already fitted.
           */}
           <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:w-[calc(100%-6rem)] lg:grid-cols-3">
             {METHOD_GOALS.map((goal, index) => (
               <Surface
                 key={goal}
                 as="li"
-                className={`flex items-start gap-4 border-l-4 border-[var(--accent)] p-6 ${
+                className={`flex min-w-0 items-start gap-4 border-l-4 border-[var(--accent)] p-5 sm:p-6 ${
                   Math.floor(index / 3) % 2 === 1 ? "lg:translate-x-24" : ""
                 }`}
               >
@@ -94,7 +103,7 @@ export default function GamePage() {
                 >
                   {index + 1}
                 </span>
-                <span className="text-lg leading-snug font-semibold text-balance">
+                <span className="min-w-0 flex-1 text-base leading-snug font-semibold break-words hyphens-auto text-balance sm:text-lg xl:hyphens-manual">
                   {goal}
                 </span>
               </Surface>
