@@ -15,8 +15,6 @@ import { EMPTY_QUERY, buildSearchParams, hasActiveFilters } from "@/lib/filters"
 import type { Facets, FacetKey, Game, NameRef } from "@/lib/types";
 import { FACET_LABELS } from "@/lib/types";
 
-/** Facets rendered as plain multi-selects; duration has its own control. */
-const SIMPLE_FACETS: FacetKey[] = ["platforms", "modes", "genres", "competencies"];
 const FACET_ORDER: FacetKey[] = [
   "platforms",
   "durations",
@@ -31,24 +29,14 @@ const names = (refs: NameRef[]) => refs.map((ref) => ref.name);
  * The one place a game's attributes are described. Both the table and the card
  * layout render from this list, so the two views cannot drift apart — which is
  * how the old mobile view ended up printing only the first character of the
- * playtime string. `sort` names the API ordering field where the column has one.
+ * playtime string.
  */
 const gameFields = (game: Game) => [
-  { key: "platforms", label: "Платформа", values: names(game.platforms), sort: null },
-  {
-    key: "durations",
-    label: "Продолжительность",
-    values: [game.duration],
-    sort: "duration_hours_min",
-  },
-  { key: "modes", label: "Режим игры", values: names(game.modes), sort: null },
-  { key: "genres", label: "Жанр", values: names(game.genres), sort: null },
-  {
-    key: "competencies",
-    label: "Компетенции",
-    values: names(game.competencies),
-    sort: null,
-  },
+  { key: "platforms", label: "Платформа", values: names(game.platforms) },
+  { key: "durations", label: "Продолжительность", values: [game.duration] },
+  { key: "modes", label: "Режим игры", values: names(game.modes) },
+  { key: "genres", label: "Жанр", values: names(game.genres) },
+  { key: "competencies", label: "Компетенции", values: names(game.competencies) },
 ];
 
 /**
@@ -205,6 +193,39 @@ export const GameCatalog = ({
   );
   const isFiltered = hasActiveFilters(query);
 
+  /** The filter control for one facet, wherever it is being placed. */
+  const filterFor = (key: FacetKey) =>
+    key === "durations" ? (
+      <DurationFilter
+        options={facets.durations}
+        selected={query.selected.durations}
+        onToggleType={(id) => toggle("durations", id)}
+        min={query.durationMin}
+        max={query.durationMax}
+        endless={query.endless}
+        onRangeChange={(durationMin, durationMax) =>
+          navigate({ durationMin, durationMax })
+        }
+        onEndlessChange={(endless) => navigate({ endless })}
+        onClear={() =>
+          navigate({
+            selected: { ...query.selected, durations: [] },
+            durationMin: null,
+            durationMax: null,
+            endless: false,
+          })
+        }
+      />
+    ) : (
+      <FacetFilter
+        label={FACET_LABELS[key]}
+        options={facets[key]}
+        selected={query.selected[key]}
+        onToggle={(id) => toggle(key, id)}
+        onClear={() => clearFacet(key)}
+      />
+    );
+
   const optionName = (key: FacetKey, id: number) =>
     facets[key].find((option) => option.id === id)?.name ?? String(id);
 
@@ -229,46 +250,22 @@ export const GameCatalog = ({
             value={query.ordering}
             onChange={(ordering) => navigate({ ordering })}
           />
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          {SIMPLE_FACETS.map((key) => (
-            <FacetFilter
-              key={key}
-              label={FACET_LABELS[key]}
-              options={facets[key]}
-              selected={query.selected[key]}
-              onToggle={(id) => toggle(key, id)}
-              onClear={() => clearFacet(key)}
-            />
-          ))}
-
-          <DurationFilter
-            options={facets.durations}
-            selected={query.selected.durations}
-            onToggleType={(id) => toggle("durations", id)}
-            min={query.durationMin}
-            max={query.durationMax}
-            endless={query.endless}
-            onRangeChange={(durationMin, durationMax) =>
-              navigate({ durationMin, durationMax })
-            }
-            onEndlessChange={(endless) => navigate({ endless })}
-            onClear={() =>
-              navigate({
-                selected: { ...query.selected, durations: [] },
-                durationMin: null,
-                durationMax: null,
-                endless: false,
-              })
-            }
-          />
 
           {isFiltered && (
             <Button variant="ghost" size="sm" onPress={clearAll}>
               Сбросить всё
             </Button>
           )}
+        </div>
+
+        {/*
+          Below xl there is no table to hang them on, so the filters keep a row
+          of their own; from xl each one moves into the column it filters.
+        */}
+        <div className="flex flex-wrap items-center gap-2 xl:hidden">
+          {FACET_ORDER.map((key) => (
+            <span key={key}>{filterFor(key)}</span>
+          ))}
         </div>
 
         {(activeCount > 0 ||
@@ -379,18 +376,12 @@ export const GameCatalog = ({
                       onSort={(ordering) => navigate({ ordering })}
                     />
                   </th>
-                  {gameFields(games[0]).map((field) => (
-                    <th key={field.key} scope="col" className="px-3 py-3">
-                      {field.sort ? (
-                        <SortableHeader
-                          label={field.label}
-                          field={field.sort}
-                          ordering={query.ordering}
-                          onSort={(ordering) => navigate({ ordering })}
-                        />
-                      ) : (
-                        <span className="font-semibold">{field.label}</span>
-                      )}
+                  {/* Each column filters itself, the way the original
+                      site's table did. Sorting stays in the control above,
+                      since a header cannot carry both without crowding. */}
+                  {FACET_ORDER.map((key) => (
+                    <th key={key} scope="col" className="px-3 py-3">
+                      {filterFor(key)}
                     </th>
                   ))}
                 </tr>
