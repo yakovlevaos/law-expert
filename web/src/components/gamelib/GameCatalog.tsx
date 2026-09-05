@@ -187,6 +187,51 @@ export const GameCatalog = ({
     navigate({ ...EMPTY_QUERY(step), ordering: query.ordering, search: "" });
   };
 
+  /*
+   * More rows are fetched as the visitor reaches the end of the list. The
+   * guard holds the largest `shown` already asked for: a navigation takes a
+   * round trip, during which `query.shown` still reads the old value, and
+   * without it the observer would fire again on every scroll event of that
+   * round trip and ask for the same page over and over. It follows
+   * `query.shown` exactly rather than growing monotonically, so changing a
+   * filter — which sends the list back to its first page — resets it too.
+   */
+  const requestedShown = useRef(query.shown);
+  useEffect(() => {
+    requestedShown.current = query.shown;
+  }, [query.shown]);
+
+  const loadMore = () => {
+    const next = query.shown + step;
+    if (requestedShown.current >= next) return;
+    requestedShown.current = next;
+    navigate({ shown: next });
+  };
+
+  // Read through a ref so the observer is not rebuilt on every render.
+  const loadMoreRef = useRef(loadMore);
+  useEffect(() => {
+    loadMoreRef.current = loadMore;
+  });
+
+  const hasMore = games.length < total;
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel || !hasMore) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) loadMoreRef.current();
+      },
+      // Fetch before the end is actually reached, so the list rarely stops.
+      { rootMargin: "600px" },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasMore]);
+
   const activeCount = FACET_ORDER.reduce(
     (count, key) => count + query.selected[key].length,
     0,
@@ -461,12 +506,21 @@ export const GameCatalog = ({
         </div>
       )}
 
-      {games.length < total && (
+      {hasMore && (
+        <div ref={sentinelRef} aria-hidden="true" className="h-px" />
+      )}
+
+      {hasMore && (
+        /*
+          The rows load on their own as the sentinel above comes into view;
+          this stays as the way through for anyone whose browser does not run
+          the observer, and for a visitor who would rather press than scroll.
+        */
         <Button
           variant="secondary"
           className="mx-auto"
           isPending={isPending}
-          onPress={() => navigate({ shown: query.shown + step })}
+          onPress={loadMore}
         >
           Показать ещё ({total - games.length})
         </Button>
