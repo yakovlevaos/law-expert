@@ -51,6 +51,12 @@ export const CloseIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const PlayIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.79-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
+  </svg>
+);
+
 export const VkIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M13.16 18.34c-6.02 0-9.45-4.13-9.6-11h3.02c.1 5.05 2.33 7.19 4.09 7.63V7.34h2.84v4.35c1.74-.19 3.57-2.17 4.19-4.35h2.84a8.4 8.4 0 0 1-3.87 5.5 8.7 8.7 0 0 1 4.53 5.5h-3.13a5.45 5.45 0 0 0-3.56-3.93v3.93h-.35Z" />
