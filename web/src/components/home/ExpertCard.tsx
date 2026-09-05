@@ -7,8 +7,14 @@ import { Button, Card } from "@heroui/react";
 import { expertDocCover, expertDocPdf, expertPhoto } from "@/data/experts";
 import type { Expert } from "@/data/experts";
 
-export const ExpertCard = ({ expert }: { expert: Expert }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+type Props = {
+  expert: Expert;
+  /** Shared with every other card in the rail; see ExpertsRail. */
+  isExpanded: boolean;
+  onToggle: () => void;
+};
+
+export const ExpertCard = ({ expert, isExpanded, onToggle }: Props) => {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const bioRef = useRef<HTMLParagraphElement>(null);
 
@@ -100,7 +106,7 @@ export const ExpertCard = ({ expert }: { expert: Expert }) => {
             variant="ghost"
             size="sm"
             className="mt-auto self-start px-0"
-            onPress={() => setIsExpanded((value) => !value)}
+            onPress={onToggle}
             aria-expanded={isExpanded}
           >
             {isExpanded ? "Свернуть" : "Узнать больше"}
