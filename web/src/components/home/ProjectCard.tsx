@@ -45,7 +45,12 @@ type Props = {
 
 export const ProjectCard = ({ project, isMirrored = false }: Props) => {
   const { open } = useLightbox();
-  const cover = resolveMedia(project.media[0]);
+  /**
+   * Two shots rather than one. The column runs the full height of the card,
+   * which follows whichever tab is open, and a single photograph left most of
+   * that height as bare tint.
+   */
+  const covers = project.media.slice(0, 2).map(resolveMedia);
   const links = PROJECT_LINKS[project.slug] ?? [];
 
   return (
@@ -61,42 +66,49 @@ export const ProjectCard = ({ project, isMirrored = false }: Props) => {
             : "md:grid-cols-[minmax(0,40%)_1fr]"
         }`}
       >
-        <button
-          type="button"
-          onClick={() =>
-            open({ src: cover.src, kind: cover.kind, alt: project.title })
-          }
-          /* The card's height follows the selected tab, so the cover column
-             is whatever height that comes to. `contain` centres the photo in
-             it rather than cropping it to fit, and the leftover space reads
-             as padding because it is the card's own background. */
-          /* A tint turns the column into a deliberate image panel. The card's
-             height follows the selected tab, and the cover is centred in
-             whatever that comes to rather than cropped to fill it -- against
-             the card's own white that centring read as an empty gap. */
-          className={`group relative aspect-3/2 w-full cursor-pointer overflow-hidden bg-[var(--surface-secondary)] md:aspect-auto md:h-full ${
+        <div
+          className={`flex aspect-3/2 w-full flex-col gap-2 md:aspect-auto md:h-full ${
             isMirrored ? "md:order-2" : ""
           }`}
-          aria-label={`Открыть медиа проекта «${project.title}»`}
         >
-          {cover.kind === "video" ? (
-            <video
-              src={cover.src}
-              muted
-              playsInline
-              preload="metadata"
-              className="size-full object-contain object-top"
-            />
-          ) : (
-            <Image
-              src={cover.src}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-contain object-top transition-transform duration-200 group-hover:scale-[1.02]"
-            />
-          )}
-        </button>
+          {covers.map((media, index) => (
+            <button
+              key={project.media[index]}
+              type="button"
+              onClick={() =>
+                open({ src: media.src, kind: media.kind, alt: project.title })
+              }
+              /* Each shot takes an equal share of the column and is contained
+                 within it, so nothing is cropped whatever height the card
+                 comes to. The tint makes the share read as an image panel
+                 rather than as a gap. Below md there is only room for one. */
+              className={`group relative min-h-0 flex-1 cursor-pointer overflow-hidden bg-[var(--surface-secondary)] ${
+                index > 0 ? "hidden md:block" : ""
+              }`}
+              aria-label={`Открыть ${
+                media.kind === "video" ? "видео" : "фотографию"
+              } проекта «${project.title}»`}
+            >
+              {media.kind === "video" ? (
+                <video
+                  src={media.src}
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="size-full object-contain"
+                />
+              ) : (
+                <Image
+                  src={media.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+                />
+              )}
+            </button>
+          ))}
+        </div>
 
         <div className={`min-w-0 p-5 sm:p-6 ${isMirrored ? "md:order-1" : ""}`}>
           <h3 className="text-xl font-bold text-balance">{project.title}</h3>
