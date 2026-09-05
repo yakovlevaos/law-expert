@@ -91,7 +91,8 @@ Apply the guidance first, then verify the result in the browser as described bel
 
 The rewrite once put every image into a fixed-ratio box with `object-cover`, which cost the square service illustrations 37.5% of their height and cut the shoulders off the widest staff portrait. The rule that replaced it:
 
-- **Content** — anything a visitor came to look at, with no other way to see it whole — keeps its own aspect ratio. Staff portraits use a fixed height and natural width, centred, the way the original site did it; the square illustrations get a square box.
+- **Content** — anything a visitor came to look at, with no other way to see it whole — keeps its own aspect ratio. The square illustrations get a square box, project covers a 3:2 one.
+- **Staff portraits are the exception**, at the customer's request: they are cropped to a shared 4:5 box so every card's photograph ends on the same line. `object-position: top` keeps the crop off the faces. Do not "fix" this back to `contain` — the ragged bottom edge it produced is what was objected to.
 - **Backgrounds** are cropped freely. The two hero banners are the only ones.
 - **Thumbnails that open a lightbox** fill their tile, because the grid has to read as one contact sheet and the whole frame is one click away.
 

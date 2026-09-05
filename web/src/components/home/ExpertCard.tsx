@@ -1,43 +1,50 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Button, Card } from "@heroui/react";
 
 import { expertDocCover, expertDocPdf, expertPhoto } from "@/data/experts";
 import type { Expert } from "@/data/experts";
 
-/** Bios longer than this are collapsed, matching the previous site's rule. */
-const WORD_LIMIT = 50;
-
-const splitBio = (text: string) => {
-  const words = text.trim().split(/\s+/);
-  if (words.length <= WORD_LIMIT) return { head: text.trim(), tail: "" };
-  return {
-    head: words.slice(0, WORD_LIMIT).join(" "),
-    tail: words.slice(WORD_LIMIT).join(" "),
-  };
-};
-
 export const ExpertCard = ({ expert }: { expert: Expert }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const { head, tail } = splitBio(expert.description);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const bioRef = useRef<HTMLParagraphElement>(null);
+
+  /*
+   * Collapsed to a fixed number of lines rather than a word count. The bios
+   * run from 16 to 48 words, and the card is one column wide on a phone and a
+   * quarter of the row on a wide screen, so the same wording fills wildly
+   * different numbers of lines; clamping the lines is what actually keeps the
+   * cards to a common height. Measured only while collapsed, so the state
+   * survives expanding and the control does not vanish under the reader.
+   */
+  useLayoutEffect(() => {
+    const bio = bioRef.current;
+    if (!bio || isExpanded) return;
+
+    const check = () => setIsOverflowing(bio.scrollHeight > bio.clientHeight + 1);
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(bio);
+    return () => observer.disconnect();
+  }, [isExpanded]);
 
   return (
     <Card className="flex h-full flex-col overflow-hidden p-0">
       {/*
-        Fixed height, natural width, centred -- the portraits range from 0.67
-        to 0.96 in aspect ratio, and a shared box would cut heads and
-        shoulders off the widest of them. The card's own background fills
-        whatever is left at the sides, so it reads as padding.
+        Cropped to a common box so every portrait ends on the same line, at the
+        customer's request. Anchored to the top, so what a wide photograph
+        loses is the bottom of the frame rather than the face.
       */}
-      <div className="relative h-[360px] w-full">
+      <div className="relative aspect-4/5 w-full">
         <Image
           src={expertPhoto(expert)}
           alt={`Фотография: ${expert.name}`}
           fill
-          sizes="(max-width: 640px) 85vw, 340px"
-          className="object-contain"
+          sizes="(max-width: 640px) 100vw, 25vw"
+          className="object-cover object-top"
         />
       </div>
 
@@ -58,7 +65,7 @@ export const ExpertCard = ({ expert }: { expert: Expert }) => {
             accessible name lives on the link, so dropping the visible caption
             costs a screen reader nothing.
           */
-          <ul className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ul className="flex gap-2 overflow-x-auto pb-1 [justify-content:safe_center] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {expert.docs.map((doc, index) => (
               <li key={doc} className="shrink-0">
                 <a
@@ -81,11 +88,14 @@ export const ExpertCard = ({ expert }: { expert: Expert }) => {
           </ul>
         )}
 
-        <p className="text-sm leading-relaxed">
-          {isExpanded || !tail ? expert.description : `${head}…`}
+        <p
+          ref={bioRef}
+          className={`text-sm leading-relaxed ${isExpanded ? "" : "line-clamp-4"}`}
+        >
+          {expert.description}
         </p>
 
-        {tail && (
+        {(isOverflowing || isExpanded) && (
           <Button
             variant="ghost"
             size="sm"
