@@ -76,7 +76,7 @@ export const ServiceItems = ({
             className="grid size-11 cursor-pointer place-items-center"
           >
             <span
-              className={`block size-3.5 rounded-full transition-colors duration-200 ${
+              className={`block size-3 rounded-full transition-colors duration-200 ${
                 index === active
                   ? "bg-[var(--accent)]"
                   : "bg-[var(--border)] hover:bg-[var(--muted)]"

@@ -135,8 +135,8 @@ export default function HomePage() {
                   alt=""
                   width={480}
                   height={480}
-                  sizes="(max-width: 768px) 50vw, 16vw"
-                  className="aspect-square w-1/2 self-center rounded-lg object-contain"
+                  sizes="(max-width: 768px) 60vw, 20vw"
+                  className="aspect-square w-3/5 self-center rounded-lg object-contain"
                 />
                 <p className="text-base leading-relaxed">{goal.text}</p>
               </li>
