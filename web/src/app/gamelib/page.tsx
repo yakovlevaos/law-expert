@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GameCatalog } from "@/components/gamelib/GameCatalog";
 import { GameLibFaq } from "@/components/gamelib/GameLibFaq";
-import { VkIcon } from "@/components/icons";
+import { TelegramIcon, VkIcon } from "@/components/icons";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ThemeToggle } from "@/components/theme";
 import { Section } from "@/components/ui/Section";
@@ -81,7 +81,11 @@ export default async function GameLibraryPage({ searchParams }: Props) {
           <div className="ml-auto flex items-center gap-2 sm:gap-4">
             <Link
               href="/game"
-              className="shrink-0 transition-opacity hover:opacity-80"
+              /* Below `sm` the bar cannot hold this 136px logo and both social
+                 icons at once — the theme toggle was the thing that got
+                 crushed. The same trade SiteHeader makes, and the route
+                 survives: the footer links to /game in words. */
+              className="hidden shrink-0 transition-opacity hover:opacity-80 sm:block"
               aria-label="Методика: центр игровой психологической поддержки"
             >
               <Image
@@ -92,15 +96,30 @@ export default async function GameLibraryPage({ searchParams }: Props) {
                 className="h-8 w-auto sm:h-10"
               />
             </Link>
-            <a
-              href={SOCIAL.vkGameLib}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid size-11 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white"
-              aria-label="Заметили ошибку? Напишите в группу ВКонтакте (откроется в новой вкладке)"
-            >
-              <VkIcon className="size-6" />
-            </a>
+            {/* Grouped, and spaced tighter than the rest of the bar, so the
+                two read as one set of social links rather than as two
+                unrelated controls — the same arrangement as SiteHeader, which
+                this page's header otherwise mirrors by hand. */}
+            <div className="flex items-center gap-1">
+              <a
+                href={SOCIAL.vkGameLib}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white sm:size-11"
+                aria-label="Заметили ошибку? Напишите в группу ВКонтакте (откроется в новой вкладке)"
+              >
+                <VkIcon className="size-6" />
+              </a>
+              <a
+                href={SOCIAL.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid size-10 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white sm:size-11"
+                aria-label="Канал в Telegram (откроется в новой вкладке)"
+              >
+                <TelegramIcon className="size-6" />
+              </a>
+            </div>
             <ThemeToggle />
           </div>
         </div>
