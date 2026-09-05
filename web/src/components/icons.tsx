@@ -57,6 +57,19 @@ export const PlayIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const GamepadIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className={className} aria-hidden="true">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M7.6 7.5h8.8a4.6 4.6 0 0 1 4.52 3.74l.6 3.2a2.8 2.8 0 0 1-2.75 3.31c-.9 0-1.74-.43-2.27-1.16l-.94-1.28a1.5 1.5 0 0 0-1.21-.61H9.65c-.48 0-.93.23-1.21.61l-.94 1.28A2.82 2.82 0 0 1 5.23 17.75a2.8 2.8 0 0 1-2.75-3.31l.6-3.2A4.6 4.6 0 0 1 7.6 7.5Z"
+    />
+    <path strokeLinecap="round" d="M8.1 10.6v2.4M6.9 11.8h2.4" />
+    <circle cx="15.4" cy="10.9" r="0.95" fill="currentColor" stroke="none" />
+    <circle cx="17.3" cy="12.8" r="0.95" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 export const VkIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M13.16 18.34c-6.02 0-9.45-4.13-9.6-11h3.02c.1 5.05 2.33 7.19 4.09 7.63V7.34h2.84v4.35c1.74-.19 3.57-2.17 4.19-4.35h2.84a8.4 8.4 0 0 1-3.87 5.5 8.7 8.7 0 0 1 4.53 5.5h-3.13a5.45 5.45 0 0 0-3.56-3.93v3.93h-.35Z" />
