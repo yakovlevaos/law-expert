@@ -127,15 +127,18 @@ export default function HomePage() {
                 key={goal.image}
                 className="flex flex-col gap-4 rounded-xl bg-[var(--surface)] p-5"
               >
+                {/* Half the card's width and centred, as on the original
+                    site, so the illustration frames the text instead of
+                    dominating the card. */}
                 <Image
                   src={goal.image}
                   alt=""
                   width={480}
                   height={480}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="aspect-square w-full rounded-lg object-contain"
+                  sizes="(max-width: 768px) 50vw, 16vw"
+                  className="aspect-square w-1/2 self-center rounded-lg object-contain"
                 />
-                <p className="text-sm leading-relaxed">{goal.text}</p>
+                <p className="text-base leading-relaxed">{goal.text}</p>
               </li>
             ))}
           </ul>
