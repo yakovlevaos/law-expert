@@ -8,7 +8,19 @@
 FROM node:22-alpine AS deps
 WORKDIR /app
 COPY web/package.json web/package-lock.json ./
-RUN npm ci
+
+# A flaky link to the registry used to fail the whole build: npm reports it as
+# "Exit handler never called!", which reads like a crash but is just an install
+# that was killed or stalled. This stage takes ~40s on a healthy connection and
+# has been seen to give up after 117s on the server, then succeed on a retry, so
+# the download is given room to recover instead. The cache mount means a retry
+# re-uses whatever was already fetched, and audit and funding are two round
+# trips a build has no use for.
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci --no-audit --no-fund \
+        --fetch-retries=5 \
+        --fetch-retry-maxtimeout=120000 \
+        --fetch-timeout=600000
 
 FROM node:22-alpine AS builder
 WORKDIR /app
