@@ -1,13 +1,12 @@
 # syntax=docker/dockerfile:1
 #
-# Built from the repository root, not from `web/`: the app's public directory
-# symlinks into `client/public`, and those symlinks are excluded here in favour
-# of read-only bind mounts at runtime (see docker-compose.yml). Keeping the
-# ~400 MB of photos and video out of the image keeps builds and pulls fast.
+# Built from `web/`, which is self-contained. The ~400 MB of photos, PDFs and
+# video under public/ is excluded by .dockerignore and bind-mounted read-only at
+# runtime instead (see docker-compose.yml), which keeps builds and pulls fast.
 
 FROM node:22-alpine AS deps
 WORKDIR /app
-COPY web/package.json web/package-lock.json ./
+COPY package.json package-lock.json ./
 
 # A flaky link to the registry used to fail the whole build: npm reports it as
 # "Exit handler never called!", which reads like a crash but is just an install
@@ -25,7 +24,7 @@ RUN --mount=type=cache,target=/root/.npm \
 FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY web/ ./
+COPY . ./
 
 # Both values are needed at build time, for different reasons: the pages are
 # prerendered here and fetch the catalog, and NEXT_PUBLIC_* is inlined into the

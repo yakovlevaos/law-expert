@@ -1,11 +1,10 @@
-# Development runs the Next.js client straight from `web/`; production runs it
-# from the Docker image behind nginx. Both are driven from this file.
+# Development runs the client straight from `web/`; production runs it from the
+# Docker image behind nginx. Both are driven from this file.
 #
 # Compose v2 is the default. On a host that still only has the old standalone
 # binary, override it: `make up COMPOSE=docker-compose`.
 COMPOSE ?= docker compose
 WEB := web
-LEGACY := client
 # The catalog API lives in a sibling repository; see the README of ../genesis.
 BACKEND := ../genesis
 
@@ -74,15 +73,5 @@ shell:  ## Open a shell inside the running client container
 config:  ## Render the resolved compose file
 	$(COMPOSE) config
 
-# --- Legacy Vite client -----------------------------------------------------
-# Kept working until the cutover is confirmed; not deployed any more.
-
-legacy-dev:  ## Run the old Vite dev server
-	cd $(LEGACY) && npm run dev
-
-legacy-build:  ## Build the old Vite client into client/dist
-	cd $(LEGACY) && npm run build
-
 .PHONY: help install dev backend backend-db lint typecheck check build start \
-	clean up down rebuild restart logs logs-nginx ps shell config \
-	legacy-dev legacy-build
+	clean up down rebuild restart logs logs-nginx ps shell config

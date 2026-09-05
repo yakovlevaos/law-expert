@@ -1,0 +1,6 @@
+node_modules
+.next
+.env.local
+# Photos, PDFs and video are bind-mounted at runtime instead of baked in.
+public/images
+public/docs
