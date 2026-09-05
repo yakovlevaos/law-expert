@@ -26,13 +26,19 @@ export const ExpertCard = ({ expert }: { expert: Expert }) => {
 
   return (
     <Card className="flex h-full flex-col overflow-hidden p-0">
-      <div className="relative aspect-4/5 w-full bg-[var(--surface-secondary)]">
+      {/*
+        Fixed height, natural width, centred -- the portraits range from 0.67
+        to 0.96 in aspect ratio, and a shared box would cut heads and
+        shoulders off the widest of them. The card's own background fills
+        whatever is left at the sides, so it reads as padding.
+      */}
+      <div className="relative h-[360px] w-full">
         <Image
           src={expertPhoto(expert)}
           alt={`Фотография: ${expert.name}`}
           fill
-          sizes="(max-width: 640px) 85vw, 380px"
-          className="object-cover"
+          sizes="(max-width: 640px) 85vw, 340px"
+          className="object-contain"
         />
       </div>
 

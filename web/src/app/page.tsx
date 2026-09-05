@@ -127,9 +127,9 @@ export default function HomePage() {
                   src={goal.image}
                   alt=""
                   width={480}
-                  height={320}
+                  height={480}
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="aspect-16/10 w-full rounded-lg object-cover"
+                  className="aspect-square w-full rounded-lg object-contain"
                 />
                 <p className="text-sm leading-relaxed">{goal.text}</p>
               </li>

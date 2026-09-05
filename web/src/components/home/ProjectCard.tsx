@@ -44,7 +44,11 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           onClick={() =>
             open({ src: cover.src, kind: cover.kind, alt: project.title })
           }
-          className="group relative aspect-4/3 w-full cursor-pointer overflow-hidden bg-[var(--surface-secondary)] md:aspect-auto md:h-full"
+          /* The card's height follows the selected tab, so the cover column
+             is whatever height that comes to. `contain` centres the photo in
+             it rather than cropping it to fit, and the leftover space reads
+             as padding because it is the card's own background. */
+          className="group relative aspect-3/2 w-full cursor-pointer overflow-hidden md:aspect-auto md:h-full"
           aria-label={`Открыть медиа проекта «${project.title}»`}
         >
           {cover.kind === "video" ? (
@@ -53,7 +57,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               muted
               playsInline
               preload="metadata"
-              className="size-full object-cover"
+              className="size-full object-contain"
             />
           ) : (
             <Image
@@ -61,7 +65,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 340px"
-              className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              className="object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           )}
         </button>
@@ -128,7 +132,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             alt: project.title,
                           })
                         }
-                        className="relative block aspect-4/3 w-full cursor-pointer overflow-hidden rounded-md bg-[var(--surface-secondary)]"
+                        className="relative block aspect-3/2 w-full cursor-pointer overflow-hidden rounded-md bg-[var(--surface-secondary)]"
                         aria-label={`Открыть ${media.kind === "video" ? "видео" : "фотографию"} проекта «${project.title}»`}
                       >
                         {media.kind === "video" ? (
@@ -137,7 +141,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             muted
                             playsInline
                             preload="metadata"
-                            className="size-full object-cover"
+                            className="size-full object-contain"
                           />
                         ) : (
                           <Image
@@ -145,7 +149,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                             alt=""
                             fill
                             sizes="(max-width: 640px) 45vw, 220px"
-                            className="object-cover transition-transform duration-200 hover:scale-[1.03]"
+                            className="object-contain transition-transform duration-200 hover:scale-[1.03]"
                           />
                         )}
                       </button>

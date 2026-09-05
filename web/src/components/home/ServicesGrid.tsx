@@ -17,13 +17,15 @@ export const ServicesGrid = () => (
         as="li"
         className="flex h-full flex-col overflow-hidden"
       >
-        <div className="relative aspect-16/10 w-full bg-[var(--surface-secondary)]">
+        {/* The illustrations are square; `contain` keeps a future
+            non-square one whole rather than silently cropping it. */}
+        <div className="relative aspect-square w-full bg-[var(--surface-secondary)]">
           <Image
             src={`/images/${service.image}.jpg`}
             alt=""
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
         <div className="flex flex-1 flex-col gap-3 p-5">
