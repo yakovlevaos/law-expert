@@ -15,6 +15,7 @@ export const ServicesGrid = () => (
       <Surface
         key={service.title}
         as="li"
+        tone="band"
         className="flex h-full flex-col overflow-hidden"
       >
         {/* The illustrations are square; `contain` keeps a future

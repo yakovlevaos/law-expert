@@ -106,11 +106,11 @@ export const ProjectCard = ({ project, isMirrored = false }: Props) => {
     <Card
       /*
        * One solid block on the section's band rather than a card split into an
-       * image panel and a text panel. `--project-card` keeps the original's
+       * image panel and a text panel. `--card-on-band` keeps the original's
        * relationship to the band in each theme: lighter than the band in the
        * light theme, darker than it in the dark one.
        */
-      className={`bg-[var(--project-card)] p-5 sm:p-6 lg:w-5/6 xl:w-4/6 ${
+      className={`bg-[var(--card-on-band)] p-5 sm:p-6 lg:w-5/6 xl:w-4/6 ${
         isMirrored ? "lg:ml-auto" : ""
       }`}
     >

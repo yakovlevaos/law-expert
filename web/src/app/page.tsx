@@ -8,6 +8,7 @@ import { Contacts } from "@/components/site/Contacts";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { Section } from "@/components/ui/Section";
+import { Surface } from "@/components/ui/Surface";
 import { EXPERTS } from "@/data/experts";
 import { PROJECTS } from "@/data/projects";
 import {
@@ -123,9 +124,11 @@ export default function HomePage() {
           <h3 className="mt-10 text-xl font-bold">Цели деятельности организации</h3>
           <ul className="mt-5 grid gap-6 md:grid-cols-3">
             {ABOUT_GOALS.map((goal) => (
-              <li
+              <Surface
                 key={goal.image}
-                className="flex flex-col gap-4 rounded-xl bg-[var(--surface)] p-5"
+                as="li"
+                tone="band"
+                className="flex flex-col gap-4 p-5"
               >
                 {/* Half the card's width and centred, as on the original
                     site, so the illustration frames the text instead of
@@ -139,7 +142,7 @@ export default function HomePage() {
                   className="aspect-square w-3/5 self-center rounded-lg object-contain"
                 />
                 <p className="text-base leading-relaxed">{goal.text}</p>
-              </li>
+              </Surface>
             ))}
           </ul>
 

@@ -48,12 +48,14 @@
   --chrome: oklch(0.2077 0.0398 265.75); /* slate-900 */
   --chrome-foreground: oklch(0.9683 0.0069 247.9);
   --chrome-muted: oklch(0.8452 0.0198 252.89);
-  /* Alternating section band, and the card colour used on top of it. The
+  /* Alternating section band, and the colour of any card sitting on it. The
      original site pairs a slate-300 band with slate-100 cards in the light
      theme and inverts the relationship in the dark one, so a card is raised
-     against the band in the light theme and recessed into it in the dark. */
+     against the band in the light theme and recessed into it in the dark.
+     `--surface` cannot serve here: in the dark theme it is the same slate-800
+     as the band, and a card on a band would have no edge at all. */
   --band: oklch(0.869 0.0198 252.89); /* slate-300 */
-  --project-card: oklch(0.9683 0.0069 247.9); /* slate-100 */
+  --card-on-band: oklch(0.9683 0.0069 247.9); /* slate-100 */
 }
 
 [data-theme="dark"] {
@@ -78,7 +80,7 @@
   --chrome-foreground: oklch(0.9683 0.0069 247.9);
   --chrome-muted: oklch(0.7137 0.0192 261.32);
   --band: oklch(0.2795 0.0368 260.03); /* slate-800 */
-  --project-card: oklch(0.2077 0.0398 265.75); /* slate-900 */
+  --card-on-band: oklch(0.2077 0.0398 265.75); /* slate-900 */
 }
 
 @layer base {
