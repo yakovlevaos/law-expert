@@ -6,6 +6,7 @@ import { Contacts } from "@/components/site/Contacts";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { Section } from "@/components/ui/Section";
+import { Surface } from "@/components/ui/Surface";
 import { GAME_EXPERTS } from "@/data/experts";
 import { METHOD_GOALS } from "@/data/gamelib";
 import { GAME_NAV, PHONES } from "@/data/site";
@@ -65,21 +66,39 @@ export default function GamePage() {
           title="Методика"
           lead="Преимущество методики заключается в заинтересованности подростков в консультациях. Создается комфортная и безопасная среда, что позволяет эффективно работать и решать трудности и проблемы подростка."
         >
-          <h3 className="text-xl font-bold">Задачи, которые решает методика</h3>
-          <ul className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {METHOD_GOALS.map((goal) => (
-              <li
+          <h3 className="text-2xl font-bold sm:text-3xl">
+            Задачи, которые решает методика
+          </h3>
+          {/*
+            The page's case for the method, so it is given weight: numbered,
+            set larger than body copy, and each carrying an accent mark, rather
+            than reading as five more paragraphs.
+          */}
+          <ol className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {METHOD_GOALS.map((goal, index) => (
+              <Surface
                 key={goal}
-                className="rounded-xl bg-[var(--surface)] p-5 text-base leading-relaxed font-medium text-balance"
+                as="li"
+                className="flex items-start gap-4 border-l-4 border-[var(--accent)] p-6"
               >
-                {goal}
-              </li>
+                <span
+                  aria-hidden="true"
+                  className="grid size-10 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-lg font-bold text-[var(--accent-foreground)]"
+                >
+                  {index + 1}
+                </span>
+                <span className="text-lg leading-snug font-semibold text-balance">
+                  {goal}
+                </span>
+              </Surface>
             ))}
-          </ul>
+          </ol>
         </Section>
 
         <Section id="authors" title="Специалисты" band>
-          <ExpertsRail experts={GAME_EXPERTS} />
+          <div className="max-w-[820px]">
+            <ExpertsRail experts={GAME_EXPERTS} />
+          </div>
         </Section>
 
         <Section id="contacts" title="Контакты">
