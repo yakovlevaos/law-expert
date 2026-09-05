@@ -74,12 +74,19 @@ export default function GamePage() {
             set larger than body copy, and each carrying an accent mark, rather
             than reading as five more paragraphs.
           */}
-          <ol className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {/*
+            Three to a row, with the second row nudged across. The grid is kept
+            a shift narrower than the section so the offset row lands exactly
+            on the right edge rather than pushing past it.
+          */}
+          <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:w-[calc(100%-6rem)] lg:grid-cols-3">
             {METHOD_GOALS.map((goal, index) => (
               <Surface
                 key={goal}
                 as="li"
-                className="flex items-start gap-4 border-l-4 border-[var(--accent)] p-6"
+                className={`flex items-start gap-4 border-l-4 border-[var(--accent)] p-6 ${
+                  Math.floor(index / 3) % 2 === 1 ? "lg:translate-x-24" : ""
+                }`}
               >
                 <span
                   aria-hidden="true"
@@ -92,6 +99,19 @@ export default function GamePage() {
                 </span>
               </Surface>
             ))}
+
+            {/*
+              A sixth, empty slot closing the second row: the same card shape
+              and accent bar, dissolving to nothing on the right. With the row
+              already offset, the fade reads as the row carrying on past the
+              edge rather than stopping short against a blank gap. Decoration
+              only, so it is hidden from assistive technology, and it appears
+              only at the width where the offset does.
+            */}
+            <li
+              aria-hidden="true"
+              className="hidden rounded-[var(--radius)] border-l-4 border-[color-mix(in_oklab,var(--accent)_30%,transparent)] bg-linear-to-r from-[var(--surface)] to-transparent lg:block lg:translate-x-24"
+            />
           </ol>
         </Section>
 
