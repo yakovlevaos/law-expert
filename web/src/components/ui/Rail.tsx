@@ -5,6 +5,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { Button } from "@heroui/react";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
+import { scrollTrackTo } from "@/lib/scroll";
 
 type Props = {
   /** Announced to assistive technology, e.g. "Специалисты центра". */
@@ -20,12 +21,6 @@ type Props = {
 
 /** Gap between items, matching `--rail-gap` in the `rail` utility. */
 const GAP = 24;
-
-/**
- * How long to let an arrow-driven scroll animate before the row's position is
- * asserted. Comfortably longer than the browser's own smooth scroll.
- */
-const SCROLL_DURATION = 500;
 
 /** One card on a phone, up to four on a wide screen. */
 const DEFAULT_VISIBLE =
@@ -57,9 +52,6 @@ const correction = (position: number, copyWidth: number) => {
   return 0;
 };
 
-const prefersReducedMotion = () =>
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 /**
  * A horizontally scrollable row with snap points, replacing the Swiper
  * carousels of the old site. It is a plain scroll container, so it works
@@ -80,7 +72,7 @@ export const Rail = ({ label, children, visibleClassName }: Props) => {
   const [isLooping, setIsLooping] = useState(false);
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(false);
-  const settleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelScroll = useRef<(() => void) | null>(null);
   const isAnimatingRef = useRef(false);
 
   const items = Array.isArray(children) ? children : [children];
@@ -155,12 +147,7 @@ export const Rail = ({ label, children, visibleClassName }: Props) => {
     track.scrollLeft += correction(track.scrollLeft, copyWidth);
   }, [isLooping]);
 
-  useEffect(
-    () => () => {
-      if (settleTimer.current) clearTimeout(settleTimer.current);
-    },
-    [],
-  );
+  useEffect(() => () => cancelScroll.current?.(), []);
 
   const onScroll = () => {
     recentre();
@@ -182,41 +169,15 @@ export const Rail = ({ label, children, visibleClassName }: Props) => {
       track.scrollLeft += correction(track.scrollLeft + step * direction, copyWidth);
     }
 
-    /*
-     * Two things get in the way of simply asking the browser to scroll here.
-     *
-     * `scroll-snap-type: x mandatory` fights a programmatic smooth scroll: the
-     * snap engine keeps re-targeting the point the row is already on, the
-     * animation is dropped, and the arrows appear dead -- which is exactly
-     * what they did. So snapping is suspended for the length of the scroll.
-     *
-     * And smooth scrolling itself is not guaranteed to run: it is driven by
-     * animation frames, which a background tab or a headless browser may
-     * starve. So the position is asserted once the scroll should have
-     * finished. A press therefore always ends one card further along, whether
-     * or not the animation was ever drawn.
-     */
     const target = track.scrollLeft + step * direction;
-    const reduceMotion = prefersReducedMotion();
 
-    if (settleTimer.current) clearTimeout(settleTimer.current);
-    track.style.scrollSnapType = "none";
+    cancelScroll.current?.();
     isAnimatingRef.current = true;
-
-    track.scrollTo({ left: target, behavior: reduceMotion ? "auto" : "smooth" });
-
-    const settle = () => {
-      if (Math.abs(track.scrollLeft - target) > 2) track.scrollLeft = target;
-      // The landing position is a card boundary, so restoring snapping moves
-      // nothing.
-      track.style.scrollSnapType = "";
+    cancelScroll.current = scrollTrackTo(track, target, () => {
+      cancelScroll.current = null;
       isAnimatingRef.current = false;
-      settleTimer.current = null;
       recentre();
-    };
-
-    if (reduceMotion) settle();
-    else settleTimer.current = setTimeout(settle, SCROLL_DURATION);
+    });
   };
 
   return (

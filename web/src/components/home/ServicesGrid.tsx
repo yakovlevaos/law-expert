@@ -1,13 +1,13 @@
 import Image from "next/image";
 
+import { ServiceItems } from "@/components/home/ServiceItems";
 import { Surface } from "@/components/ui/Surface";
 import { SERVICES } from "@/data/services";
 
 /**
- * The old page nested a carousel inside a carousel here, so each service
- * showed one bullet at a time and the rest were only reachable by swiping.
- * Everything is listed at once now — the copy is short enough that hiding it
- * cost more than it saved.
+ * Each card carries its own carousel of what the service covers, as the
+ * original site did. The bulleted list that replaced it made the cards very
+ * uneven -- consulting has four points to mediation's one.
  */
 export const ServicesGrid = () => (
   <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -30,11 +30,7 @@ export const ServicesGrid = () => (
         </div>
         <div className="flex flex-1 flex-col gap-3 p-5">
           <h3 className="text-lg font-bold">{service.title}</h3>
-          <ul className="flex list-disc flex-col gap-2 pl-4 text-sm leading-relaxed marker:text-[var(--accent)]">
-            {service.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <ServiceItems title={service.title} items={service.items} />
         </div>
       </Surface>
     ))}
