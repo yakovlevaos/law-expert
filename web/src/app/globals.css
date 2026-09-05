@@ -1,0 +1,187 @@
+/* Tailwind v4 first, HeroUI styles after — the order is required by HeroUI. */
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/*
+ * Dark mode is driven by `data-theme` on <html>, which is also what HeroUI's
+ * own tokens key off. Pointing Tailwind's `dark:` variant at the same
+ * attribute keeps utility classes and HeroUI components in step, so a single
+ * attribute flip themes the whole page.
+ */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+
+  /* Reading measure for long Russian prose blocks. */
+  --container-prose: 68ch;
+}
+
+/*
+ * Brand tokens layered on top of HeroUI's defaults. Only the values that
+ * differ are redefined; everything derived (hover states, soft variants,
+ * borders) is recalculated by HeroUI from these.
+ */
+:root,
+[data-theme="light"] {
+  --background: oklch(0.9761 0.0032 247.86); /* slate-50/100 */
+  --foreground: oklch(0.2795 0.0368 260.03); /* slate-800 */
+  --surface: oklch(1 0 0);
+  --surface-secondary: oklch(0.9683 0.0069 247.9);
+  --surface-tertiary: oklch(0.9288 0.0126 255.51);
+  --overlay: oklch(1 0 0); /* popovers and modals sit on the same white */
+  --overlay-foreground: var(--foreground);
+  /* Unchecked controls and quiet buttons; must read against `--surface`. */
+  --default: oklch(0.9288 0.0126 255.51); /* slate-200 */
+  --default-foreground: var(--foreground);
+  --field-background: oklch(1 0 0);
+  --field-border: oklch(0.8686 0.0198 252.89);
+  --muted: oklch(0.5544 0.0407 257.42); /* slate-500 */
+  --border: oklch(0.9288 0.0126 255.51); /* slate-200 */
+  --separator: oklch(0.9288 0.0126 255.51);
+  --accent: oklch(0.5462 0.2152 262.88); /* #2563EB — trust blue */
+  --accent-foreground: oklch(1 0 0);
+  --link: var(--accent);
+
+  /* Page chrome: the dark header/footer band the current site is known by. */
+  --chrome: oklch(0.2077 0.0398 265.75); /* slate-900 */
+  --chrome-foreground: oklch(0.9683 0.0069 247.9);
+  --chrome-muted: oklch(0.8452 0.0198 252.89);
+  /* Alternating section band, and the colour of any card sitting on it. The
+     original site pairs a slate-300 band with slate-100 cards in the light
+     theme and inverts the relationship in the dark one, so a card is raised
+     against the band in the light theme and recessed into it in the dark.
+     `--surface` cannot serve here: in the dark theme it is the same slate-800
+     as the band, and a card on a band would have no edge at all. */
+  --band: oklch(0.869 0.0198 252.89); /* slate-300 */
+  --card-on-band: oklch(0.9683 0.0069 247.9); /* slate-100 */
+}
+
+[data-theme="dark"] {
+  --background: oklch(0.2077 0.0398 265.75); /* slate-900 */
+  --foreground: oklch(0.9683 0.0069 247.9); /* slate-100 */
+  --surface: oklch(0.2795 0.0368 260.03); /* slate-800 */
+  --surface-secondary: oklch(0.3211 0.0364 259.73);
+  --surface-tertiary: oklch(0.3717 0.0392 257.29);
+  --overlay: oklch(0.2795 0.0368 260.03);
+  --overlay-foreground: var(--foreground);
+  --default: oklch(0.3717 0.0392 257.29); /* slate-600 */
+  --default-foreground: var(--foreground);
+  --field-background: oklch(0.2495 0.0368 260.03);
+  --field-border: oklch(0.4461 0.0263 256.8);
+  --muted: oklch(0.7137 0.0192 261.32); /* slate-400 */
+  --border: oklch(0.3717 0.0392 257.29); /* slate-600 */
+  --separator: oklch(0.3211 0.0364 259.73);
+  --accent: oklch(0.6626 0.1836 258.34); /* lifted for contrast on dark */
+  --accent-foreground: oklch(0.1 0.02 265);
+
+  --chrome: oklch(0.1591 0.0329 266.44);
+  --chrome-foreground: oklch(0.9683 0.0069 247.9);
+  --chrome-muted: oklch(0.7137 0.0192 261.32);
+  --band: oklch(0.2795 0.0368 260.03); /* slate-800 */
+  --card-on-band: oklch(0.2077 0.0398 265.75); /* slate-900 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header height, so anchor links don't land under it. */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  /* Keyboard focus must stay visible everywhere, including on custom chrome. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/*
+ * HeroUI places a tab's underline with an inline `translate` worked out when
+ * the tabs mount. On the project cards that measurement is taken before the
+ * page above has settled — photographs load, balanced headings re-wrap — and
+ * it is never retaken, so the further down the page a card sits the further
+ * its underline drifts up, until it strikes through the label instead of
+ * sitting beneath it: 2px out on the first card, 21px on the fourth.
+ *
+ * The indicator's own static position, pinned to the bottom of the tab, is
+ * already correct, so the stale correction is simply dropped. `!important`
+ * because the value it overrides is an inline style.
+ */
+.tabs__indicator {
+  translate: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility band {
+  background-color: var(--band);
+}
+
+/*
+ * Horizontal rails: one card per swipe on touch, arrows on the desktop.
+ *
+ * Tracks are sized so a whole number of cards fills the row exactly --
+ * `--rail-visible` of them plus the gaps between them come to 100% — rather
+ * than a fixed card width that leaves a sliver of the next one showing. The
+ * consumer sets `--rail-visible` per breakpoint and `--rail-count` to how many
+ * cards there actually are, so a rail with fewer cards than slots does not
+ * squeeze them into a fraction of the row.
+ */
+@utility rail {
+  --rail-gap: 1.5rem;
+  --rail-visible: 1;
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--rail-gap);
+  grid-auto-columns: calc(
+    (100% - (var(--rail-visible) - 1) * var(--rail-gap)) / var(--rail-visible)
+  );
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * Snapped to the start, not the centre: with the row holding an exact number
+ * of cards, centring one would push half a card off each edge and defeat the
+ * point of the sizing above.
+ */
+.rail > * {
+  scroll-snap-align: start;
+}
