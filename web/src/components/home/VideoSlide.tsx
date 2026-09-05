@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import { PlayIcon } from "@/components/icons";
@@ -54,10 +55,19 @@ export const VideoSlide = ({ video }: { video: SiteVideo }) => {
           <button
             type="button"
             onClick={() => setIsPlaying(true)}
-            className="group grid size-full cursor-pointer place-items-center bg-[var(--surface-tertiary)]"
+            className="group relative grid size-full cursor-pointer place-items-center bg-[var(--surface-tertiary)]"
             aria-label={`Воспроизвести: ${video.title}`}
           >
-            <span className="grid size-16 place-items-center rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] transition-transform duration-200 group-hover:scale-110">
+            {video.poster && (
+              <Image
+                src={video.poster}
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+              />
+            )}
+            <span className="relative grid size-16 place-items-center rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] shadow-lg transition-transform duration-200 group-hover:scale-110">
               <PlayIcon className="size-7 translate-x-0.5" />
             </span>
           </button>
