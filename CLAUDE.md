@@ -42,7 +42,7 @@ Dark mode is `data-theme` on `<html>`, set before paint by an inline script in `
 All three are addressed by absolute runtime paths, but they are deployed differently, which is the part that bites:
 
 - `web/public/img/` — small interface assets (banners, logos, illustrations). **Baked into the Docker image.** A change here reaches production by rebuilding.
-- `web/public/images/` and `web/public/docs/` — the ~400 MB of photographs, certificate scans, video and PDFs. **Excluded by `web/.dockerignore` and bind-mounted read-only at runtime** (see `docker-compose.yml`), so they never pass through the build. A new photograph must be put on the server's disk; rebuilding the image will not carry it.
+- `web/public/images/` and `web/public/docs/` — the ~400 MB of photographs, certificate scans, video and PDFs. **Excluded by `web/.dockerignore` and bind-mounted read-only at runtime** (see `docker-compose.yml`), so they never pass through the build. They are tracked in git, so a new photograph reaches production through the deploy checkout rather than through the image — rebuilding alone will not carry it.
 
 `public/docs/` also holds the favicons and `site.webmanifest` that `layout.tsx` points at, so that mount is not optional — without it the site loses its icons.
 
@@ -135,4 +135,4 @@ Compose takes its project name from the directory the repository is checked out 
 
 Repository secrets the deploy job needs: `DEPLOY_SSH_KEY`, `DEPLOY_KNOWN_HOSTS`, `DEPLOY_USER`, `DEPLOY_HOST`, `DEPLOY_PATH`, and optionally `DEPLOY_PORT`.
 
-**The deploy job is only safe once `main` carries the Next.js client.** While `main` is still the old Vite site, a push to it would check the server out onto the legacy tree and rebuild from it — the pipeline would faithfully deploy a regression.
+The pipeline goes live when those secrets are set; until then the `deploy` job fails at the SSH step and the server is untouched. `main` carries the Next.js client, so arming it is safe.
