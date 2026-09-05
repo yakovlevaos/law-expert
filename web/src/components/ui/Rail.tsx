@@ -17,6 +17,12 @@ type Props = {
    * The track sizing itself lives in the `rail` utility.
    */
   visibleClassName?: string;
+  /**
+   * Whether the row may wrap around. Off for content that is expensive to
+   * duplicate — looping renders the list three times, and three copies of a
+   * video embed is three players.
+   */
+  canLoop?: boolean;
 };
 
 /** Gap between items, matching `--rail-gap` in the `rail` utility. */
@@ -66,7 +72,12 @@ const correction = (position: number, copyWidth: number) => {
  * seen. Native scrolling is untouched, so swipe, trackpad and momentum all
  * keep working.
  */
-export const Rail = ({ label, children, visibleClassName }: Props) => {
+export const Rail = ({
+  label,
+  children,
+  visibleClassName,
+  canLoop = true,
+}: Props) => {
   const trackRef = useRef<HTMLUListElement>(null);
   const copyWidthRef = useRef(0);
   const [isLooping, setIsLooping] = useState(false);
@@ -105,8 +116,8 @@ export const Rail = ({ label, children, visibleClassName }: Props) => {
     // without that trailing gap, or a row sized to fit exactly would read as
     // one gap too wide and clone itself for nothing -- which is what the game
     // page, with its two people filling the row, does.
-    setIsLooping(copyWidth - GAP > track.clientWidth + 1);
-  }, [items.length]);
+    setIsLooping(canLoop && copyWidth - GAP > track.clientWidth + 1);
+  }, [items.length, canLoop]);
 
   useLayoutEffect(() => {
     const track = trackRef.current;

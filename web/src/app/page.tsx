@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ExpertsRail } from "@/components/home/ExpertsRail";
 import { ProjectCard } from "@/components/home/ProjectCard";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { VideoGrid } from "@/components/home/VideoGrid";
+import { VideoCarousel } from "@/components/home/VideoCarousel";
 import { Contacts } from "@/components/site/Contacts";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -108,7 +108,7 @@ export default function HomePage() {
         </Section>
 
         <Section id="video" title="Видео">
-          <VideoGrid />
+          <VideoCarousel />
         </Section>
 
         <Section id="about" title="О нас" band>
