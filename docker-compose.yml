@@ -1,9 +1,10 @@
 services:
   app:
     build:
-      # Root context: the Dockerfile needs both web/ and the repository layout.
-      context: .
-      dockerfile: web/Dockerfile
+      # web/ is self-contained — the app and its media both live there — so the
+      # context does not have to be the repository root.
+      context: ./web
+      dockerfile: Dockerfile
       args:
         API_BASE_URL: ${API_BASE_URL:-https://genesis-expert.ru/api/v1}
         NEXT_PUBLIC_YANDEX_METRIKA_ID: ${NEXT_PUBLIC_YANDEX_METRIKA_ID:-96536967}
@@ -15,8 +16,8 @@ services:
     volumes:
       # next/image optimises local sources off disk, so the app needs the media
       # even though nginx is what serves it to visitors.
-      - ./client/public/images:/app/public/images:ro
-      - ./client/public/docs:/app/public/docs:ro
+      - ./web/public/images:/app/public/images:ro
+      - ./web/public/docs:/app/public/docs:ro
     networks:
       - genesis-web
 
@@ -33,7 +34,7 @@ services:
         # The external reverse proxy reaches the site at this address.
         ipv4_address: 177.169.0.57
     volumes:
-      - ./client/public:/var/www/media:ro
+      - ./web/public:/var/www/media:ro
 
 networks:
   genesis-web:

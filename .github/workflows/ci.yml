@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+
+    env:
+      # The build bakes `images.remotePatterns` in from this value, so CI has to
+      # use the one production runs with or the check proves nothing. Nothing is
+      # fetched from it: only /gamelib talks to the API and it is server-rendered
+      # on demand, so the build needs no network beyond the npm registry.
+      API_BASE_URL: https://genesis-expert.ru/api/v1
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Matches the base image in web/Dockerfile.
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        # `ci`, not `install`: it fails if package-lock.json is out of date with
+        # package.json, and never rewrites the lockfile.
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Types
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the production image
+        # Through compose rather than `docker build`, so the build context, the
+        # build args and the rest of the deployment wiring are checked too.
+        run: docker compose build app
+
+  deploy:
+    # Only a green push to main reaches the server; pull requests never deploy.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [check, docker]
+    runs-on: ubuntu-latest
+    # Configure this environment in the repository settings to require a
+    # reviewer if the first deploys should be approved by hand.
+    environment: production
+    # Never let two deploys race. Queue rather than cancel, so an older commit
+    # cannot overtake a newer one that is already rolling out.
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+
+    steps:
+      - name: Configure SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: |
+          ssh -i ~/.ssh/id_deploy \
+              -p "${{ secrets.DEPLOY_PORT || 22 }}" \
+              -o BatchMode=yes \
+              "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+              "cd '${{ secrets.DEPLOY_PATH }}' && ./deploy/deploy.sh"

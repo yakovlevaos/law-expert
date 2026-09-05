@@ -1,19 +1,30 @@
 # syntax=docker/dockerfile:1
 #
-# Built from the repository root, not from `web/`: the app's public directory
-# symlinks into `client/public`, and those symlinks are excluded here in favour
-# of read-only bind mounts at runtime (see docker-compose.yml). Keeping the
-# ~400 MB of photos and video out of the image keeps builds and pulls fast.
+# Built from `web/`, which is self-contained. The ~400 MB of photos, PDFs and
+# video under public/ is excluded by .dockerignore and bind-mounted read-only at
+# runtime instead (see docker-compose.yml), which keeps builds and pulls fast.
 
 FROM node:22-alpine AS deps
 WORKDIR /app
-COPY web/package.json web/package-lock.json ./
-RUN npm ci
+COPY package.json package-lock.json ./
+
+# A flaky link to the registry used to fail the whole build: npm reports it as
+# "Exit handler never called!", which reads like a crash but is just an install
+# that was killed or stalled. This stage takes ~40s on a healthy connection and
+# has been seen to give up after 117s on the server, then succeed on a retry, so
+# the download is given room to recover instead. The cache mount means a retry
+# re-uses whatever was already fetched, and audit and funding are two round
+# trips a build has no use for.
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci --no-audit --no-fund \
+        --fetch-retries=5 \
+        --fetch-retry-maxtimeout=120000 \
+        --fetch-timeout=600000
 
 FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY web/ ./
+COPY . ./
 
 # Both values are needed at build time, for different reasons: the pages are
 # prerendered here and fetch the catalog, and NEXT_PUBLIC_* is inlined into the
