@@ -515,6 +515,12 @@ export const GameCatalog = ({
           The rows load on their own as the sentinel above comes into view;
           this stays as the way through for anyone whose browser does not run
           the observer, and for a visitor who would rather press than scroll.
+
+          HeroUI marks the button pending and dims it, but draws no indicator
+          of its own, so the spinner is placed here through the render-prop
+          form of children. Without it a press looked like nothing had
+          happened until the new rows arrived, which on a slow connection is a
+          long time to doubt.
         */
         <Button
           variant="secondary"
@@ -522,7 +528,16 @@ export const GameCatalog = ({
           isPending={isPending}
           onPress={loadMore}
         >
-          Показать ещё ({total - games.length})
+          {({ isPending: isLoadingMore }) =>
+            isLoadingMore ? (
+              <>
+                <Spinner color="current" size="sm" aria-hidden="true" />
+                Загружаем…
+              </>
+            ) : (
+              `Показать ещё (${total - games.length})`
+            )
+          }
         </Button>
       )}
     </div>
