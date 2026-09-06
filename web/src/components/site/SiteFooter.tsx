@@ -7,15 +7,15 @@ import type { NavItem } from "@/components/site/SiteHeader";
 type Props = {
   links: readonly NavItem[];
   phones?: { tel: string; label: string }[];
+  /** The VKontakte community differs per page; Telegram is one channel for
+   *  the whole site, so it is not configurable. */
   vkHref?: string;
-  showTelegram?: boolean;
 };
 
 export const SiteFooter = ({
   links,
   phones = [PHONES.general, PHONES.director],
   vkHref = SOCIAL.vkPersonal,
-  showTelegram = true,
 }: Props) => (
   <footer className="mt-12 bg-[var(--chrome)] text-[var(--chrome-foreground)]">
     <div className="mx-auto grid max-w-[1600px] gap-8 px-5 py-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -61,17 +61,15 @@ export const SiteFooter = ({
           >
             <VkIcon className="size-6" />
           </a>
-          {showTelegram && (
-            <a
-              href={SOCIAL.telegram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid size-11 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white"
-              aria-label="Telegram (откроется в новой вкладке)"
-            >
-              <TelegramIcon className="size-6" />
-            </a>
-          )}
+          <a
+            href={SOCIAL.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid size-11 place-items-center rounded-md text-[var(--chrome-muted)] transition-colors duration-200 hover:text-white"
+            aria-label="Telegram (откроется в новой вкладке)"
+          >
+            <TelegramIcon className="size-6" />
+          </a>
         </div>
       </div>
     </div>

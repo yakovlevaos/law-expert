@@ -138,7 +138,6 @@ export default function GamePage() {
       <SiteFooter
         links={FOOTER_LINKS}
         phones={[PHONES.general, PHONES.gameCentre]}
-        showTelegram={false}
       />
     </>
   );
