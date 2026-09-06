@@ -171,7 +171,6 @@ export default async function GameLibraryPage({ searchParams }: Props) {
         links={FOOTER_LINKS}
         phones={[PHONES.general, PHONES.director]}
         vkHref={SOCIAL.vkGameLib}
-        showTelegram={false}
       />
     </>
   );
