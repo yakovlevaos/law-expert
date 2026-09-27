@@ -17,6 +17,7 @@ export const VIDEOS: SiteVideo[] = [
     title: "Проект «Мои отражения»: фотовыставка",
     src: "/images/mirror7.mp4",
     kind: "file",
+    poster: "/images/mirror7-poster.jpg",
   },
   {
     title: "Красноярские школьники при занятиях киберспортом могут пообщаться с психологами",

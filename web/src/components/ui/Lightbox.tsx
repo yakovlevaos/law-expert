@@ -7,6 +7,8 @@ import { Modal } from "@heroui/react";
 export type LightboxItem = {
   src: string;
   kind: "image" | "video";
+  /** Shown while the video's first frame is still on its way. */
+  poster?: string;
   alt?: string;
 };
 
@@ -53,6 +55,7 @@ export const LightboxProvider = ({ children }: { children: ReactNode }) => {
               {item?.kind === "video" ? (
                 <video
                   src={item.src}
+                  poster={item.poster}
                   controls
                   autoPlay
                   className="max-h-[85vh] w-auto max-w-full rounded-lg"
