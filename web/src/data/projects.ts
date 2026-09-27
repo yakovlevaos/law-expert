@@ -18,6 +18,12 @@ export type Project = {
 export type ProjectMedia = {
   src: string;
   kind: "image" | "video";
+  /**
+   * A still for videos, shown until the visitor opens one. Resolved by
+   * convention — `mirror5.mp4` → `/images/mirror5-poster.jpg` — so adding a
+   * video means adding its poster file next to it.
+   */
+  poster?: string;
 };
 
 const VIDEO_EXTENSIONS = new Set(["mp4", "webm", "ogg"]);
@@ -28,10 +34,11 @@ export const resolveMedia = (entry: string): ProjectMedia => {
   const extension = dot === -1 ? "" : entry.slice(dot + 1).toLowerCase();
 
   if (!extension) return { src: `/images/${entry}.jpeg`, kind: "image" };
-  return {
-    src: `/images/${entry}`,
-    kind: VIDEO_EXTENSIONS.has(extension) ? "video" : "image",
-  };
+  if (VIDEO_EXTENSIONS.has(extension)) {
+    const stem = entry.slice(0, dot);
+    return { src: `/images/${entry}`, kind: "video", poster: `/images/${stem}-poster.jpg` };
+  }
+  return { src: `/images/${entry}`, kind: "image" };
 };
 
 export const PROJECTS: Project[] = [

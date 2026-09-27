@@ -32,13 +32,18 @@ export const VideoSlide = ({ video }: { video: SiteVideo }) => {
   return (
     <figure className="flex h-full flex-col gap-2">
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-[var(--surface-secondary)]">
-        {/* A local file is cheap: the element shows its first frame from the
-            metadata alone and fetches nothing else until it is played. */}
+        {/* A local file used to preload its metadata, on the belief that this
+            was cheap. It was not: the carousel renders every slide three times
+            for its loop, and the file keeps its index at the end, so each copy
+            fetched the start, aborted, and went for the tail — five aborted
+            loads of a 94 MB file per page view, by an audit's count. Now the
+            poster stands in and nothing is fetched until play is pressed. */}
         {video.kind === "file" ? (
           <video
             src={video.src}
+            poster={video.poster}
             controls
-            preload="metadata"
+            preload="none"
             className="size-full"
             title={video.title}
           />

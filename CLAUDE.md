@@ -48,6 +48,8 @@ All three are addressed by absolute runtime paths, but they are deployed differe
 
 The data arrays build `src` strings by convention: an expert's `photo: "maz-photo"` resolves to `/images/maz-photo.jpg`, and a `docs: ["yurkov-1"]` entry resolves to both `/docs/yurkov-1.pdf` (link) and `/images/yurkov-1.jpg` (thumbnail).
 
+**Videos are never fetched to draw a thumbnail.** A project video `mirror5.mp4` needs a still `mirror5-poster.jpg` beside it (`resolveMedia` derives the name), and the carousel's local video carries a `poster` in `src/data/videos.ts`. Thumbnails render the still; the video loads only when the lightbox opens it or play is pressed (`preload="none"`). The existing files keep their index (`moov`) at the end, so `preload="metadata"` made the browser fetch the start, abort, and go for the tail — once per copy, and the looping carousel renders every slide three times. Extract a still with `ffmpeg -ss <seconds> -i video.mp4 -frames:v 1 -vf scale=1280:-2 -q:v 3 video-poster.jpg`.
+
 ## The backend lives in `../genesis` — run it during development
 
 The REST API this client consumes is a separate Django repo checked out alongside this one at `../genesis` (uv + Postgres, its own `.env` and `CLAUDE.md`). **Start it whenever you develop against anything API-driven**, or `/gamelib` has nothing to talk to.

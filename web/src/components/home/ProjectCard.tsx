@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Card, Tabs } from "@heroui/react";
 
+import { PlayIcon } from "@/components/icons";
 import { useLightbox } from "@/components/ui/Lightbox";
 import { PROJECT_LINKS, resolveMedia } from "@/data/projects";
 import type { Project, ProjectMedia } from "@/data/projects";
@@ -49,6 +50,42 @@ const Partners = ({ project }: { project: Project }) => (
  * sized to the picture instead of to the card, there is no leftover space
  * underneath it to fill.
  */
+/**
+ * A video's place in a thumbnail, as a still with a play mark.
+ *
+ * These used to be `<video preload="metadata">` elements, fetched only to
+ * paint a first frame. The files keep their index (`moov`) at the end, so
+ * each thumbnail cost a request for the start that the browser then aborted,
+ * and another for the tail — an audit counted the aborts. The still is about
+ * 60 KB; the video itself loads when the lightbox opens it, and not before.
+ */
+const VideoPoster = ({
+  media,
+  sizes,
+  fit,
+}: {
+  media: ProjectMedia;
+  sizes: string;
+  fit: string;
+}) => (
+  <>
+    {media.poster && (
+      <Image
+        src={media.poster}
+        alt=""
+        fill
+        sizes={sizes}
+        className={`${fit} transition-transform duration-200 group-hover:scale-[1.02]`}
+      />
+    )}
+    <span aria-hidden="true" className="absolute inset-0 grid place-items-center">
+      <span className="grid size-12 place-items-center rounded-full bg-black/55 text-white shadow-lg transition-transform duration-200 group-hover:scale-110">
+        <PlayIcon className="size-6 translate-x-0.5" />
+      </span>
+    </span>
+  </>
+);
+
 const Cover = ({
   media,
   title,
@@ -65,13 +102,7 @@ const Cover = ({
     aria-label={`Открыть ${media.kind === "video" ? "видео" : "фотографию"} проекта «${title}»`}
   >
     {media.kind === "video" ? (
-      <video
-        src={media.src}
-        muted
-        playsInline
-        preload="metadata"
-        className="size-full object-contain"
-      />
+      <VideoPoster media={media} sizes="(max-width: 640px) 100vw, 30vw" fit="object-contain" />
     ) : (
       <Image
         src={media.src}
@@ -100,7 +131,7 @@ export const ProjectCard = ({ project, isMirrored = false }: Props) => {
   const links = PROJECT_LINKS[project.slug] ?? [];
 
   const openCover = () =>
-    open({ src: cover.src, kind: cover.kind, alt: project.title });
+    open({ src: cover.src, kind: cover.kind, poster: cover.poster, alt: project.title });
 
   return (
     <Card
@@ -186,20 +217,15 @@ export const ProjectCard = ({ project, isMirrored = false }: Props) => {
                       open({
                         src: media.src,
                         kind: media.kind,
+                        poster: media.poster,
                         alt: project.title,
                       })
                     }
-                    className="relative block aspect-3/2 w-full cursor-pointer overflow-hidden rounded-md bg-[var(--surface-secondary)]"
+                    className="group relative block aspect-3/2 w-full cursor-pointer overflow-hidden rounded-md bg-[var(--surface-secondary)]"
                     aria-label={`Открыть ${media.kind === "video" ? "видео" : "фотографию"} проекта «${project.title}»`}
                   >
                     {media.kind === "video" ? (
-                      <video
-                        src={media.src}
-                        muted
-                        playsInline
-                        preload="metadata"
-                        className="size-full object-cover"
-                      />
+                      <VideoPoster media={media} sizes="(max-width: 640px) 45vw, 220px" fit="object-cover" />
                     ) : (
                       <Image
                         src={media.src}
