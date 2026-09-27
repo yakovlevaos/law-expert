@@ -113,9 +113,9 @@ The catalog is fetched on the server, so a failed API call shows up in the dev-s
 `docker-compose.yml` builds two containers on the `genesis-web` bridge network:
 
 - `genesis-app` — the Next.js client, built from `web/Dockerfile` with **`web/` as the build context**. `output: "standalone"` keeps the runtime stage to ~230 MB. Listens on 3000, publishes no host port.
-- `genesis-nginx` — the entry point at a fixed `177.169.0.57`. It proxies `/` to `genesis-app` and serves `/images/` and `/docs/` itself off `./web/public`, so the media never passes through Node.
+- `genesis-nginx` — the entry point, published on `127.0.0.1:8083`. It proxies `/` to `genesis-app` and serves `/images/` and `/docs/` itself off `./web/public`, so the media never passes through Node.
 
-**The external reverse proxy reaches the site by that IP**, not by container or network name — the address and the `177.169.0.0/24` subnet are load-bearing; the names are not.
+**The VPS's TLS terminator reaches the site on that published port**, so the port number is load-bearing; the compose network's addressing is not, and neither are the container names. The bind is loopback, never `0.0.0.0`: nothing may answer from outside the host except through the terminator. The port before this was a fixed address on the bridge, taken from `177.169.0.0/24` — public address space rather than RFC1918, which would have swallowed traffic to any real host in that range.
 
 The media is bind-mounted into *both* containers: nginx serves it, and the app needs it on disk because `next/image` optimises local sources by reading the file.
 
@@ -131,7 +131,7 @@ Compose takes its project name from the directory the repository is checked out 
 - **docker** — `docker compose build app`, not a bare `docker build`, so the build context and build args are checked along with the Dockerfile.
 - **deploy** — runs only on a green push to `main`, in a `production` environment, in a non-cancelling concurrency group so an older commit cannot overtake a newer one. It SSHes in and runs `deploy/deploy.sh`.
 
-`deploy/deploy.sh` fast-forwards the server's checkout to `origin/$DEPLOY_BRANCH` (default `main`), rebuilds with `docker compose up -d --build`, waits for nginx to answer at `http://177.169.0.57/`, and on failure resets to the previous commit and rebuilds again. It refuses to run without a `.env`. Its body is wrapped in `main()` because a release can rewrite the script while bash is still reading it. `up -d --build` rather than a plain image swap matters here: the photographs reach the site through bind mounts, so a release that moves them needs the mounts repointed too.
+`deploy/deploy.sh` fast-forwards the server's checkout to `origin/$DEPLOY_BRANCH` (default `main`), rebuilds with `docker compose up -d --build`, waits for nginx to answer at `http://127.0.0.1:8083/`, and on failure resets to the previous commit and rebuilds again. It refuses to run without a `.env`. Its body is wrapped in `main()` because a release can rewrite the script while bash is still reading it. `up -d --build` rather than a plain image swap matters here: the photographs reach the site through bind mounts, so a release that moves them needs the mounts repointed too.
 
 Repository secrets the deploy job needs: `DEPLOY_SSH_KEY`, `DEPLOY_KNOWN_HOSTS`, `DEPLOY_USER`, `DEPLOY_HOST`, `DEPLOY_PATH`, and optionally `DEPLOY_PORT`.
 
