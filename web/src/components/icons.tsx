@@ -57,6 +57,13 @@ export const PlayIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const MapPinIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className={className} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s-6.5-5.6-6.5-11.2a6.5 6.5 0 1 1 13 0C18.5 15.4 12 21 12 21Z" />
+    <circle cx="12" cy="9.8" r="2.4" />
+  </svg>
+);
+
 export const GamepadIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className={className} aria-hidden="true">
     <path

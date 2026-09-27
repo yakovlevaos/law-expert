@@ -1,4 +1,5 @@
-import { CONTACTS, MAP_EMBED_URL } from "@/data/site";
+import { MapEmbed } from "@/components/site/MapEmbed";
+import { CONTACTS } from "@/data/site";
 
 /**
  * The old markup carried two near-identical copies of this block, one hidden
@@ -44,13 +45,6 @@ export const Contacts = () => (
       ))}
     </div>
 
-    <div className="min-h-[320px] overflow-hidden rounded-lg border border-[var(--border)]">
-      <iframe
-        src={MAP_EMBED_URL}
-        title="Центр «Генезис» на карте Красноярска"
-        loading="lazy"
-        className="size-full min-h-[320px] border-0"
-      />
-    </div>
+    <MapEmbed />
   </div>
 );
