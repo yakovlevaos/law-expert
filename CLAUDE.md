@@ -81,6 +81,24 @@ Two skills are vendored into `.agents/skills/` (pinned in `skills-lock.json`). U
 
 Apply the guidance first, then verify the result in the browser as described below.
 
+## Nothing that sets a cookie runs before consent
+
+The site answers to 152-ФЗ, and an audit caught it setting third-party cookies on first load. The rule that fixed it, and that every new embed has to follow:
+
+- **Yandex.Metrika** (`src/components/site/YandexMetrika.tsx`) loads only when `useConsent()` from `src/lib/consent.ts` returns `"granted"`. There is no `<noscript>` pixel: a visitor without JavaScript cannot reach the banner, so a pixel would track them with no way to consent.
+- **The Yandex map** in the contacts (`MapEmbed.tsx`) is framed only after consent or when the visitor presses «Показать карту». This one was found by measuring, not by reading: its lazy iframe set nine yandex.ru cookies and fired an ad-exchange user-sync chain as soon as it scrolled into view. An iframe is a third party's page, and `loading="lazy"` delays it, it does not gate it.
+- **VK videos** were already click-to-load and stay that way.
+- **Any new script, iframe or widget from another origin goes through the same gate.** Follow the map or the video facade: a still panel until consent or an explicit press.
+
+The banner is server-rendered for everyone, so scanners that read only the static HTML can find it. `CONSENT_INIT_SCRIPT` in `<head>` marks `<html data-cookie-consent>` before paint, and a rule in `globals.css` hides the banner at once for visitors who already answered. Do not make the banner client-only — that brings back both the scanner finding and the flash for returning visitors. The choice lives in localStorage under `cookie-consent`, next to the theme's `dark-mode`.
+
+**`src/data/privacy.ts` is a legal document, not copy.** It states exactly what the site collects. A change that adds a form, an analytics service, a widget or a new cookie must update it in the same commit — and the banner text in `CookieBanner.tsx` too. Auditors compare the services they detect against both documents, so the two lists have to agree:
+
+- the **policy** names every third party the site can reach — today Yandex.Metrika with Webvisor, the Yandex map, and the VK video players;
+- the **banner** names what «Принять» switches on — today Metrika and the map. VK is absent from it on purpose: its player loads only when the visitor presses play, which is its own consent.
+
+To verify, check the cookies themselves rather than the network log: in a fresh browser context, scroll the whole page to the footer without answering the banner, then `context.cookies()` must be empty apart from the dev server's own `__next_hmr_refresh_hash__`. When testing «Принять» against the real counter, block `mc.yandex.*/watch` so test visits do not land in the customer's statistics.
+
 ## Images: fit the box to the source, never the source to the box
 
 The rewrite once put every image into a fixed-ratio box with `object-cover`, which cost the square service illustrations 37.5% of their height and cut the shoulders off the widest staff portrait. The rule that replaced it:

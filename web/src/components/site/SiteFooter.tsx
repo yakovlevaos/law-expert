@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CookieSettingsButton } from "@/components/site/CookieBanner";
 import { TelegramIcon, VkIcon } from "@/components/icons";
 import { ORG, PHONES, SOCIAL } from "@/data/site";
 import type { NavItem } from "@/components/site/SiteHeader";
@@ -71,6 +72,21 @@ export const SiteFooter = ({
             <TelegramIcon className="size-6" />
           </a>
         </div>
+      </div>
+    </div>
+
+    {/* On every page, because the footer is on every page: the audit's first
+        question is whether the policy can be found, and withdrawing consent has
+        to be as easy to reach as giving it. */}
+    <div className="border-t border-white/10">
+      <div className="mx-auto flex max-w-[1600px] flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 text-sm text-[var(--chrome-muted)]">
+        <Link
+          href="/privacy"
+          className="underline-offset-4 transition-colors duration-200 hover:text-white hover:underline"
+        >
+          Политика обработки персональных данных
+        </Link>
+        <CookieSettingsButton className="hover:text-white" />
       </div>
     </div>
   </footer>

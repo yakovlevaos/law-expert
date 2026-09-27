@@ -27,6 +27,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    // Indexed so it can be found by search as well as by the footer link —
+    // the audit that asked for it checks exactly that.
+    {
+      url: `${ORG.siteUrl}/privacy`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   // Certificates and diplomas are linked from the site and worth indexing; a

@@ -21,6 +21,13 @@ export const PHONES = {
   gameCentre: { tel: "+79831992391", label: "+7 983 199-23-91" },
 } as const;
 
+/** Referenced by the contacts block and by the privacy policy, which names the
+ *  general address as the place to send personal-data requests. */
+export const EMAILS = {
+  general: "genesisexpert@yandex.ru",
+  director: "genesiskrsk@yandex.ru",
+} as const;
+
 export const SOCIAL = {
   vk: "https://vk.com/genesiskrsk",
   vkPersonal: "https://vk.com/dmitryurk",
@@ -44,11 +51,11 @@ export const CONTACTS: ContactBlock[] = [
   },
   {
     heading: "По общим вопросам",
-    lines: [PHONES.general.label, "Юрков Дмитрий", "genesisexpert@yandex.ru"],
+    lines: [PHONES.general.label, "Юрков Дмитрий", EMAILS.general],
   },
   {
     heading: "Директор",
-    lines: ["Милованова Екатерина", PHONES.director.label, "genesiskrsk@yandex.ru"],
+    lines: ["Милованова Екатерина", PHONES.director.label, EMAILS.director],
   },
   {
     heading: "Руководитель центра игровой поддержки",
@@ -59,6 +66,11 @@ export const CONTACTS: ContactBlock[] = [
 /** Yandex.Maps embed for the office, reused on both pages that show contacts. */
 export const MAP_EMBED_URL =
   "https://yandex.ru/map-widget/v1/?from=mapframe&ll=92.879197%2C55.979485&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjQyMTI0OBJM0KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7Rj9GA0YHQuiwg0YPQu9C40YbQsCA2MCDQu9C10YIg0J7QutGC0Y_QsdGA0Y8sIDEwMiIKDSfCuUIV_upfQg%2C%2C&source=mapframe&utm_source=mapframe&z=16.78";
+
+/** The same place on yandex.ru/maps itself. Opens in a new tab, so following it
+ *  sets nothing on this site — the way to see the map without consenting to
+ *  the embed. Derived rather than copied, so the two cannot point apart. */
+export const MAP_OPEN_URL = MAP_EMBED_URL.replace("/map-widget/v1/", "/maps/");
 
 export const HOME_NAV = [
   { href: "#court-expertise", label: "Экспертиза", labelLong: "Судебно-психологическая экспертиза" },

@@ -4,7 +4,9 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
 import { BackToTop } from "@/components/site/BackToTop";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import { YandexMetrika } from "@/components/site/YandexMetrika";
+import { CONSENT_INIT_SCRIPT } from "@/lib/consent";
 import { LightboxProvider } from "@/components/ui/Lightbox";
 import { THEME_INIT_SCRIPT } from "@/components/theme";
 import { ORG } from "@/data/site";
@@ -82,6 +84,8 @@ export default function RootLayout({
       <head>
         {/* Must run before paint, otherwise dark-mode visitors get a light flash. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        {/* Likewise, or visitors who already answered see the banner flash. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_INIT_SCRIPT }} />
       </head>
       <body className="min-h-dvh antialiased">
         <a
@@ -92,6 +96,8 @@ export default function RootLayout({
         </a>
         <LightboxProvider>{children}</LightboxProvider>
         <BackToTop />
+        {/* The counter only loads once the banner has been answered "yes". */}
+        <CookieBanner />
         <YandexMetrika />
       </body>
     </html>

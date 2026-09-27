@@ -185,3 +185,9 @@
 .rail > * {
   scroll-snap-align: start;
 }
+
+/* Set before paint by CONSENT_INIT_SCRIPT: hides the server-rendered banner at
+   once for a visitor who answered on an earlier visit. */
+html[data-cookie-consent] #cookie-consent-banner {
+  display: none;
+}
