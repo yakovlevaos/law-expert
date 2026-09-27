@@ -14,9 +14,9 @@ set -euo pipefail
 
 main() {
     local BRANCH="${DEPLOY_BRANCH:-main}"
-    # nginx publishes no host port; it is reachable on the compose network at
-    # this fixed address, which is also how the external reverse proxy finds it.
-    local HEALTH_URL="${HEALTH_URL:-http://177.169.0.57/}"
+    # The same door the VPS's TLS terminator knocks on, so a deploy that
+    # answers here is one the public can actually reach.
+    local HEALTH_URL="${HEALTH_URL:-http://127.0.0.1:8083/}"
     local HEALTH_TIMEOUT="${HEALTH_TIMEOUT:-180}"
 
     cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

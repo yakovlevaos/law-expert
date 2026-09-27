@@ -71,12 +71,13 @@ Two containers on the `genesis-web` bridge network:
 - **`genesis-app`** — the Next.js client, built from `web/Dockerfile` with `web/`
   as the build context. `output: "standalone"` keeps the runtime stage to
   ~233 MB. Listens on 3000 and publishes no host port.
-- **`genesis-nginx`** — the entry point at a fixed **`177.169.0.57`**. It proxies
-  `/` to `genesis-app` and serves `/images/` and `/docs/` itself off
+- **`genesis-nginx`** — the entry point, published on **`127.0.0.1:8083`**. It
+  proxies `/` to `genesis-app` and serves `/images/` and `/docs/` itself off
   `./web/public`.
 
-**The external reverse proxy reaches the site by that IP**, not by container or
-network name — the address and the `177.169.0.0/24` subnet are load-bearing.
+**The VPS's TLS terminator reaches the site on that port**, so the port number
+is load-bearing; the compose network's addressing is not. The bind is loopback
+rather than `0.0.0.0`, so nothing answers from outside the host directly.
 
 ### Media
 
@@ -123,7 +124,7 @@ On the server, `deploy/deploy.sh`:
 3. `docker compose up -d --build` — a rebuild rather than an image swap, because
    the photographs arrive through bind mounts and a release that moves them has
    to repoint the mounts too;
-4. polls `http://177.169.0.57/` for up to `HEALTH_TIMEOUT` (180s); nginx
+4. polls `http://127.0.0.1:8083/` for up to `HEALTH_TIMEOUT` (180s); nginx
    publishes no host port, so the check goes over the compose network;
 5. on failure, dumps the container logs, resets to the previous commit,
    rebuilds, and exits non-zero.

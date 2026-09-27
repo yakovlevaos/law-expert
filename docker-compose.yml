@@ -35,18 +35,15 @@ services:
     ports:
       - "127.0.0.1:8083:80"
     networks:
-      genesis-web:
-        # Kept until the head nginx upstream has been moved to the published
-        # port above and that has been seen working. Note that 177.169.0.0/24
-        # is public address space, not RFC1918 — the loopback port is what
-        # replaces it.
-        ipv4_address: 177.169.0.57
+      - genesis-web
     volumes:
       - ./web/public:/var/www/media:ro
 
 networks:
+  # No fixed address and no hand-picked subnet: the site is reached on the
+  # published loopback port above, so docker can number this network however
+  # it likes. The previous subnet came out of 177.169.0.0/24, which is public
+  # address space rather than RFC1918 — traffic to a real host in that range
+  # would have been swallowed by the bridge.
   genesis-web:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 177.169.0.0/24
