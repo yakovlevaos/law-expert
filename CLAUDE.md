@@ -92,7 +92,10 @@ The site answers to 152-ФЗ, and an audit caught it setting third-party cookies
 
 The banner is server-rendered for everyone, so scanners that read only the static HTML can find it. `CONSENT_INIT_SCRIPT` in `<head>` marks `<html data-cookie-consent>` before paint, and a rule in `globals.css` hides the banner at once for visitors who already answered. Do not make the banner client-only — that brings back both the scanner finding and the flash for returning visitors. The choice lives in localStorage under `cookie-consent`, next to the theme's `dark-mode`.
 
-**`src/data/privacy.ts` is a legal document, not copy.** It states exactly what the site collects. A change that adds a form, an analytics service, a widget or a new cookie must update it in the same commit.
+**`src/data/privacy.ts` is a legal document, not copy.** It states exactly what the site collects. A change that adds a form, an analytics service, a widget or a new cookie must update it in the same commit — and the banner text in `CookieBanner.tsx` too. Auditors compare the services they detect against both documents, so the two lists have to agree:
+
+- the **policy** names every third party the site can reach — today Yandex.Metrika with Webvisor, the Yandex map, and the VK video players;
+- the **banner** names what «Принять» switches on — today Metrika and the map. VK is absent from it on purpose: its player loads only when the visitor presses play, which is its own consent.
 
 To verify, check the cookies themselves rather than the network log: in a fresh browser context, scroll the whole page to the footer without answering the banner, then `context.cookies()` must be empty apart from the dev server's own `__next_hmr_refresh_hash__`. When testing «Принять» against the real counter, block `mc.yandex.*/watch` so test visits do not land in the customer's statistics.
 
