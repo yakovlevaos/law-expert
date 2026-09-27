@@ -124,7 +124,7 @@ On the server, `deploy/deploy.sh`:
 3. `docker compose up -d --build` — a rebuild rather than an image swap, because
    the photographs arrive through bind mounts and a release that moves them has
    to repoint the mounts too;
-4. polls `http://127.0.0.1:8083/` for up to `HEALTH_TIMEOUT` (180s); nginx
+4. asks compose where nginx is published (`docker compose port nginx 80`) and polls it for up to `HEALTH_TIMEOUT` (180s); nginx
    publishes no host port, so the check goes over the compose network;
 5. on failure, dumps the container logs, resets to the previous commit,
    rebuilds, and exits non-zero.
