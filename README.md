@@ -121,22 +121,46 @@ On the server, `deploy/deploy.sh`:
 2. `git fetch --prune origin main`, then `git checkout -B main origin/main`
    (a plain `reset --hard` would move whichever branch is checked out and leave
    the server on a stale branch name);
-3. `docker compose up -d --build` — a rebuild rather than an image swap, because
+3. **hands over to the release's own copy of `deploy.sh`** (`exec`), so the
+   build, the health check and the rollback are always the new release's
+   logic, never the previous one's;
+4. `docker compose up -d --build` — a rebuild rather than an image swap, because
    the photographs arrive through bind mounts and a release that moves them has
    to repoint the mounts too;
-4. asks compose where nginx is published (`docker compose port nginx 80`) and polls it for up to `HEALTH_TIMEOUT` (180s); nginx
-   publishes no host port, so the check goes over the compose network;
-5. on failure, dumps the container logs, resets to the previous commit,
+5. asks compose where nginx is published (`docker compose port nginx 80`,
+   today `127.0.0.1:8083`) and polls it for up to `HEALTH_TIMEOUT` (180s);
+6. on failure, dumps the container logs, resets to the previous commit,
    rebuilds, and exits non-zero.
 
 If the target commit is already checked out it only makes sure the stack is up,
-so re-running a deploy is harmless. Unlike the backend there are no migrations,
-so the rollback is complete: the previous commit rebuilds to exactly what was
-running before.
+so re-running a deploy is harmless.
+
+Why the handover: the copy of the script that starts a deploy was read from the
+checkout *before* the update, so it is always one release behind the compose
+file it applies. Twice that took the site down — a release that changed the
+health-check address was judged by a script still polling the old one, declared
+unhealthy while it was serving visitors, and rolled back. If `main` is ever
+force-pushed back to a commit older than the handover, the running script
+notices the target cannot take over and finishes the deploy itself.
+
+**Rollback covers code, not topology.** There are no migrations, so rolling back
+is usually complete. The exception is a release that changes the compose
+network: docker will not re-address a network that exists, so a rollback across
+such a change cannot start the old containers. Those releases need a
+`make rebuild` by hand and no automatic rollback to lean on.
+
+**Never move the server's checkout backwards by hand.** The next deploy is run
+by the script found in that checkout, so a manual `git reset` to an old commit
+puts an old script in charge of the next release. That is what caused the
+27 September outage: the checkout had been reset three weeks back, and the next
+deploy ran a script that predated the port change. If you must go back, deploy
+the older commit through `main`, or move the checkout forward again before CI
+runs.
 
 `deploy/deploy.sh` keeps its whole body in a `main()` function on purpose — the
 update rewrites that very file, and bash reads a plain script incrementally, so
-a release that changes the script could otherwise resume mid-file.
+a release that changes the script could otherwise resume mid-file. The handover
+starts a fresh bash on the new file, which sidesteps the same hazard.
 
 Run it by hand, or watch a run, with:
 
