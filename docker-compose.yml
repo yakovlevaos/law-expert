@@ -29,9 +29,17 @@ services:
     restart: unless-stopped
     depends_on:
       - app
+    # Bound to the loopback interface, never 0.0.0.0: the site must reach the
+    # outside only through the VPS's TLS terminator, which sits on the same
+    # host and proxies to this port.
+    ports:
+      - "127.0.0.1:8083:80"
     networks:
       genesis-web:
-        # The external reverse proxy reaches the site at this address.
+        # Kept until the head nginx upstream has been moved to the published
+        # port above and that has been seen working. Note that 177.169.0.0/24
+        # is public address space, not RFC1918 — the loopback port is what
+        # replaces it.
         ipv4_address: 177.169.0.57
     volumes:
       - ./web/public:/var/www/media:ro
