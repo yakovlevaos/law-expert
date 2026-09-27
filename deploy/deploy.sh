@@ -14,9 +14,6 @@ set -euo pipefail
 
 main() {
     local BRANCH="${DEPLOY_BRANCH:-main}"
-    # The same door the VPS's TLS terminator knocks on, so a deploy that
-    # answers here is one the public can actually reach.
-    local HEALTH_URL="${HEALTH_URL:-http://127.0.0.1:8083/}"
     local HEALTH_TIMEOUT="${HEALTH_TIMEOUT:-180}"
 
     cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -38,7 +35,7 @@ main() {
     if [[ "$previous" == "$target" ]]; then
         log "already at origin/$BRANCH; making sure the stack is up"
         compose up -d
-        wait_healthy "$HEALTH_URL" "$HEALTH_TIMEOUT" && {
+        wait_healthy "$(health_url)" "$HEALTH_TIMEOUT" && {
             log "healthy, nothing to deploy"
             return 0
         }
@@ -57,7 +54,7 @@ main() {
     # matters because the photographs and PDFs reach the site through bind
     # mounts: a release that moves them needs the mounts repointed, not just a
     # new image.
-    if compose up -d --build && wait_healthy "$HEALTH_URL" "$HEALTH_TIMEOUT"; then
+    if compose up -d --build && wait_healthy "$(health_url)" "$HEALTH_TIMEOUT"; then
         log "deployed $target on branch $BRANCH successfully"
         # Keep the disk from filling up with superseded build layers.
         docker image prune -f >/dev/null || true
@@ -68,7 +65,7 @@ main() {
     compose logs --tail 80 app nginx || true
 
     git reset --hard "$previous"
-    if compose up -d --build && wait_healthy "$HEALTH_URL" "$HEALTH_TIMEOUT"; then
+    if compose up -d --build && wait_healthy "$(health_url)" "$HEALTH_TIMEOUT"; then
         log "rolled back to $previous"
     else
         log "FATAL: rollback to $previous is also unhealthy -- manual intervention needed"
@@ -79,6 +76,24 @@ main() {
 log() { printf '==> %s\n' "$*"; }
 
 compose() { docker compose "$@"; }
+
+# Where to knock, asked of the running stack rather than remembered here.
+#
+# This script is read from the checkout as it stood *before* the update, so a
+# hard-coded address belongs to the previous release while the compose file it
+# applies belongs to the next one. That is not hypothetical: the release that
+# removed the container's fixed bridge address was rolled back by a script
+# still polling that address, after 180s of a perfectly healthy site serving
+# visitors. Asking compose keeps the question pinned to what was just started.
+health_url() {
+    if [[ -n "${HEALTH_URL:-}" ]]; then
+        printf '%s\n' "$HEALTH_URL"
+        return
+    fi
+    local binding
+    binding="$(compose port nginx 80 2>/dev/null | tr -d '\r')"
+    printf 'http://%s/\n' "${binding:-127.0.0.1:8083}"
+}
 
 wait_healthy() {
     local url="$1" timeout="$2"
